@@ -1,18 +1,20 @@
-﻿using Assets._Project.Scripts.Factories;
-using Photon.Pun;
+﻿using Photon.Pun;
 using Photon.Realtime;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using Zenject;
 
-namespace Assets._Project.Scripts.Menu.Network
+namespace Assets._Project.Scripts.LoadResources
 {
-    public class ConnectionToPhoton : MonoBehaviourPunCallbacks
+    public class NetworkForTesting : MonoBehaviourPunCallbacks
     {
+        public Action CallBackConnection;
+
         public void Awake()
         {
+            if (PhotonNetwork.IsConnected)
+                return;
+
             PhotonNetwork.ConnectUsingSettings();
-            PhotonNetwork.AutomaticallySyncScene = true;
         }
 
         public override void OnConnectedToMaster()
@@ -23,6 +25,8 @@ namespace Assets._Project.Scripts.Menu.Network
 
         public override void OnJoinedLobby()
         {
+            if (CallBackConnection != null)
+                CallBackConnection.Invoke();
             Debug.Log("OnJoinedLobby");
         }
     }

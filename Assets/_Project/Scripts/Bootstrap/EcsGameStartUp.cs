@@ -1,6 +1,9 @@
+using Assets._Project.Scripts.Interfaces;
 using Assets._Project.Scripts.Systems;
 using Leopotam.EcsLite;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 using Voody.UniLeo.Lite;
 using Zenject;
 
@@ -8,17 +11,19 @@ namespace Assets._Project.Scripts.Bootstrap
 {
     public class EcsGameStartUp : MonoBehaviour, IInitializable
     {
-        private EcsWorld world;
+        [Inject] private EcsWorld world;
+        [Inject] private List<IEcsInitSystem> injectedInitSystems;
+        [Inject] private List<IEcsFixedUpdateSystem> injectedFixedUpdateSystems;
+        [Inject] private List<IEcsUpdateSystem> injectedUpdateSystems;
+        [Inject] private List<IEcsLateUpdateSystem> injectedLateUpdateSystems;
 
-        private EcsSystems initUpdateSystems;
+        private EcsSystems initSystems;
         private EcsSystems fixedUpdateSystems;
         private EcsSystems updateSystems;
         private EcsSystems lateUpdateSystems;
 
         public void Initialize()
         {
-            world = new EcsWorld();
-
             DeclareInitSystems();
             DeclareFixedUpdateSystems();
             DeclareUpdateSystems();
@@ -27,18 +32,25 @@ namespace Assets._Project.Scripts.Bootstrap
 
         private void DeclareInitSystems()
         {
-            initUpdateSystems = new EcsSystems(world);
-            //initUpdateSystems.Add(new InputPCSystem());
-            initUpdateSystems.Init();
+            initSystems = new EcsSystems(world);
+
+            foreach (var system in injectedInitSystems)
+            {
+                initSystems.Add(system);
+            }
+
+            initSystems.Init();
         }
 
         private void DeclareFixedUpdateSystems()
         {
             fixedUpdateSystems = new EcsSystems(world);
-
             fixedUpdateSystems.ConvertScene();
 
-            //fixedUpdateSystems.OneFrame<GroundedComponent>();
+            foreach (var system in injectedFixedUpdateSystems)
+            {
+                fixedUpdateSystems.Add(system);
+            }
 
             fixedUpdateSystems.Init();
         }
@@ -47,7 +59,10 @@ namespace Assets._Project.Scripts.Bootstrap
         {
             updateSystems = new EcsSystems(world);
 
-            updateSystems.Add(new PlayerInputSystem());
+            foreach (var system in injectedUpdateSystems)
+            {
+                updateSystems.Add(system);
+            }
 
             updateSystems.Init();
         }
@@ -56,7 +71,10 @@ namespace Assets._Project.Scripts.Bootstrap
         {
             lateUpdateSystems = new EcsSystems(world);
 
-            //lateUpdateSystems.Add(new FollowCameraSystem());
+            foreach (var system in injectedLateUpdateSystems)
+            {
+                lateUpdateSystems.Add(system);
+            }
 
             lateUpdateSystems.Init();
         }
@@ -72,7 +90,7 @@ namespace Assets._Project.Scripts.Bootstrap
 
         private void OnDestroy()
         {
-            initUpdateSystems.Destroy();
+            initSystems.Destroy();
             fixedUpdateSystems.Destroy();
             updateSystems.Destroy();
             lateUpdateSystems.Destroy();

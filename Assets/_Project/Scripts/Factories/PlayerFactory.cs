@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Assets._Project.Scripts.Factories
@@ -7,30 +8,17 @@ namespace Assets._Project.Scripts.Factories
     public class PlayerFactory
     {
         private DiContainer _container;
-        private Object _playerPrefab;
-        private Object _playerCameraPrefab;
+        private AssetReference playerPrefabAssetRef;
 
-        public PlayerFactory(DiContainer container)
+        public PlayerFactory(DiContainer container, AssetReference playerPrefabAssetRef)
         {
             _container = container;
-            LoadResources();
+            this.playerPrefabAssetRef = playerPrefabAssetRef;
         }
 
-        public void LoadResources()
+        public void CreatePlayer(Vector3 position, Quaternion rotation)
         {
-            _playerPrefab = Resources.Load("Player");
-            _playerCameraPrefab = Resources.Load("PlayerCamera");
-        }
-
-        public void CreatePlayer(Vector3 position)
-        {
-            var player = PhotonNetwork.Instantiate(_playerPrefab.name, position, Quaternion.identity);
-
-            var playerPhotonView = player.GetComponent<PhotonView>();
-            if (playerPhotonView.Owner.IsLocal)
-            {
-                var playerCamera = (GameObject)GameObject.Instantiate(_playerCameraPrefab, position, Quaternion.identity);
-            }
+            PhotonNetwork.Instantiate(playerPrefabAssetRef.AssetGUID, position, rotation);
         }
     }
 }

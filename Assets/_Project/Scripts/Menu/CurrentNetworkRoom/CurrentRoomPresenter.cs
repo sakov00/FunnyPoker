@@ -11,7 +11,7 @@ using Assets._Project.Scripts.Menu.ManagmentPanels;
 
 namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 {
-    internal class CurrentRoomPresenter : MonoBehaviourPunCallbacks
+    public class CurrentRoomPresenter : MonoBehaviourPunCallbacks
     {
         [SerializeField] private AssetReference roomListing;
 
@@ -78,6 +78,12 @@ namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 
         private void StartGame()
         {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.LoadLevel(1);
+            }
         }
 
         private void LeaveRoom()
