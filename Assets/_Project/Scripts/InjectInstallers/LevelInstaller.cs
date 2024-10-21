@@ -7,25 +7,44 @@ using Leopotam.EcsLite;
 using Assets._Project.Scripts.Interfaces;
 using Assets._Project.Scripts.Systems;
 using Assets._Project.Scripts.Network;
-using Assets._Project.Scripts.LoadResources;
+using Assets._Project.Scripts.MonoBehLogic;
 
 namespace Assets._Project.Scripts.InjectInstallers
 {
     public class LevelInstaller : MonoInstaller
     {
         [SerializeField] private AssetReference playerAsset;
+        [SerializeField] private AssetReference cameraAsset;
 
         public override void InstallBindings() 
         {
-            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerAsset);
+            BindServices();
+            BindEcs();
+            BindFactories();
+            BindNetwork();
+        }
 
-            var world = new EcsWorld();
-            Container.Bind<EcsWorld>().FromInstance(world).AsSingle();
+        private void BindServices()
+        {
+            Container.Bind<PlayersTurnService>().FromComponentInHierarchy().AsSingle();
+        }
 
-            //Container.Bind<IEcsFixedUpdateSystem>().To<PlayerSpawnSystem>().AsSingle();
+        private void BindFactories()
+        {
+            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerAsset, cameraAsset);
+        }
 
-            Container.BindInterfacesAndSelfTo<EcsGameStartUp>().FromComponentInHierarchy().AsSingle().NonLazy();
+        private void BindEcs()
+        {
+            Container.Bind<EcsWorld>().FromInstance(new EcsWorld()).AsSingle();
 
+            Container.Bind<IEcsFixedUpdateSystem>().To<PlayerCanvasActiveSystem>().AsSingle();
+
+            Container.Bind<EcsGameStartUp>().FromComponentInHierarchy().AsSingle().NonLazy();
+        }
+
+        private void BindNetwork()
+        {
             Container.BindInterfacesAndSelfTo<NetworkCallBacks>().FromComponentInHierarchy().AsSingle().NonLazy();
         }
     }

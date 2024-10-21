@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
+using Voody.UniLeo.Lite;
 
 namespace Assets._Project.Scripts.Components
 {
-    internal class CameraProvider
+    public sealed class CameraProvider : MonoProvider<CameraComponent> { }
+
+    [Serializable]
+    public struct CameraComponent
     {
+        public Transform Transform;
     }
 }
