@@ -16,27 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e5acce337179a2746b01d233a4d0939a
-  m_SerializeEntries:
-  - m_GUID: 19d2b85c8b901e545b1dc57b700ba8a2
-    m_Address: Assets/_Project/Prefabs/MainMenu/RoomListing.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d8804b18bfc05fb4d9c8d546709d4404
-    m_Address: Assets/_Project/Prefabs/Player.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a2c505cab00ff8e4fad209bc9ba0ebb4
-    m_Address: Assets/_Project/Prefabs/Judge.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a0cdac158c6d1246b49b1b4ec3aece5
-    m_Address: Assets/_Project/Prefabs/Camera.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f44465f8abcce3346b0d42c39e7b5cc6, type: 2}
   m_SchemaSet:

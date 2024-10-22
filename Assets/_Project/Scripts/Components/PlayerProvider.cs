@@ -7,7 +7,7 @@ namespace Assets._Project.Scripts.Components
     public sealed class PlayerProvider : MonoProvider<PlayerComponent> { }
 
     [Serializable]
-    public struct PlayerComponent 
+    public struct PlayerComponent
     {
         public int HealthPoints;
         public int CountLimitCards;

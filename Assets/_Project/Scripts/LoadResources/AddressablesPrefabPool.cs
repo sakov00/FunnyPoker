@@ -13,25 +13,21 @@ namespace Assets._Project.Scripts.LoadResources
 
         public Action<string, GameObject> CallBackPreLoaded;
 
-        public void PreLoad(string prefabId, Action<string, GameObject> callBackPreLoaded)
+        public void PreLoadGroup(string labelGroup, Action callBackPreLoaded)
         {
-            if (loadedPrefabs.TryGetValue(prefabId, out var prefab))
+            var loadOperation = Addressables.LoadAssetsAsync<GameObject>(labelGroup, null);
+            loadOperation.Completed += handle =>
             {
-                callBackPreLoaded.Invoke(prefabId, prefab);
-            }
-            else
-            {
-                var assetRef = new AssetReference(prefabId);
-                assetRef.LoadAssetAsync<GameObject>().Completed += handle =>
+                if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    if (handle.Status == AsyncOperationStatus.Succeeded)
+                    foreach (var prefab in handle.Result)
                     {
-                        prefab = handle.Result;
+                        var prefabId = prefab.name;
                         loadedPrefabs[prefabId] = prefab;
-                        callBackPreLoaded.Invoke(prefabId, prefab);
                     }
-                };
-            }
+                    callBackPreLoaded.Invoke();
+                }
+            };
         }
 
         public GameObject Instantiate(string prefabId, Vector3 position, Quaternion rotation)

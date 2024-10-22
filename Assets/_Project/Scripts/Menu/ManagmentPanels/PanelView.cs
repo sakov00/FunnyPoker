@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System;
 using UniRx;
-using System;
-using Zenject;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets._Project.Scripts.Menu.ManagmentPanels
 {

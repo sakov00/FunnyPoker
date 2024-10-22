@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum TypeCard 
+public enum TypeCard
 {
     General,
     Magic,

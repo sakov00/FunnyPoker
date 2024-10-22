@@ -308,15 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cc008befc475f42a6345321d2e1d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabAssetRef:
-  - m_AssetGUID: d8804b18bfc05fb4d9c8d546709d4404
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 3a0cdac158c6d1246b49b1b4ec3aece5
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  labelsGroupGame:
+  - AssetsForGame
 --- !u!4 &1231581534
 Transform:
   m_ObjectHideFlags: 0

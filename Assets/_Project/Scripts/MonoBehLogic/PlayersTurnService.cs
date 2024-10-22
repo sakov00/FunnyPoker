@@ -1,5 +1,4 @@
-﻿using Assets._Project.Scripts.Factories;
-using Photon.Pun;
+﻿using Photon.Pun;
 using Photon.Realtime;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,7 +54,7 @@ namespace Assets._Project.Scripts.MonoBehLogic
                 {
                     currentPlayerFounded = true;
                 }
-                else if(currentPlayerFounded)
+                else if (currentPlayerFounded)
                 {
                     currentPlayerActorNumber = player;
                     currentPlayerFounded = false;

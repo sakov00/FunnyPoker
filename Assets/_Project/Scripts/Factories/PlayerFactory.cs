@@ -1,8 +1,6 @@
 ﻿using Assets._Project.Scripts.Components;
 using Photon.Pun;
-using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Assets._Project.Scripts.Factories
@@ -10,28 +8,28 @@ namespace Assets._Project.Scripts.Factories
     public class PlayerFactory
     {
         private DiContainer container;
-        private AssetReference playerPrefabAssetRef;
-        private AssetReference cameraPrefabAssetRef;
+        private Object playerPrefab;
+        private Object cameraPrefab;
 
-        public PlayerFactory(DiContainer container, AssetReference playerPrefabAssetRef, AssetReference cameraPrefabAssetRef)
+        public PlayerFactory(DiContainer container, Object playerPrefab, Object cameraPrefab)
         {
             this.container = container;
-            this.playerPrefabAssetRef = playerPrefabAssetRef;
-            this.cameraPrefabAssetRef = cameraPrefabAssetRef;
+            this.playerPrefab = playerPrefab;
+            this.cameraPrefab = cameraPrefab;
         }
 
         public GameObject CreatePlayer(Vector3 position, Quaternion rotation)
         {
             if (PhotonNetwork.LocalPlayer.IsLocal)
             {
-                var player = PhotonNetwork.Instantiate(playerPrefabAssetRef.AssetGUID, position, rotation);
+                var player = PhotonNetwork.Instantiate(playerPrefab.name, position, rotation);
                 InjectObject(player);
 
                 if (player.GetComponent<PhotonView>().IsMine)
                 {
                     var cameraProvider = player.GetComponent<CameraPositionProvider>();
                     var cameraPosition = cameraProvider.value.CameraPosition.position;
-                    var mainCamera = PhotonNetwork.PrefabPool.Instantiate(cameraPrefabAssetRef.AssetGUID, cameraPosition, rotation);
+                    var mainCamera = PhotonNetwork.PrefabPool.Instantiate(cameraPrefab.name, cameraPosition, rotation);
                     InjectObject(mainCamera);
                 }
                 return player;

@@ -1,21 +1,20 @@
 ﻿using Assets._Project.Scripts.Bootstrap;
 using Assets._Project.Scripts.Factories;
-using UnityEngine.AddressableAssets;
+using Assets._Project.Scripts.Interfaces;
+using Assets._Project.Scripts.MonoBehLogic;
+using Assets._Project.Scripts.Systems;
+using Leopotam.EcsLite;
 using UnityEngine;
 using Zenject;
-using Leopotam.EcsLite;
-using Assets._Project.Scripts.Interfaces;
-using Assets._Project.Scripts.Systems;
-using Assets._Project.Scripts.MonoBehLogic;
 
 namespace Assets._Project.Scripts.InjectInstallers
 {
     public class LevelInstaller : MonoInstaller
     {
-        [SerializeField] private AssetReference playerAsset;
-        [SerializeField] private AssetReference cameraAsset;
+        [SerializeField] private Object playerPrefab;
+        [SerializeField] private Object cameraPrefab;
 
-        public override void InstallBindings() 
+        public override void InstallBindings()
         {
             BindServices();
             BindEcs();
@@ -30,7 +29,7 @@ namespace Assets._Project.Scripts.InjectInstallers
 
         private void BindFactories()
         {
-            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerAsset, cameraAsset);
+            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
         }
 
         private void BindEcs()

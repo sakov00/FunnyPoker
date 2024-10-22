@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Assets._Project.Scripts.LoadResources
@@ -11,7 +10,7 @@ namespace Assets._Project.Scripts.LoadResources
     {
         [Inject] private AddressablesPrefabPool AddressablesPrefabPool;
 
-        [SerializeField] private List<AssetReference> prefabAssetRef;
+        [SerializeField] private List<string> labelsGroupGame;
 
         private int loadedPrefabsCount = 0;
 
@@ -21,22 +20,17 @@ namespace Assets._Project.Scripts.LoadResources
         {
             PhotonNetwork.PrefabPool = AddressablesPrefabPool;
 
-            foreach (AssetReference asset in prefabAssetRef)
+            foreach (string label in labelsGroupGame)
             {
-                PreLoadPrefab(asset);
+                AddressablesPrefabPool.PreLoadGroup(label, OnPrefabLoaded);
             }
         }
 
-        private void PreLoadPrefab(AssetReference prefabAssetRef)
-        {
-            AddressablesPrefabPool.PreLoad(prefabAssetRef.AssetGUID, OnPrefabLoaded);
-        }
-
-        private void OnPrefabLoaded(string prefabId, GameObject prefab)
+        private void OnPrefabLoaded()
         {
             loadedPrefabsCount++;
 
-            if (loadedPrefabsCount >= prefabAssetRef.Count)
+            if (loadedPrefabsCount >= labelsGroupGame.Count)
             {
                 OnAllResourcesLoaded();
             }

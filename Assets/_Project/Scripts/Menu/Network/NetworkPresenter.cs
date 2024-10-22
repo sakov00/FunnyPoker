@@ -54,7 +54,7 @@ namespace Assets._Project.Scripts.Menu.Network
 
         private void CreateRoom(string nameServer)
         {
-            if(!PhotonNetwork.IsConnected)
+            if (!PhotonNetwork.IsConnected)
                 return;
 
             var roomOptions = new RoomOptions();
@@ -80,7 +80,7 @@ namespace Assets._Project.Scripts.Menu.Network
 
             foreach (var roomInfo in roomList)
             {
-                if(!roomInfo.RemovedFromList)
+                if (!roomInfo.RemovedFromList)
                     RoomAdded(roomInfo);
             }
         }

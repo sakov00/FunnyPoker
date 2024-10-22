@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using Assets._Project.Scripts.Menu.ManagmentPanels;
+using Photon.Pun;
 using Photon.Realtime;
 using System.Linq;
 using TMPro;
@@ -7,7 +8,6 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
-using Assets._Project.Scripts.Menu.ManagmentPanels;
 
 namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 {

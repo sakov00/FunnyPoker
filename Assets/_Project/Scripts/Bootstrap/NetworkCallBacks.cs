@@ -1,12 +1,9 @@
-﻿using Assets._Project.Scripts.Bootstrap;
-using Assets._Project.Scripts.Factories;
+﻿using Assets._Project.Scripts.Factories;
 using Assets._Project.Scripts.MonoBehLogic;
 using Leopotam.EcsLite;
 using Photon.Pun;
 using Photon.Realtime;
-using System.Collections.Generic;
 using UnityEngine;
-using Voody.UniLeo.Lite;
 using Zenject;
 
 namespace Assets._Project.Scripts.Bootstrap
@@ -27,7 +24,7 @@ namespace Assets._Project.Scripts.Bootstrap
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 1 });
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -45,7 +42,7 @@ namespace Assets._Project.Scripts.Bootstrap
             if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
                 StartGame();
         }
-            
+
         private void StartGame()
         {
             playersTurnService.Initialize();

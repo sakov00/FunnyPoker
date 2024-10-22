@@ -1,5 +1,4 @@
 ﻿using Photon.Realtime;
-using TMPro;
 using UnityEngine;
 
 namespace Assets._Project.Scripts.Menu.Network
