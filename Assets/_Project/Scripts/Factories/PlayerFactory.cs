@@ -29,10 +29,9 @@ namespace Assets._Project.Scripts.Factories
 
                 if (player.GetComponent<PhotonView>().IsMine)
                 {
-                    var cameraProvider = player.GetComponent<CameraProvider>();
-                    var cameraPosition = cameraProvider.value.Transform.position;
-                    var cameraRotation = cameraProvider.value.Transform.rotation;
-                    var mainCamera = PhotonNetwork.PrefabPool.Instantiate(cameraPrefabAssetRef.AssetGUID, cameraPosition, cameraRotation);
+                    var cameraProvider = player.GetComponent<CameraPositionProvider>();
+                    var cameraPosition = cameraProvider.value.CameraPosition.position;
+                    var mainCamera = PhotonNetwork.PrefabPool.Instantiate(cameraPrefabAssetRef.AssetGUID, cameraPosition, rotation);
                     InjectObject(mainCamera);
                 }
                 return player;

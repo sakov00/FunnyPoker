@@ -69,9 +69,9 @@ namespace Assets._Project.Scripts.MonoBehLogic
             photonView.RPC("RPC_UpdateCurrentPlayerActorNumber", RpcTarget.All, currentPlayerActorNumber);
         }
 
-        public int GetCurrentPlayerActorNumber()
+        public bool IsCurrentPlayerActorNumber(int actorNumber)
         {
-            return currentPlayerActorNumber;
+            return currentPlayerActorNumber == actorNumber;
         }
 
         [PunRPC]

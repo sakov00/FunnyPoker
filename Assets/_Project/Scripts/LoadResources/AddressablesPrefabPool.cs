@@ -36,7 +36,6 @@ namespace Assets._Project.Scripts.LoadResources
 
         public GameObject Instantiate(string prefabId, Vector3 position, Quaternion rotation)
         {
-            // Проверяем, есть ли уже загруженный префаб.
             if (loadedPrefabs.TryGetValue(prefabId, out var prefab))
             {
                 return GameObject.Instantiate(prefab, position, rotation);

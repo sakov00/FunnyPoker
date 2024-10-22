@@ -821,8 +821,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352431805}
-  - component: {fileID: 1352431807}
-  - component: {fileID: 1352431806}
   m_Layer: 0
   m_Name: PointPlayer 1
   m_TagString: Untagged
@@ -845,34 +843,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835854622}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1352431806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352431804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efdcaba30436314c9d307d3e80d388c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    TypeObject: 0
---- !u!114 &1352431807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352431804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236f59dc59fdd4c8a846a7fc5bb735ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  convertMode: 0
-  customWorld: 
 --- !u!1 &1356787604
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +920,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844307676}
-  - component: {fileID: 1844307678}
-  - component: {fileID: 1844307677}
   m_Layer: 0
   m_Name: PointPlayer 3
   m_TagString: Untagged
@@ -974,34 +942,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835854622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1844307677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844307675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efdcaba30436314c9d307d3e80d388c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    TypeObject: 0
---- !u!114 &1844307678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844307675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236f59dc59fdd4c8a846a7fc5bb735ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  convertMode: 0
-  customWorld: 
 --- !u!1 &2028086966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,8 +951,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028086967}
-  - component: {fileID: 2028086969}
-  - component: {fileID: 2028086968}
   m_Layer: 0
   m_Name: PointPlayer 2
   m_TagString: Untagged
@@ -1035,34 +973,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835854622}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!114 &2028086968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028086966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efdcaba30436314c9d307d3e80d388c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    TypeObject: 0
---- !u!114 &2028086969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028086966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236f59dc59fdd4c8a846a7fc5bb735ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  convertMode: 0
-  customWorld: 
 --- !u!1 &2029355641
 GameObject:
   m_ObjectHideFlags: 0

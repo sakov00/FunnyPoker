@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using Zenject;
+﻿using Zenject;
 
 namespace Assets._Project.Scripts.InjectInstallers
 {

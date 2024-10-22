@@ -6,7 +6,6 @@ using Zenject;
 using Leopotam.EcsLite;
 using Assets._Project.Scripts.Interfaces;
 using Assets._Project.Scripts.Systems;
-using Assets._Project.Scripts.Network;
 using Assets._Project.Scripts.MonoBehLogic;
 
 namespace Assets._Project.Scripts.InjectInstallers
@@ -39,6 +38,8 @@ namespace Assets._Project.Scripts.InjectInstallers
             Container.Bind<EcsWorld>().FromInstance(new EcsWorld()).AsSingle();
 
             Container.Bind<IEcsFixedUpdateSystem>().To<PlayerCanvasActiveSystem>().AsSingle();
+
+            Container.Bind<IEcsUpdateSystem>().To<CameraSystem>().AsSingle();
 
             Container.Bind<EcsGameStartUp>().FromComponentInHierarchy().AsSingle().NonLazy();
         }

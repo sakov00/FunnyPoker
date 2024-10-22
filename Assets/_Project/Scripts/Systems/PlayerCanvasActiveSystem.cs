@@ -7,18 +7,13 @@ using Zenject;
 
 namespace Assets._Project.Scripts.Systems
 {
-    internal class PlayerCanvasActiveSystem : IEcsInitSystem, IEcsFixedUpdateSystem
+    public class PlayerCanvasActiveSystem : IEcsFixedUpdateSystem
     {
         [Inject] private PlayersTurnService playersTurnService;
 
         private EcsWorld world;
         private EcsFilter filter;
         private EcsPool<CanvasComponent> canvasPool;
-
-        public void Init(EcsSystems systems)
-        {
-
-        }
 
         public void Run(EcsSystems systems)
         {
@@ -30,10 +25,8 @@ namespace Assets._Project.Scripts.Systems
             {
                 ref var canvasComponent = ref canvasPool.Get(entityIndex);
 
-                if(playersTurnService.GetCurrentPlayerActorNumber() == PhotonNetwork.LocalPlayer.ActorNumber)
-                    canvasComponent.gameObjectCanvas.SetActive(true);
-                else 
-                    canvasComponent.gameObjectCanvas.SetActive(false);
+                var IsTurn = playersTurnService.IsCurrentPlayerActorNumber(PhotonNetwork.LocalPlayer.ActorNumber);
+                canvasComponent.gameObjectCanvas.SetActive(IsTurn);
             }
         }
     }

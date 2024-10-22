@@ -1,6 +1,4 @@
 ﻿using Assets._Project.Scripts.Bootstrap;
-using Assets._Project.Scripts.Components;
-using Assets._Project.Scripts.Components.Turn;
 using Assets._Project.Scripts.Factories;
 using Assets._Project.Scripts.MonoBehLogic;
 using Leopotam.EcsLite;
@@ -11,7 +9,7 @@ using UnityEngine;
 using Voody.UniLeo.Lite;
 using Zenject;
 
-namespace Assets._Project.Scripts.Network
+namespace Assets._Project.Scripts.Bootstrap
 {
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
@@ -29,7 +27,7 @@ namespace Assets._Project.Scripts.Network
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
