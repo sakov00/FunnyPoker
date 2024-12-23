@@ -20,6 +20,7 @@ namespace Assets._Project.Scripts.Bootstrap
 
         public void Initialize()
         {
+            Application.targetFrameRate = 999;
             DeclareFixedUpdateSystems();
             DeclareUpdateSystems();
             DeclareLateUpdateSystems();

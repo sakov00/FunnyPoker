@@ -1,6 +1,9 @@
-public enum TypeCard
+namespace Assets._Project.Scripts.Enums
 {
-    General,
-    Magic,
-    Special,
+    public enum TypeCard
+    {
+        General,
+        Magic,
+        Special,
+    }
 }
