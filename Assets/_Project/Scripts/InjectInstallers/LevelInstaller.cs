@@ -1,9 +1,6 @@
-﻿using Assets._Project.Scripts.Bootstrap;
+﻿using _Project.Scripts.Services.Network;
+using Assets._Project.Scripts.Bootstrap;
 using Assets._Project.Scripts.Factories;
-using Assets._Project.Scripts.Interfaces;
-using Assets._Project.Scripts.MonoBehLogic;
-using Assets._Project.Scripts.Systems;
-using Leopotam.EcsLite;
 using UnityEngine;
 using Zenject;
 
@@ -12,35 +9,30 @@ namespace Assets._Project.Scripts.InjectInstallers
     public class LevelInstaller : MonoInstaller
     {
         [SerializeField] private Object playerPrefab;
-        [SerializeField] private Object cameraPrefab;
+        [SerializeField] private GameStartUp gameStartUp;
+        [SerializeField] private PlayersInRoomService playersInRoomService;
 
         public override void InstallBindings()
         {
+            BindGame();
             BindServices();
-            BindEcs();
             BindFactories();
             BindNetwork();
         }
 
+        private void BindGame()
+        {
+            Container.BindInstance(gameStartUp).AsSingle();
+        }
+
         private void BindServices()
         {
-            Container.Bind<PlayersTurnService>().FromComponentInHierarchy().AsSingle();
+            Container.BindInstance(playersInRoomService).AsSingle();
         }
 
         private void BindFactories()
         {
-            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
-        }
-
-        private void BindEcs()
-        {
-            Container.Bind<EcsWorld>().FromInstance(new EcsWorld()).AsSingle();
-
-            Container.Bind<IEcsFixedUpdateSystem>().To<PlayerCanvasActiveSystem>().AsSingle();
-
-            Container.Bind<IEcsUpdateSystem>().To<CameraSystem>().AsSingle();
-
-            Container.Bind<EcsGameStartUp>().FromComponentInHierarchy().AsSingle().NonLazy();
+            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab);
         }
 
         private void BindNetwork()

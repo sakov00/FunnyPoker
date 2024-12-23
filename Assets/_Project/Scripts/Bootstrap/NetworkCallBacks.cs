@@ -1,6 +1,4 @@
-﻿using Assets._Project.Scripts.Factories;
-using Assets._Project.Scripts.MonoBehLogic;
-using Leopotam.EcsLite;
+﻿using _Project.Scripts.Services.Network;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -10,10 +8,8 @@ namespace Assets._Project.Scripts.Bootstrap
 {
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
-        [Inject] EcsWorld world;
-        [Inject] PlayerFactory playerFactory;
-        [Inject] EcsGameStartUp ecsGameStartUp;
-        [Inject] PlayersTurnService playersTurnService;
+        [Inject] private PlayersInRoomService _playersInRoomService;
+        [Inject] private GameStartUp _gameStartUp;  
 
         [SerializeField] private Transform[] spawnPlayerPoint;
 
@@ -29,24 +25,18 @@ namespace Assets._Project.Scripts.Bootstrap
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
+            _playersInRoomService.PlayerJoinedToRoom();
+            
             if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
-                StartGame();
+                _gameStartUp.StartGame();
         }
 
         public override void OnJoinedRoom()
         {
-            var firstSpawnPoint = spawnPlayerPoint[PhotonNetwork.CurrentRoom.PlayerCount - 1];
-            var player = playerFactory.CreatePlayer(firstSpawnPoint.position, firstSpawnPoint.rotation);
-            Destroy(firstSpawnPoint.gameObject);
-
+            _playersInRoomService.PlayerJoinedToRoom();
+            
             if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
-                StartGame();
-        }
-
-        private void StartGame()
-        {
-            playersTurnService.Initialize();
-            ecsGameStartUp.Initialize();
+                _gameStartUp.StartGame();
         }
     }
 }
