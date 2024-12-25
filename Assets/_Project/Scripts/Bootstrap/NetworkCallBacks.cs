@@ -25,6 +25,8 @@ namespace Assets._Project.Scripts.Bootstrap
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
+            _playersInfoInRoomService.PlayerEnteredToRoom(newPlayer);
+            
             if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
                 _gameStartUp.StartGame();
         }

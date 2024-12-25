@@ -11,7 +11,7 @@ namespace _Project.Scripts.GameLogic.Buttons
         
         public void OnClick()
         {
-            _queuePlayerController.NextPlayer();
+            // _queuePlayerController.NextPlayer();
         }
     }
 }

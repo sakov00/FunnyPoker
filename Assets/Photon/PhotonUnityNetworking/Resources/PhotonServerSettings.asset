@@ -40,6 +40,11 @@ MonoBehaviour:
   - RPC_PlayerTurnList
   - RPC_UpdateCurrentPlayerActorNumber
   - RPC_UpdateplayersList
+  - AddNewPlayerRPC
+  - RemovePlayerRPC
+  - ReceivePlayerInfo
+  - SyncCurrentPlayerIndex
+  - SyncIsFreePlace
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

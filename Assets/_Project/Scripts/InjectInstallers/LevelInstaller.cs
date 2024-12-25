@@ -13,6 +13,7 @@ namespace Assets._Project.Scripts.InjectInstallers
         [SerializeField] private GameObject cameraPrefab;
         [SerializeField] private GameStartUp gameStartUp;
         [SerializeField] private PlayersInfoInRoomService playersInfoInRoomService;
+        [SerializeField] private QueuePlayerController queuePlayerController;
 
         public override void InstallBindings()
         {
@@ -30,7 +31,7 @@ namespace Assets._Project.Scripts.InjectInstallers
         private void BindServices()
         {
             Container.BindInstance(playersInfoInRoomService).AsSingle();
-            Container.Bind<QueuePlayerController>().AsSingle();
+            Container.BindInstance(queuePlayerController).AsSingle();
         }
 
         private void BindFactories()
