@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 103270526}
   - component: {fileID: 103270525}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: ButtonNextStep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,8 +222,8 @@ Transform:
   m_GameObject: {fileID: 103270523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.03, y: 1.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.08, y: 1.038, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 437590676}
   - component: {fileID: 437590675}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,6 +972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750073113}
   - component: {fileID: 1750073114}
+  - component: {fileID: 1750073115}
   m_Layer: 0
   m_Name: PlayersInRoomService
   m_TagString: Untagged
@@ -1006,11 +1007,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08e3e5b4d9c46e9a3202c07a85fe912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _players: []
-  _playersPositions:
+  playersPositions:
   - {fileID: 1352431805}
   - {fileID: 2028086967}
   - {fileID: 1844307676}
+--- !u!114 &1750073115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750073112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1844307675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,8 +1125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 726709781541860428, guid: d8804b18bfc05fb4d9c8d546709d4404, type: 3}
+  cameraPrefab: {fileID: 587340636821943716, guid: 3a0cdac158c6d1246b49b1b4ec3aece5, type: 3}
   gameStartUp: {fileID: 906903565}
-  playersInRoomService: {fileID: 1750073114}
+  playersInfoInRoomService: {fileID: 1750073114}
 --- !u!4 &2029355643
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Services.Network;
+﻿using _Project.Scripts.Services.Game;
+using _Project.Scripts.Services.Network;
 using Assets._Project.Scripts.Bootstrap;
 using Assets._Project.Scripts.Factories;
 using UnityEngine;
@@ -8,9 +9,10 @@ namespace Assets._Project.Scripts.InjectInstallers
 {
     public class LevelInstaller : MonoInstaller
     {
-        [SerializeField] private Object playerPrefab;
+        [SerializeField] private GameObject playerPrefab;
+        [SerializeField] private GameObject cameraPrefab;
         [SerializeField] private GameStartUp gameStartUp;
-        [SerializeField] private PlayersInRoomService playersInRoomService;
+        [SerializeField] private PlayersInfoInRoomService playersInfoInRoomService;
 
         public override void InstallBindings()
         {
@@ -27,12 +29,13 @@ namespace Assets._Project.Scripts.InjectInstallers
 
         private void BindServices()
         {
-            Container.BindInstance(playersInRoomService).AsSingle();
+            Container.BindInstance(playersInfoInRoomService).AsSingle();
+            Container.Bind<QueuePlayerController>().AsSingle();
         }
 
         private void BindFactories()
         {
-            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab);
+            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
         }
 
         private void BindNetwork()

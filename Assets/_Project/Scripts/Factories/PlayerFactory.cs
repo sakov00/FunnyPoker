@@ -7,21 +7,35 @@ namespace Assets._Project.Scripts.Factories
 {
     public class PlayerFactory
     {
-        private Object playerPrefab;
+        private GameObject _playerPrefab;
+        private GameObject _cameraPrefab;
 
-        public PlayerFactory(Object playerPrefab)
+        public PlayerFactory(GameObject playerPrefab, GameObject cameraPrefab)
         {
-            this.playerPrefab = playerPrefab;
+            _playerPrefab = playerPrefab;
+            _cameraPrefab = cameraPrefab;
         }
 
-        public PlayerData CreatePlayer(Vector3 position, Quaternion rotation)
+        public GameObject CreatePlayer(Vector3 position, Quaternion rotation)
         {
-            if (PhotonNetwork.LocalPlayer.IsLocal)
+            if (!PhotonNetwork.LocalPlayer.IsLocal)
+                return null;
+            
+            var player = PhotonNetwork.Instantiate(_playerPrefab.name, position, rotation);
+            if (player.GetComponent<PhotonView>().IsMine)
             {
-                var player = PhotonNetwork.Instantiate(playerPrefab.name, position, rotation);
-                return player.GetComponent<PlayerData>();
+                var posForCamera = position;
+                posForCamera.y += 0.7f;
+                CreateCamera(posForCamera, rotation, player.transform);
             }
-            return null;
+
+            return player;
+        }
+        
+        private GameObject CreateCamera(Vector3 position, Quaternion rotation, Transform parent)
+        {
+            var camera = Object.Instantiate(_cameraPrefab, position, rotation, parent);
+            return camera;
         }
     }
 }
