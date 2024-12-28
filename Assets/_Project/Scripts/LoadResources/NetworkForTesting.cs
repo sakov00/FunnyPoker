@@ -1,8 +1,8 @@
-﻿using Photon.Pun;
-using System;
+﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.LoadResources
+namespace _Project.Scripts.LoadResources
 {
     public class NetworkForTesting : MonoBehaviourPunCallbacks
     {

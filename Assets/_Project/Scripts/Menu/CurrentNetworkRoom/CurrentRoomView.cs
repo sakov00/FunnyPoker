@@ -4,7 +4,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
+namespace _Project.Scripts.Menu.CurrentNetworkRoom
 {
     public class CurrentRoomView : MonoBehaviour
     {

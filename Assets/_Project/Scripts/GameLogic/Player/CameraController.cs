@@ -1,5 +1,4 @@
 using System;
-using Photon.Pun;
 using UnityEngine;
 
 namespace _Project.Scripts.GameLogic.Player
@@ -7,14 +6,21 @@ namespace _Project.Scripts.GameLogic.Player
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private float sensitivity = 10.0f;
-        
-        [Header("Rotation Limits")]
-        [SerializeField] private float minimumVert = -45.0f;
+
+        [Header("Rotation Limits")] [SerializeField]
+        private float minimumVert = -45.0f;
+
         [SerializeField] private float maximumVert = 60.0f;
         [SerializeField] private float minimumHor = -90.0f;
         [SerializeField] private float maximumHor = 90.0f;
 
-        void Update()
+
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        private void Update()
         {
             var mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
             var mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;

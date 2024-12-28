@@ -1,14 +1,12 @@
-﻿using _Project.Scripts.Data;
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
-using Zenject;
 
-namespace Assets._Project.Scripts.Factories
+namespace _Project.Scripts.Factories
 {
     public class PlayerFactory
     {
-        private GameObject _playerPrefab;
-        private GameObject _cameraPrefab;
+        private readonly GameObject _cameraPrefab;
+        private readonly GameObject _playerPrefab;
 
         public PlayerFactory(GameObject playerPrefab, GameObject cameraPrefab)
         {
@@ -20,7 +18,7 @@ namespace Assets._Project.Scripts.Factories
         {
             if (!PhotonNetwork.LocalPlayer.IsLocal)
                 return null;
-            
+
             var player = PhotonNetwork.Instantiate(_playerPrefab.name, position, rotation);
             if (player.GetComponent<PhotonView>().IsMine)
             {
@@ -31,7 +29,7 @@ namespace Assets._Project.Scripts.Factories
 
             return player;
         }
-        
+
         private GameObject CreateCamera(Vector3 position, Quaternion rotation, Transform parent)
         {
             var camera = Object.Instantiate(_cameraPrefab, position, rotation, parent);

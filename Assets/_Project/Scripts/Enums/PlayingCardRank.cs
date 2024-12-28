@@ -1,4 +1,4 @@
-﻿namespace Assets._Project.Scripts.Enums
+﻿namespace _Project.Scripts.Enums
 {
     public enum PlayingCardRank
     {

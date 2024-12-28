@@ -1,7 +1,8 @@
-﻿using Assets._Project.Scripts.Menu.ManagmentPanels;
+﻿using System.Linq;
+using _Project.Scripts.Menu.Enums;
+using _Project.Scripts.Menu.ManagmentPanels;
 using Photon.Pun;
 using Photon.Realtime;
-using System.Linq;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -9,18 +10,18 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
 
-namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
+namespace _Project.Scripts.Menu.CurrentNetworkRoom
 {
     public class CurrentRoomPresenter : MonoBehaviourPunCallbacks
     {
         [SerializeField] private AssetReference roomListing;
+        [Inject] private PanelPresenter panelPresenter;
 
         [Inject] private CurrentRoomModel roomModel;
         [Inject] private CurrentRoomView roomView;
-        [Inject] private PanelPresenter panelPresenter;
 
 
-        void Start()
+        private void Start()
         {
             LoadRoomListingAsset();
             SetupEventHandlers();
@@ -28,17 +29,13 @@ namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 
         private void LoadRoomListingAsset()
         {
-            AsyncOperationHandle<GameObject> handle = roomListing.LoadAssetAsync<GameObject>();
+            var handle = roomListing.LoadAssetAsync<GameObject>();
             handle.Completed += operation =>
             {
                 if (operation.Status == AsyncOperationStatus.Succeeded)
-                {
                     Debug.Log("Room listing asset loaded successfully.");
-                }
                 else
-                {
                     Debug.LogError("Failed to load room listing asset.");
-                }
             };
         }
 
@@ -60,10 +57,7 @@ namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 
         private void PlayerJoinToRoom()
         {
-            foreach (var player in PhotonNetwork.PlayerList)
-            {
-                AddPlayerToList(player);
-            }
+            foreach (var player in PhotonNetwork.PlayerList) AddPlayerToList(player);
         }
 
         public override void OnPlayerEnteredRoom(Player player)
@@ -88,13 +82,10 @@ namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
 
         private void LeaveRoom()
         {
-            foreach (var player in PhotonNetwork.PlayerList)
-            {
-                RemovePlayerFromList(player);
-            }
+            foreach (var player in PhotonNetwork.PlayerList) RemovePlayerFromList(player);
 
             PhotonNetwork.LeaveRoom();
-            panelPresenter.ChangePanel(Enums.TypePanel.Network);
+            panelPresenter.ChangePanel(TypePanel.Network);
         }
 
         private void AddPlayerToList(Player player)
@@ -105,13 +96,15 @@ namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
                 LinkedGameObject = (GameObject)Instantiate(roomListing.Asset, roomView.ContentPlayers)
             };
 
-            newPlayerElement.LinkedGameObject.GetComponentInChildren<TextMeshProUGUI>().SetText(newPlayerElement.Player.NickName);
+            newPlayerElement.LinkedGameObject.GetComponentInChildren<TextMeshProUGUI>()
+                .SetText(newPlayerElement.Player.NickName);
             roomModel.PlayerElements.Add(newPlayerElement);
         }
 
         private void RemovePlayerFromList(Player player)
         {
-            var removedPlayerElement = roomModel.PlayerElements.FirstOrDefault(playerElement => playerElement.Player.ActorNumber == player.ActorNumber);
+            var removedPlayerElement = roomModel.PlayerElements.FirstOrDefault(playerElement =>
+                playerElement.Player.ActorNumber == player.ActorNumber);
             if (removedPlayerElement == null)
                 return;
 

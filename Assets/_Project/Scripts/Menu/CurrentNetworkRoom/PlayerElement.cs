@@ -1,7 +1,7 @@
 ﻿using Photon.Realtime;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.Menu.CurrentNetworkRoom
+namespace _Project.Scripts.Menu.CurrentNetworkRoom
 {
     public class PlayerElement
     {

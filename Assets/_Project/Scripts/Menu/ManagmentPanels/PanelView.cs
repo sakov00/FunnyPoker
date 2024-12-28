@@ -3,7 +3,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets._Project.Scripts.Menu.ManagmentPanels
+namespace _Project.Scripts.Menu.ManagmentPanels
 {
     public class PanelView : MonoBehaviour
     {

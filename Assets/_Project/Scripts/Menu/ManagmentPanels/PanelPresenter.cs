@@ -1,20 +1,19 @@
-﻿using Assets._Project.Scripts.Menu.Enums;
+﻿using _Project.Scripts.Menu.Enums;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
-namespace Assets._Project.Scripts.Menu.ManagmentPanels
+namespace _Project.Scripts.Menu.ManagmentPanels
 {
     public class PanelPresenter : MonoBehaviour
     {
-        [Inject] private PanelModel model;
-        [Inject] private PanelView view;
-
         [field: SerializeField] public GameObject MainMenuPanel { get; private set; }
         [field: SerializeField] public GameObject NetworkPanel { get; private set; }
         [field: SerializeField] public GameObject SettingPanel { get; private set; }
         [field: SerializeField] public GameObject CurrentRoomPanel { get; private set; }
         [field: SerializeField] public GameObject ConstantPanel { get; private set; }
+        [Inject] private PanelModel model;
+        [Inject] private PanelView view;
 
         private void Start()
         {
@@ -51,8 +50,6 @@ namespace Assets._Project.Scripts.Menu.ManagmentPanels
                 case TypePanel.CurrentRoom:
                     ChangePanel(CurrentRoomPanel);
                     break;
-                default:
-                    break;
             }
         }
 
@@ -71,13 +68,9 @@ namespace Assets._Project.Scripts.Menu.ManagmentPanels
             panel.SetActive(true);
 
             if (MainMenuPanel == panel || CurrentRoomPanel == panel)
-            {
                 ConstantPanel.SetActive(false);
-            }
             else
-            {
                 ConstantPanel.SetActive(true);
-            }
         }
 
         private void HideAllPanels()

@@ -1,7 +1,7 @@
 ﻿using Photon.Realtime;
 using UnityEngine;
 
-namespace Assets._Project.Scripts.Menu.Network
+namespace _Project.Scripts.Menu.Network
 {
     public class RoomElement
     {

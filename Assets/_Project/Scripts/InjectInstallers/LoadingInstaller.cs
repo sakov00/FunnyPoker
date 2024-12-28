@@ -1,7 +1,7 @@
-﻿using Assets._Project.Scripts.LoadResources;
+﻿using _Project.Scripts.LoadResources;
 using Zenject;
 
-namespace Assets._Project.Scripts.InjectInstallers
+namespace _Project.Scripts.InjectInstallers
 {
     internal class LoadingInstaller : MonoInstaller
     {

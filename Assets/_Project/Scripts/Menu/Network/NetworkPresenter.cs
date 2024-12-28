@@ -1,7 +1,8 @@
-﻿using Assets._Project.Scripts.Menu.ManagmentPanels;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Menu.Enums;
+using _Project.Scripts.Menu.ManagmentPanels;
 using Photon.Pun;
 using Photon.Realtime;
-using System.Collections.Generic;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -9,7 +10,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
 
-namespace Assets._Project.Scripts.Menu.Network
+namespace _Project.Scripts.Menu.Network
 {
     internal class NetworkPresenter : MonoBehaviourPunCallbacks
     {
@@ -19,7 +20,7 @@ namespace Assets._Project.Scripts.Menu.Network
         [Inject] private NetworkView networkView;
         [Inject] private PanelPresenter panelPresenter;
 
-        void Start()
+        private void Start()
         {
             LoadRoomListingAsset();
             SetupEventHandlers();
@@ -27,17 +28,13 @@ namespace Assets._Project.Scripts.Menu.Network
 
         private void LoadRoomListingAsset()
         {
-            AsyncOperationHandle<GameObject> handle = roomListing.LoadAssetAsync<GameObject>();
+            var handle = roomListing.LoadAssetAsync<GameObject>();
             handle.Completed += operation =>
             {
                 if (operation.Status == AsyncOperationStatus.Succeeded)
-                {
                     Debug.Log("Room listing asset loaded successfully.");
-                }
                 else
-                {
                     Debug.LogError("Failed to load room listing asset.");
-                }
             };
         }
 
@@ -72,17 +69,12 @@ namespace Assets._Project.Scripts.Menu.Network
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            foreach (var roomElement in networkModel.RoomElements)
-            {
-                Destroy(roomElement.LinkedGameObject);
-            }
+            foreach (var roomElement in networkModel.RoomElements) Destroy(roomElement.LinkedGameObject);
             networkModel.RoomElements.Clear();
 
             foreach (var roomInfo in roomList)
-            {
                 if (!roomInfo.RemovedFromList)
                     RoomAdded(roomInfo);
-            }
         }
 
         private void RoomAdded(RoomInfo roomInfoAdded)
@@ -93,13 +85,14 @@ namespace Assets._Project.Scripts.Menu.Network
                 LinkedGameObject = (GameObject)Instantiate(roomListing.Asset, networkView.ContentRooms)
             };
 
-            newRoomElement.LinkedGameObject.GetComponentInChildren<TextMeshProUGUI>().SetText(newRoomElement.RoomInfo.Name);
+            newRoomElement.LinkedGameObject.GetComponentInChildren<TextMeshProUGUI>()
+                .SetText(newRoomElement.RoomInfo.Name);
             networkModel.RoomElements.Add(newRoomElement);
         }
 
         public override void OnJoinedRoom()
         {
-            panelPresenter.ChangePanel(Enums.TypePanel.CurrentRoom);
+            panelPresenter.ChangePanel(TypePanel.CurrentRoom);
         }
     }
 }

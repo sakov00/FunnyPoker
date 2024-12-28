@@ -1,5 +1,4 @@
-﻿
-namespace Assets._Project.Scripts.Menu.Enums
+﻿namespace _Project.Scripts.Menu.Enums
 {
     public enum TypePanel
     {

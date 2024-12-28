@@ -1,9 +1,9 @@
-﻿using Assets._Project.Scripts.Menu.CurrentNetworkRoom;
-using Assets._Project.Scripts.Menu.ManagmentPanels;
-using Assets._Project.Scripts.Menu.Network;
+﻿using _Project.Scripts.Menu.CurrentNetworkRoom;
+using _Project.Scripts.Menu.ManagmentPanels;
+using _Project.Scripts.Menu.Network;
 using Zenject;
 
-namespace Assets._Project.Scripts.InjectInstallers
+namespace _Project.Scripts.InjectInstallers
 {
     public class MenuInstaller : MonoInstaller
     {

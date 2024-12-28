@@ -1,16 +1,20 @@
-using _Project.Scripts.Services.Network;
+using _Project.Scripts.Services.Game;
+using Photon.Pun;
 using UnityEngine;
 using Zenject;
 
-namespace Assets._Project.Scripts.Bootstrap
+namespace _Project.Scripts.Bootstrap
 {
     public class GameStartUp : MonoBehaviour
     {
-        [Inject] private PlayersInfoInRoomService _playersInfoInRoomService;
-        
+        [Inject] private ServicePlaces _servicePlaces;
+
         public void StartGame()
         {
-            
+            if (!PhotonNetwork.IsMasterClient)
+                return;
+
+            _servicePlaces.ActivateRandomPlace();
         }
     }
 }

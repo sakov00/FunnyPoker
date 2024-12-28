@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Assets._Project.Scripts.LoadResources
+namespace _Project.Scripts.LoadResources
 {
     public class LoadingScreen : MonoBehaviour
     {
-        [Inject] private NetworkForTesting NetworkForTesting;
-        [Inject] private LoadingResources LoadingResources;
+        private bool IsAllResourcesLoaded;
 
         private bool IsNetworkReady;
-        private bool IsAllResourcesLoaded;
+        [Inject] private LoadingResources LoadingResources;
+        [Inject] private NetworkForTesting NetworkForTesting;
 
         private void Start()
         {
             NetworkForTesting.CallBackConnection += LoadedNetwork;
             LoadingResources.CallBackAllResourcesLoaded += LoadedResources;
         }
+
         private void LoadedNetwork()
         {
             IsNetworkReady = true;
@@ -30,10 +32,7 @@ namespace Assets._Project.Scripts.LoadResources
 
         private void StartGame()
         {
-            if (IsNetworkReady && IsAllResourcesLoaded)
-            {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("MainGameScene");
-            }
+            if (IsNetworkReady && IsAllResourcesLoaded) SceneManager.LoadScene("MainGameScene");
         }
     }
 }

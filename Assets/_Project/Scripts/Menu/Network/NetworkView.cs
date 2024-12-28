@@ -1,11 +1,11 @@
-﻿using Photon.Pun;
-using System;
+﻿using System;
+using Photon.Pun;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets._Project.Scripts.Menu.Network
+namespace _Project.Scripts.Menu.Network
 {
     public class NetworkView : MonoBehaviour
     {
@@ -16,7 +16,9 @@ namespace Assets._Project.Scripts.Menu.Network
 
         [field: SerializeField] public Transform ContentRooms { get; private set; }
 
-        public IObservable<string> OnCreateRoom => createRoomButton.OnClickAsObservable().Select(_ => nameServerInput.text);
+        public IObservable<string> OnCreateRoom =>
+            createRoomButton.OnClickAsObservable().Select(_ => nameServerInput.text);
+
         public IObservable<string> OnJoinRoom => joinRoomButton.OnClickAsObservable().Select(_ => nameServerInput.text);
 
         private void Start()
