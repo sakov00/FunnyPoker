@@ -11,16 +11,22 @@ namespace _Project.Scripts.InjectInstallers
     {
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private GameObject cameraPrefab;
+        [SerializeField] private NetworkCallBacks networkCallBacks;
         [SerializeField] private GameStartUp gameStartUp;
-        [SerializeField] private PlayersInfoInRoomService playersInfoInRoomService;
+        [SerializeField] private PlayersInfoService playersInfoService;
         [SerializeField] private ServicePlaces servicePlaces;
-
+        
         public override void InstallBindings()
         {
+            BindNetwork();
             BindGame();
             BindServices();
             BindFactories();
-            BindNetwork();
+        }
+
+        private void BindNetwork()
+        {
+            Container.BindInterfacesAndSelfTo<NetworkCallBacks>().FromInstance(networkCallBacks).AsSingle().NonLazy();
         }
 
         private void BindGame()
@@ -31,17 +37,12 @@ namespace _Project.Scripts.InjectInstallers
         private void BindServices()
         {
             Container.BindInstance(servicePlaces).AsSingle();
-            Container.BindInstance(playersInfoInRoomService).AsSingle();
+            Container.BindInstance(playersInfoService).AsSingle();
         }
 
         private void BindFactories()
         {
             Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
-        }
-
-        private void BindNetwork()
-        {
-            Container.BindInterfacesAndSelfTo<NetworkCallBacks>().FromComponentInHierarchy().AsSingle().NonLazy();
         }
     }
 }

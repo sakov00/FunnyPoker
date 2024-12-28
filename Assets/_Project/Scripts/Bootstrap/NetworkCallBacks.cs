@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Services.Network;
+﻿using System;
 using Photon.Pun;
 using Photon.Realtime;
 using Zenject;
@@ -7,8 +7,9 @@ namespace _Project.Scripts.Bootstrap
 {
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
-        [Inject] private GameStartUp _gameStartUp;
-        [Inject] private PlayersInfoInRoomService _playersInfoInRoomService;
+        public Action PlayerJoined;
+        public Action<Player> PlayerEntered;
+        public Action<Player> PlayerLeft;
 
         public void Initialize()
         {
@@ -17,23 +18,22 @@ namespace _Project.Scripts.Bootstrap
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 1 });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        public override void OnPlayerEnteredRoom(Player player)
         {
-            _playersInfoInRoomService.PlayerEnteredToRoom(newPlayer);
-
-            if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
-                _gameStartUp.StartGame();
+            PlayerEntered?.Invoke(player);
         }
 
         public override void OnJoinedRoom()
         {
-            _playersInfoInRoomService.PlayerJoinedToRoom();
+            PlayerJoined?.Invoke();
+        }
 
-            if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
-                _gameStartUp.StartGame();
+        public override void OnPlayerLeftRoom(Player player)
+        {
+            PlayerLeft?.Invoke(player);
         }
     }
 }

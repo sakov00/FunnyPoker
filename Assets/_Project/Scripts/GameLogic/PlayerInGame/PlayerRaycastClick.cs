@@ -1,7 +1,7 @@
 using _Project.Scripts.Interfaces;
 using UnityEngine;
 
-namespace _Project.Scripts.GameLogic.Player
+namespace _Project.Scripts.GameLogic.PlayerInGame
 {
     public class PlayerRaycastClick : MonoBehaviour
     {

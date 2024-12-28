@@ -1,6 +1,10 @@
+using System;
+using _Project.Scripts.Bootstrap;
 using _Project.Scripts.GameLogic.Rendering;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.GameLogic.PlayerPlace
 {
@@ -8,6 +12,8 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
     {
         [SerializeField] private BloomPoint _greenButton;
         [SerializeField] private BloomPoint _yellowButton;
+        
+        [Inject] private NetworkCallBacks _networkCallBacks;
         
         [field: SerializeField] public PlaceInfo PreviousPlace { get; private set; }
         [field: SerializeField] public PlaceInfo NextPlace { get; private set; }
@@ -22,7 +28,7 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
             set
             {
                 _isFree = value;
-                photonView.RPC("SyncIsFreePlace", RpcTarget.Others, value);
+                photonView.RPC("SyncIsFree", RpcTarget.Others, value);
             }
         }
         
@@ -36,7 +42,7 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
                 _isEnable = value;
                 _greenButton.SetBloomEnabled(_isEnable);
                 _yellowButton.SetBloomEnabled(!_isEnable);
-                photonView.RPC("SyncIsFreePlace", RpcTarget.Others, value);
+                photonView.RPC("SyncIsEnable", RpcTarget.Others, value);
             }
         }
 
@@ -44,6 +50,17 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
         {
             _greenButton.SetBloomEnabled(_isEnable);
             _yellowButton.SetBloomEnabled(!_isEnable);
+
+            _networkCallBacks.PlayerEntered += GetLastInfo;
+        }
+
+        private void GetLastInfo(Player player)
+        {
+            if(!PhotonNetwork.IsMasterClient)
+               return;
+            
+            photonView.RPC("SyncIsFree", player, _isFree);
+            photonView.RPC("SyncIsEnable", player, _isEnable);
         }
 
         [PunRPC]
@@ -56,6 +73,11 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
         private void SyncIsEnable(bool isEnable)
         {
             _isEnable = isEnable;
+        }
+
+        private void OnDestroy()
+        {
+            _networkCallBacks.PlayerEntered -= GetLastInfo;
         }
     }
 }

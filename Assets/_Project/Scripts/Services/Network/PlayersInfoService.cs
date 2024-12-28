@@ -1,23 +1,28 @@
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Factories;
-using _Project.Scripts.GameLogic.Player;
-using _Project.Scripts.GameLogic.PlayerPlace;
 using _Project.Scripts.Services.Game;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Services.Network
 {
-    public class PlayersInfoInRoomService : MonoBehaviourPun
+    public class PlayersInfoService : MonoBehaviourPun
     {
+        [Inject] private NetworkCallBacks _networkCallBacks;
         [Inject] private PlayerFactory _playerFactory;
         [Inject] private ServicePlaces _servicePlaces;
         public SortedDictionary<int, int> PlayerPlacesInfo { get; private set; } = new();
 
-        public void PlayerJoinedToRoom()
+        private void Start()
+        {
+            _networkCallBacks.PlayerEntered += PlayerEnteredToRoom;
+            _networkCallBacks.PlayerJoined += PlayerJoinedToRoom;
+        }
+
+        private void PlayerJoinedToRoom()
         {
             var playerPlaceInfo = _servicePlaces.AllPlayerPlaces.First(place => place.IsFree);
             playerPlaceInfo.IsFree = false;
@@ -27,7 +32,7 @@ namespace _Project.Scripts.Services.Network
             PlayerPlacesInfo.Add(playerPlaceInfo.NumberPlace, PhotonNetwork.LocalPlayer.ActorNumber);
         }
 
-        public void PlayerEnteredToRoom(Player newPlayer)
+        private void PlayerEnteredToRoom(Player player)
         {
             if (!PhotonNetwork.IsMasterClient)
                 return;
@@ -35,11 +40,11 @@ namespace _Project.Scripts.Services.Network
             var playerPlaceInfo = _servicePlaces.AllPlayerPlaces.First(place => place.IsFree);
             playerPlaceInfo.IsFree = false;
 
-            PlayerPlacesInfo.Add(playerPlaceInfo.NumberPlace, newPlayer.ActorNumber);
+            PlayerPlacesInfo.Add(playerPlaceInfo.NumberPlace, player.ActorNumber);
 
-            photonView.RPC("AddNewPlayerRPC", RpcTarget.Others, playerPlaceInfo.NumberPlace, newPlayer.ActorNumber);
+            photonView.RPC("AddNewPlayerRPC", RpcTarget.Others, playerPlaceInfo.NumberPlace, player.ActorNumber);
             
-            photonView.RPC("ReceivePlayerInfo", newPlayer, PlayerPlacesInfo.Keys.ToArray(),
+            photonView.RPC("ReceivePlayerInfo", player, PlayerPlacesInfo.Keys.ToArray(),
                 PlayerPlacesInfo.Values.ToArray());
         }
 
@@ -60,6 +65,12 @@ namespace _Project.Scripts.Services.Network
         {
             PlayerPlacesInfo.Clear();
             for (var i = 0; i < playerInfoKeys.Length; i++) PlayerPlacesInfo.Add(playerInfoIds[i], playerInfoKeys[i]);
+        }
+
+        private void OnDestroy()
+        {
+            _networkCallBacks.PlayerEntered -= PlayerEnteredToRoom;
+            _networkCallBacks.PlayerJoined -= PlayerJoinedToRoom;
         }
     }
 }

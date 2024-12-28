@@ -7,12 +7,12 @@ using Zenject;
 
 namespace _Project.Scripts.GameLogic.PlayerPlace
 {
-    public class PlaceHandler  : MonoBehaviourPun
+    public class PlaceHandler : MonoBehaviourPun
     {
         [SerializeField] private PlaceInfo _placeInfo;
         [SerializeField] private NextStepButton _nextPlayerButton;
         
-        [Inject] private PlayersInfoInRoomService _playersInfoInRoomService;
+        [Inject] private PlayersInfoService _playersInfoService;
 
         private void Start()
         {
@@ -21,7 +21,7 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
 
         private void NextPlayer()
         {
-            _playersInfoInRoomService.PlayerPlacesInfo.TryGetValue(_placeInfo.NumberPlace, out var playerActorNumber);
+            _playersInfoService.PlayerPlacesInfo.TryGetValue(_placeInfo.NumberPlace, out var playerActorNumber);
             if(PhotonNetwork.LocalPlayer.ActorNumber != playerActorNumber)
                 return;
             
