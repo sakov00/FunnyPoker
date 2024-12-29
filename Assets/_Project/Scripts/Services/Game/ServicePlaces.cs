@@ -12,7 +12,7 @@ namespace _Project.Scripts.Services.Game
         public void ActivateRandomPlace()
         {
             var random = Random.Range(0, AllPlayerPlaces.Count);
-            AllPlayerPlaces.ElementAt(random).IsEnable = true;
+            AllPlayerPlaces.ElementAt(random).IsEnableSync = true;
         }
     }
 }

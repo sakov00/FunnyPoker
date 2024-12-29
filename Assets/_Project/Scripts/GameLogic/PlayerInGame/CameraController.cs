@@ -6,8 +6,8 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
     {
         [SerializeField] private float sensitivity = 10.0f;
 
-        [Header("Rotation Limits")] [SerializeField]
-        private float minimumVert = -45.0f;
+        [Header("Rotation Limits")] 
+        [SerializeField] private float minimumVert = -45.0f;
 
         [SerializeField] private float maximumVert = 60.0f;
         [SerializeField] private float minimumHor = -90.0f;
@@ -16,7 +16,7 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
 
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()

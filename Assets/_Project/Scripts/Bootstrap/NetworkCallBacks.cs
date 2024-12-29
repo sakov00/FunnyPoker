@@ -27,7 +27,7 @@ namespace _Project.Scripts.Bootstrap
         }
 
         public override void OnJoinedRoom()
-        {
+        { 
             PlayerJoined?.Invoke();
         }
 

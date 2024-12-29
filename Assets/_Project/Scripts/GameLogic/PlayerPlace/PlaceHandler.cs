@@ -1,5 +1,6 @@
 using System;
 using _Project.Scripts.GameLogic.Buttons;
+using _Project.Scripts.Services.Game;
 using _Project.Scripts.Services.Network;
 using Photon.Pun;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
         [SerializeField] private PlaceInfo _placeInfo;
         [SerializeField] private NextStepButton _nextPlayerButton;
         
-        [Inject] private PlayersInfoService _playersInfoService;
+        [Inject] private ServicePlaces _playersInfoService;
 
         private void Start()
         {
@@ -21,15 +22,14 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
 
         private void NextPlayer()
         {
-            _playersInfoService.PlayerPlacesInfo.TryGetValue(_placeInfo.NumberPlace, out var playerActorNumber);
-            if(PhotonNetwork.LocalPlayer.ActorNumber != playerActorNumber)
+            if(PhotonNetwork.LocalPlayer.ActorNumber !=_placeInfo.PlayerActorNumberSync)
                 return;
             
-            if(!_placeInfo.IsEnable)
+            if(!_placeInfo.IsEnableSync)
                 return;
             
-            _placeInfo.IsEnable = false;
-            _placeInfo.NextPlace.IsEnable = true;
+            _placeInfo.IsEnableSync = false;
+            _placeInfo.NextPlace.IsEnableSync = true;
         } 
 
         private void OnDestroy()
