@@ -22,6 +22,8 @@ namespace _Project.Scripts.GameLogic.PlayerPlace
 
         private void NextPlayer()
         {
+            Debug.Log("Player Clicked");
+            
             if(PhotonNetwork.LocalPlayer.ActorNumber !=_placeInfo.PlayerActorNumberSync)
                 return;
             

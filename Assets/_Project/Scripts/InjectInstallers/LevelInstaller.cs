@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Factories;
+using _Project.Scripts.GameLogic.GameStates;
 using _Project.Scripts.Services.Game;
 using _Project.Scripts.Services.Network;
 using UnityEngine;
@@ -16,10 +17,16 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private PlayersInfoService playersInfoService;
         [SerializeField] private ServicePlaces servicePlaces;
         
+        [Header("Managers")]
+        [SerializeField] private GameManager gameManager;
+        [SerializeField] private GameStateManager gameStateManager;
+        
         public override void InstallBindings()
         {
             BindNetwork();
             BindGame();
+            BindGameStates();
+            BindManagers();
             BindServices();
             BindFactories();
         }
@@ -32,6 +39,19 @@ namespace _Project.Scripts.InjectInstallers
         private void BindGame()
         {
             Container.BindInstance(gameStartUp).AsSingle();
+        }
+        
+        private void BindGameStates()
+        {
+            Container.BindInterfacesAndSelfTo<WaitingForPlayersState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DealingCardsState>().AsSingle();
+        }
+
+        private void BindManagers()
+        {
+            Container.BindInstance(gameStateManager).AsSingle();
+            Container.BindInstance(gameManager).AsSingle();
+            
         }
 
         private void BindServices()

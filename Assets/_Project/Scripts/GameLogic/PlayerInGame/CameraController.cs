@@ -16,7 +16,7 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
 
         private void Start()
         {
-            // Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
