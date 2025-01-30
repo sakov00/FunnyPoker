@@ -18,7 +18,7 @@ namespace _Project.Scripts.Bootstrap
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 1 });
         }
 
         public override void OnPlayerEnteredRoom(Player player)

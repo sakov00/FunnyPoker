@@ -11,13 +11,10 @@ namespace _Project.Scripts.GameLogic.Rendering
         
         private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
 
-        void Awake()
-        {
-            _propertyBlock = new MaterialPropertyBlock();
-        }
-
         public void SetBloomEnabled(bool isEnabled)
         {
+            _propertyBlock ??= new MaterialPropertyBlock();
+            
             _renderer.GetPropertyBlock(_propertyBlock);
             
             _propertyBlock.SetColor(EmissionColor, isEnabled ? _material.GetColor(EmissionColor) : Color.gray);

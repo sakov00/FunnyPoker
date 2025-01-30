@@ -14,7 +14,6 @@ namespace _Project.Scripts.GameLogic.GameStates
 
         public void UpdateState()
         {
-            Completed = true;
         }
 
         public void ExitState()

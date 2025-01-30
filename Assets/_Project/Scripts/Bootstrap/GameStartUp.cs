@@ -1,5 +1,6 @@
 using System;
-using _Project.Scripts.Services.Game;
+using _Project.Scripts.Enums;
+using _Project.Scripts.Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -10,22 +11,16 @@ namespace _Project.Scripts.Bootstrap
     public class GameStartUp : MonoBehaviour
     {
         [Inject] private NetworkCallBacks _networkCallBacks;
-        [Inject] private ServicePlaces _servicePlaces;
+        [Inject] private GameStateManager _gameStateManager;
 
         private void Start()
         {
             _networkCallBacks.PlayerEntered += StartGame;
         }
 
-        public void StartGame(Player player)
+        private void StartGame(Player player)
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-            
-            if (PhotonNetwork.CurrentRoom.MaxPlayers != PhotonNetwork.CurrentRoom.PlayerCount)
-                return;
-
-            _servicePlaces.ActivateRandomPlace();
+            _gameStateManager.SetState(GameStates.WaitingForPlayersState);
         }
     }
 }

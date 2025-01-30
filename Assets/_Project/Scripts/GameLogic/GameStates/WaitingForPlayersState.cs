@@ -1,5 +1,5 @@
 using _Project.Scripts.Interfaces;
-using _Project.Scripts.Services.Game;
+using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
 using Zenject;
@@ -8,6 +8,8 @@ namespace _Project.Scripts.GameLogic.GameStates
 {
     public class WaitingForPlayersState : IGameState
     {
+        [Inject] private ServicePlaces _servicePlaces;
+        
         public bool Completed { get; set; }
         
         public void EnterState()
@@ -19,6 +21,7 @@ namespace _Project.Scripts.GameLogic.GameStates
         {
             if (PhotonNetwork.CurrentRoom.MaxPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
             {
+                _servicePlaces.ActivateRandomPlace();
                 Completed = true; 
             }
         }
