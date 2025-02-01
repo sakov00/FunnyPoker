@@ -12,7 +12,7 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
         [SerializeField] private PlaceInfo _placeInfo;
         [SerializeField] private NextStepButton _nextPlayerButton;
         
-        [Inject] private ServicePlaces _playersInfoService;
+        [Inject] private PlacesManager _playersInfo;
 
         private void Start()
         {

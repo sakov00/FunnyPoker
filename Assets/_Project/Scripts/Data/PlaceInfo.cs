@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using _Project.Scripts.GameLogic.Rendering;
 using ExitGames.Client.Photon;
 using Photon.Pun;
@@ -15,8 +16,9 @@ namespace _Project.Scripts.Data
         [field: SerializeField] public PlaceInfo PreviousPlace { get; private set; }
         [field: SerializeField] public PlaceInfo NextPlace { get; private set; }
         [field: SerializeField] public int NumberPlace { get; private set; }
-        [field: SerializeField] public Transform PlayerTransform { get; set; }
-        
+        [field: SerializeField] public Transform PlayerPoint { get; set; }
+        [field: SerializeField] public Transform CardsPoint { get; set; }
+        public List<PlayingCard> PlayingCards { get; set; } = new ();
         private bool IsFree { get; set; }
         public bool IsFreeSync
         {
@@ -49,8 +51,8 @@ namespace _Project.Scripts.Data
             }
         }   
         
-        private int PlayerActorNumber { get; set; }
-        public int PlayerActorNumberSync
+        private int? PlayerActorNumber { get; set; }
+        public int? PlayerActorNumberSync
         {
             get => PlayerActorNumber;
             set
@@ -86,7 +88,7 @@ namespace _Project.Scripts.Data
                 PlayerActorNumber = (int)photonPlayer.CustomProperties[nameof(PlayerActorNumber) + NumberPlace];
         }
         
-        public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
             if (changedProps.ContainsKey(nameof(IsFree) + NumberPlace))
                 IsFree = (bool)changedProps[nameof(IsFree) + NumberPlace];

@@ -1,8 +1,7 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using _Project.Scripts.Enums;
-using _Project.Scripts.GameLogic.GameStates;
 using _Project.Scripts.Interfaces;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Zenject;
 
@@ -10,50 +9,34 @@ namespace _Project.Scripts.Managers
 {
     public class GameStateManager : MonoBehaviourPunCallbacks
     {
-        [Inject] private List<IGameState> _gameStates = new ();
+        private const string GameStateKey = "GameState";
+        private Dictionary<Type, IGameState> _gameStates;
         private IGameState _currentState;
 
-        private void Update()
+        [Inject]
+        public void Initialize(List<IGameState> states)
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-            
-            _currentState?.UpdateState();
-            if (_currentState?.Completed == true)
+            _gameStates = new Dictionary<Type, IGameState>();
+            foreach (var state in states)
             {
-                NextState();
+                _gameStates[state.GetType()] = state;
             }
         }
         
-        public void SetState(GameStates newState)
+        public void SetState<T>() where T : IGameState
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-            
             _currentState?.ExitState();
+            _currentState = _gameStates[typeof(T)];
             
-            switch (newState)
-            {
-                case GameStates.WaitingForPlayersState:
-                    _currentState = _gameStates.OfType<WaitingForPlayersState>().FirstOrDefault();
-                    break;
-                case GameStates.DealingCardsState:
-                    _currentState = _gameStates.OfType<DealingCardsState>().FirstOrDefault();
-                    break;
-            }
+            var property = new Hashtable { { GameStateKey, _currentState.GetType().AssemblyQualifiedName } };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(property);
             
             _currentState?.EnterState();
         }
-
-        private void NextState()
+        
+        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-            
-            var nextStateIndex = _gameStates.IndexOf(_currentState) + 1;
-            _currentState?.ExitState();
-            _currentState = _gameStates[nextStateIndex];
-            _currentState?.EnterState();
+            _currentState = (IGameState)Type.GetType((string)changedProps[GameStateKey]);
         }
     }
 }

@@ -5,38 +5,1210 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/GreenBloom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Materials/GreenBloom.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayingCard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayingCard.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image Effects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image Effects/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image Effects/Shaders/Reversibl_Draw.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image Effects/Shaders/Reversibl_Draw.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Black.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Blue.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/BackColor_Red.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Club13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Diamond13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Heart13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Joker_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Joker_Color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Joker_Monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Joker_Monochrome.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Image/PlayingCards/Spade13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_ntr.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_ntr.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_ntr.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/f01@f01_trump_throw_ntr.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_ntr.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_ntr.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw02.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw02.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw_ntr.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Motion/m01@m01_trump_throw_ntr.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Readme_Eng.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Readme_Eng.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Readme_Jpn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Readme_Jpn.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_Deck_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_Deck_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_LineUp_HeartDiamond_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_LineUp_HeartDiamond_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_LineUp_SpadeClub_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_LineUp_SpadeClub_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Blank_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Blank_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Club13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Diamond13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Heart13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Joker_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Joker_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Joker_10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Joker_10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_PlayingCards_Spade13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_RifleShuffle_First_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_RifleShuffle_First_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_RifleShuffle_Second_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Black/Black_RifleShuffle_Second_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_Deck_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_Deck_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_LineUp_HeartDiamond_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_LineUp_HeartDiamond_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_LineUp_SpadeClub_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_LineUp_SpadeClub_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Blank_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Blank_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Club13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Diamond13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Heart13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Joker_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Joker_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Joker_10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Joker_10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_PlayingCards_Spade13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_RifleShuffle_First_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_RifleShuffle_First_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_RifleShuffle_Second_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Blue/Blue_RifleShuffle_Second_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_Deck_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_Deck_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_LineUp_HeartDiamond_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_LineUp_HeartDiamond_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_LineUp_SpadeClub_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_LineUp_SpadeClub_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Blank_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Blank_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Club13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Diamond13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Heart13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Joker_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Joker_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Joker_10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Joker_10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade01_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade01_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade02_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade02_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade03_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade03_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade04_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade04_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade05_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade05_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade06_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade06_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade07_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade07_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade08_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade08_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade09_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade09_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade10_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade10_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade11_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade11_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade12_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade12_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade13_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_PlayingCards_Spade13_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_RifleShuffle_First_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_RifleShuffle_First_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_RifleShuffle_Second_00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/BackColor_Red/Red_RifleShuffle_Second_00.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Black.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Black.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_White.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoChip_White.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoTable_Ellipse.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoTable_Ellipse.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoTable_SemiCircle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/CasinoTable_SemiCircle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/Table_Rectangle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/Table_Rectangle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/Table_Square.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Materials/CasinoItem/Table_Square.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/5cards_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/5cards_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoChip_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoChip_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoTable_Ellipse_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoTable_Ellipse_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoTable_SemiCircle_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/CasinoTable_SemiCircle_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/LittleDeck_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/LittleDeck_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/LittleDiscard_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/LittleDiscard_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/ManyDeck_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/ManyDeck_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/ManyDiscard_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/ManyDiscard_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/PlayingCards_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/PlayingCards_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/RifleShuffle_First_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/RifleShuffle_First_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/RifleShuffle_Second_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/RifleShuffle_Second_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Spread_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Spread_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Table_Rectangle_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Table_Rectangle_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Table_Square_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Table_Square_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/TowerUnfinished_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/TowerUnfinished_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Tower_00.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Model/Tower_00.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_5cards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_5cards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_AllCards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_AllCards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_LittleDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_LittleDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_LittleDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_LittleDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_ManyDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_ManyDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_ManyDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_ManyDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Blank_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Blank_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Club13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Diamond13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Heart13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Joker_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Joker_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Joker_10.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Joker_10.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_PlayingCards_Spade13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_RifleShuffle_First_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_RifleShuffle_First_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_RifleShuffle_Second_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_RifleShuffle_Second_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_Spread_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_Spread_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_TowerUnfinished_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_TowerUnfinished_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_Tower_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Black/Black_Tower_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_5cards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_5cards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_AllCards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_AllCards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_LittleDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_LittleDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_LittleDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_LittleDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_ManyDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_ManyDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_ManyDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_ManyDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Blank_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Blank_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Club13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Diamond13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Heart13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Joker_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Joker_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Joker_10.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Joker_10.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_PlayingCards_Spade13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_RifleShuffle_First_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_RifleShuffle_First_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_RifleShuffle_Second_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_RifleShuffle_Second_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_Spread_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_Spread_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_TowerUnfinished_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_TowerUnfinished_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_Tower_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Blue/Blue_Tower_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_5cards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_5cards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_AllCards_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_AllCards_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_LittleDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_LittleDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_LittleDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_LittleDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_ManyDeck_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_ManyDeck_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_ManyDiscard_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_ManyDiscard_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Blank_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Blank_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Club13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Diamond13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Heart13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Joker_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Joker_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Joker_10.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Joker_10.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade01_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade01_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade02_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade02_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade03_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade03_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade04_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade04_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade05_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade05_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade06_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade06_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade07_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade07_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade08_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade08_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade09_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade09_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade10_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade10_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade11_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade11_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade12_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade12_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade13_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_PlayingCards_Spade13_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_RifleShuffle_First_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_RifleShuffle_First_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_RifleShuffle_Second_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_RifleShuffle_Second_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_Spread_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_Spread_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_TowerUnfinished_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_TowerUnfinished_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_Tower_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/BackColor_Red/Red_Tower_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Black_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Black_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Blue_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Blue_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Green_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Green_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Red_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_Red_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_White_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip20_White_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Black_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Black_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Blue_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Blue_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Green_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Green_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Red_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_Red_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_White_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoChip_White_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoTable_Ellipse_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoTable_Ellipse_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoTable_SemiCircle_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/CasinoTable_SemiCircle_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/Table_Rectangle_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/Table_Rectangle_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/Table_Square_00.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Prefab/CasinoItem/Table_Square_00.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Black_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Black_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Blue_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Blue_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Red_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/BackColor_Red_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Black_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Black_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Blue_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Blue_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Green_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Green_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Red_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_Red_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_White_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_White_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_mtl.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_mtl.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoChip_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_mtl.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_mtl.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_Ellipse_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_mtl.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_mtl.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/CasinoTable_SemiCircle_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckBlack_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckBlack_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckBlue_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckBlue_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckRed_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/DeckRed_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Deck_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Deck_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club01_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club01_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club02_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club02_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club03_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club03_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club04_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club04_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club05_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club05_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club06_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club06_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club07_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club07_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club08_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club08_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club09_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club09_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club10_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club10_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club11_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club11_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club12_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club12_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club13_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Club13_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond01_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond01_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond02_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond02_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond03_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond03_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond04_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond04_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond05_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond05_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond06_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond06_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond07_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond07_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond08_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond08_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond09_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond09_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond10_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond10_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond11_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond11_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond12_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond12_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond13_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Diamond13_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart01_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart01_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart02_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart02_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart03_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart03_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart04_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart04_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart05_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart05_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart06_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart06_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart07_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart07_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart08_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart08_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart09_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart09_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart10_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart10_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart11_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart11_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart12_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart12_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart13_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Heart13_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Joker_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Joker_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Joker_10.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Joker_10.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Black_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Black_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Blue_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Blue_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Red_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_BackColor_Red_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_ClubSpade_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_ClubSpade_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_HeartDiamond_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_LineUp_HeartDiamond_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade01_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade01_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade02_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade02_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade03_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade03_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade04_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade04_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade05_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade05_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade06_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade06_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade07_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade07_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade08_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade08_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade09_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade09_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade10_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade10_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade11_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade11_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade12_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade12_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade13_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/PlayingCards_Spade13_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_00_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_00_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_Blue_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_Blue_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_Red_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_First_Red_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_00_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_00_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Black_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Black_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Blue_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Blue_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Red_00_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/RiffleShuffle_Second_Red_00_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_mtl.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_mtl.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Rectangle_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_col.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_col.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_mtl.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_mtl.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_nml.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playing Cards/Resource/Textures/Table_Square_nml.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/Default.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Materials/Default.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/RedBloom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Materials/RedBloom.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/YellowBloom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Materials/YellowBloom.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/LightingData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/PostProcessing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/PostProcessing Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/GameStates.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/GameStates.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingForPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingForPlayersState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerPlace.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerPlace/PlaceHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerPlace/PlaceHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerPlace/PlaceInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerPlace/PlaceInfo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/Rendering/BloomPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/Rendering/BloomPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/GameStateManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/GameStateManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/ServicePlaces.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Game/ServicePlaces.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Network.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Network/PlayersInfoService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Network/PlayersInfoService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Interfaces/IGameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Interfaces/IGameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/ServicePlaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/ServicePlaces.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +1221,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/49/997d537e/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.9/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -58,23 +1234,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor &amp; Play.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../FunnyPokerBuild\FunnyPoker.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../FunnyPokerBuild/FunnyPoker.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Work\FunnyPokerBuild" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -110,15 +1287,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20664">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20664" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -144,6 +1319,9 @@
       <workItem from="1738267106064" duration="47000" />
       <workItem from="1738267163932" duration="58000" />
       <workItem from="1738267231524" duration="4017000" />
+      <workItem from="1738403825819" duration="2972000" />
+      <workItem from="1738428079738" duration="6520000" />
+      <workItem from="1738437038973" duration="154000" />
     </task>
     <servers />
   </component>
@@ -164,19 +1342,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/ServicePlaces.cs</url>
-          <line>57</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\Services\ServicePlaces.cs" containingFunctionPresentation="Method 'DestroyEmptyPlaces'">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs</url>
+          <line>38</line>
+          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\Managers\GameStateManager.cs" containingFunctionPresentation="Method 'OnRoomPropertiesUpdate'">
             <startOffsets>
-              <option value="2021" />
+              <option value="1220" />
             </startOffsets>
             <endOffsets>
-              <option value="2068" />
+              <option value="1297" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="Photon.LocalPlayer" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

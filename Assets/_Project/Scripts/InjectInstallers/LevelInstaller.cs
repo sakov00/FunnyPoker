@@ -1,9 +1,11 @@
 ﻿using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Factories;
 using _Project.Scripts.GameLogic.GameStates;
+using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
 using _Project.Scripts.Services;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace _Project.Scripts.InjectInstallers
@@ -14,10 +16,14 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private GameObject cameraPrefab;
         [SerializeField] private NetworkCallBacks networkCallBacks;
         [SerializeField] private GameStartUp gameStartUp;
-        [SerializeField] private ServicePlaces servicePlaces;
+        
         
         [Header("Managers")]
+        [SerializeField] private PlacesManager placesManager;
         [SerializeField] private GameStateManager gameStateManager;
+        
+        [Header("Services")]
+        [SerializeField] private DeskService deskService;
         
         public override void InstallBindings()
         {
@@ -46,18 +52,23 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindServices()
         {
-            Container.BindInstance(servicePlaces).AsSingle();
+            Container.BindInstance(deskService).AsSingle();
         }
 
         private void BindGameStates()
         {
             Container.BindInterfacesAndSelfTo<WaitingForPlayersState>().AsSingle();
             Container.BindInterfacesAndSelfTo<DealingCardsState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BettingState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ShowdownState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ResultState>().AsSingle();
         }
 
         private void BindManagers()
         {
-            Container.BindInstance(gameStateManager).AsSingle();
+            Container.BindInstance(placesManager).AsSingle();
+            Container.BindInstance(gameStateManager).AsSingle()
+                .WithArguments(Container.ResolveAll<IGameState>());
         }
     }
 }
