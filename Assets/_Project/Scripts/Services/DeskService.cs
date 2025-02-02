@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
@@ -14,20 +15,26 @@ namespace _Project.Scripts.Services
         [SerializeField] private List<PlayingCard> playingCards = new ();
         [SerializeField] private Transform playingCardsParent;
         
-        public void DealCards()
+        public void DealCards(int count)
         {
-            foreach (var place in _placesManager.AllPlayerPlaces)
+            for (int i = 0; i < count; i++)
             {
-                var card = GetRandomPlayingCard();
-                place.PlayingCards.Add(card);
-                // card.transform.SetParent(place.CardsPoint);
-                card.transform.position = place.CardsPoint.position;
+                foreach (var place in _placesManager.AllPlayerPlaces)
+                {
+                    var card = GetRandomPlayingCard();
+                    place.PlayingCards.Add(card);
+                    card.transform.SetParent(place.CardsParent);
+                    card.transform.localPosition = place.CardPoints[i].localPosition;
+                    card.transform.localRotation = place.CardPoints[i].localRotation;
+                }
             }
         }
 
         private PlayingCard GetRandomPlayingCard()
         {
-            return playingCards.FirstOrDefault();
+            var card = playingCards.FirstOrDefault();
+            playingCards.Remove(card);
+            return card;
         }
     }
 }

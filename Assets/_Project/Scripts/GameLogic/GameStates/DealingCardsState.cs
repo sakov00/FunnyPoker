@@ -14,7 +14,7 @@ namespace _Project.Scripts.GameLogic.GameStates
         public void EnterState()
         {
             Debug.Log("Раздача карт...");
-            _deskService.DealCards();
+            _deskService.DealCards(2);
             _gameStateManager.SetState<BettingState>();
         }
 

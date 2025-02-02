@@ -17,7 +17,8 @@ namespace _Project.Scripts.Data
         [field: SerializeField] public PlaceInfo NextPlace { get; private set; }
         [field: SerializeField] public int NumberPlace { get; private set; }
         [field: SerializeField] public Transform PlayerPoint { get; set; }
-        [field: SerializeField] public Transform CardsPoint { get; set; }
+        [field: SerializeField] public Transform CardsParent { get; set; }
+        [field: SerializeField] public List<Transform> CardPoints { get; set; } = new ();
         public List<PlayingCard> PlayingCards { get; set; } = new ();
         private bool IsFree { get; set; }
         public bool IsFreeSync
@@ -51,8 +52,8 @@ namespace _Project.Scripts.Data
             }
         }   
         
-        private int? PlayerActorNumber { get; set; }
-        public int? PlayerActorNumberSync
+        private int PlayerActorNumber { get; set; }
+        public int PlayerActorNumberSync
         {
             get => PlayerActorNumber;
             set
@@ -62,30 +63,38 @@ namespace _Project.Scripts.Data
             }
         }
 
-        private void Awake()
+        public override void OnJoinedRoom()
         {
-            IsFreeSync = true;
-            IsEnableSync = false;
+            if (PhotonNetwork.IsMasterClient)
+            {
+                IsFreeSync = true;
+                IsEnableSync = false;
+                PlayerActorNumberSync = 0;
+            }
+            else
+            {
+                LoadInfoFromPhoton();
+            }
         }
 
         private void SyncProperty(string key, object value)
         {
             Hashtable property = new Hashtable { { key, value } };
-            PhotonNetwork.LocalPlayer.SetCustomProperties(property);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
         }
         
         public void LoadInfoFromPhoton()
         {
-            var photonPlayer = PhotonNetwork.MasterClient;
+            var currentRoom = PhotonNetwork.CurrentRoom;
             
-            if (photonPlayer.CustomProperties.ContainsKey(nameof(IsFree) + NumberPlace))
-                IsFree = (bool)photonPlayer.CustomProperties[nameof(IsFree) + NumberPlace];
+            if (currentRoom.CustomProperties.ContainsKey(nameof(IsFree) + NumberPlace))
+                IsFree = (bool)currentRoom.CustomProperties[nameof(IsFree) + NumberPlace];
 
-            if (photonPlayer.CustomProperties.ContainsKey(nameof(IsEnable) + NumberPlace))
-                IsEnable = (bool)photonPlayer.CustomProperties[nameof(IsEnable) + NumberPlace];
+            if (currentRoom.CustomProperties.ContainsKey(nameof(IsEnable) + NumberPlace))
+                IsEnable = (bool)currentRoom.CustomProperties[nameof(IsEnable) + NumberPlace];
             
-            if (photonPlayer.CustomProperties.ContainsKey(nameof(PlayerActorNumber) + NumberPlace))
-                PlayerActorNumber = (int)photonPlayer.CustomProperties[nameof(PlayerActorNumber) + NumberPlace];
+            if (currentRoom.CustomProperties.ContainsKey(nameof(PlayerActorNumber) + NumberPlace))
+                PlayerActorNumber = (int)currentRoom.CustomProperties[nameof(PlayerActorNumber) + NumberPlace];
         }
         
         public override void OnRoomPropertiesUpdate(Hashtable changedProps)

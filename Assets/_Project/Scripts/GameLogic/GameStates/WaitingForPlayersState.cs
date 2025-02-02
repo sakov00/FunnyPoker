@@ -19,32 +19,22 @@ namespace _Project.Scripts.GameLogic.GameStates
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
-            _networkCallBacks.PlayerJoined += CheckPlayersCount;
-            _networkCallBacks.PlayerEntered += CheckPlayersCount;
-        }
-
-        private void CheckPlayersCount()
-        {
-            var connectedPlayers = _placesManager.AllPlayerPlaces.Count(place => place.PlayerActorNumberSync != null);
-            if (connectedPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
-            {
-                _gameStateManager.SetState<DealingCardsState>();
-            }
+            _networkCallBacks.PlayerEnteredToRoom += CheckPlayersCount;
         }
         
         private void CheckPlayersCount(Player player)
         {
-            var connectedPlayers = _placesManager.AllPlayerPlaces.Count(place => place.PlayerActorNumberSync != null);
-            if (connectedPlayers == PhotonNetwork.CurrentRoom.PlayerCount)
+            var connectedPlayers = _placesManager.AllPlayerPlaces.Count(place => !place.IsFreeSync);
+            if (connectedPlayers == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
+                _placesManager.ActivateRandomPlace();
                 _gameStateManager.SetState<DealingCardsState>();
             }
         }
 
         public void ExitState()
         {
-            _networkCallBacks.PlayerJoined -= CheckPlayersCount;
-            _networkCallBacks.PlayerEntered -= CheckPlayersCount;
+            _networkCallBacks.PlayerEnteredToRoom -= CheckPlayersCount;
             Debug.Log("Все игроки подключены. Начинаем игру.");
         }
     }

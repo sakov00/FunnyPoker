@@ -23,20 +23,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - AssetsForGame
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d8804b18bfc05fb4d9c8d546709d4404
-    m_Address: Player
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AssetsForGame
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a2c505cab00ff8e4fad209bc9ba0ebb4
     m_Address: Judge
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AssetsForGame
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a0cdac158c6d1246b49b1b4ec3aece5
-    m_Address: Assets/_Project/Prefabs/Camera.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsForGame

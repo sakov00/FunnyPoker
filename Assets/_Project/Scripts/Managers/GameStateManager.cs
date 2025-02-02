@@ -25,18 +25,36 @@ namespace _Project.Scripts.Managers
         
         public void SetState<T>() where T : IGameState
         {
+            if(!PhotonNetwork.IsMasterClient)
+                return;
+            
             _currentState?.ExitState();
             _currentState = _gameStates[typeof(T)];
             
             var property = new Hashtable { { GameStateKey, _currentState.GetType().AssemblyQualifiedName } };
-            PhotonNetwork.LocalPlayer.SetCustomProperties(property);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
             
             _currentState?.EnterState();
         }
         
+        public void LoadInfoFromPhoton()
+        {
+            var currentRoom = PhotonNetwork.CurrentRoom;
+
+            if (currentRoom.CustomProperties.ContainsKey(GameStateKey))
+            {
+                var currentType = Type.GetType((string)currentRoom.CustomProperties[GameStateKey]);
+                _gameStates.TryGetValue(currentType, out _currentState);
+            }
+        }
+        
         public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            _currentState = (IGameState)Type.GetType((string)changedProps[GameStateKey]);
+            if (changedProps.ContainsKey(GameStateKey))
+            {
+                var currentType = Type.GetType((string)changedProps[GameStateKey]);
+                _gameStates.TryGetValue(currentType, out _currentState);
+            }
         }
     }
 }

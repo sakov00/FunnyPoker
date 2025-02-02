@@ -18,9 +18,9 @@ namespace _Project.Scripts.Services
         
         private void Awake()
         {
-            _networkCallBacks.PlayerEntered += PlayerEnteredToRoom;
-            _networkCallBacks.PlayerJoined += PlayerJoinedToRoom;
-            _networkCallBacks.PlayerLeft += PlayerLeft;
+            _networkCallBacks.PlayerEnteredToRoom += PlayerEnteredToRoom;
+            _networkCallBacks.PlayerJoinedToRoom += PlayerJoinedToRoom;
+            _networkCallBacks.PlayerLeftRoom += PlayerLeft;
         }
         
         private void PlayerJoinedToRoom()
@@ -29,21 +29,23 @@ namespace _Project.Scripts.Services
             AllPlayerPlaces.ForEach(place => place.LoadInfoFromPhoton());
             
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
-            playerPlaceInfo.PlayerActorNumberSync = PhotonNetwork.LocalPlayer.ActorNumber;
-            playerPlaceInfo.IsFreeSync = false;
-
             _playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
         }
 
         private void PlayerEnteredToRoom(Player player)
         {
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
+            playerPlaceInfo.PlayerActorNumberSync = PhotonNetwork.LocalPlayer.ActorNumber;
             playerPlaceInfo.IsFreeSync = false;
         }
         
         private void PlayerLeft(Player player)
         {
+            if(!PhotonNetwork.IsMasterClient)
+                return;
+            
             var placeInfo = AllPlayerPlaces.First(place => place.PlayerActorNumberSync == player.ActorNumber);
+            placeInfo.PlayerActorNumberSync = 0;
             placeInfo.IsFreeSync = false;
         }
         
@@ -55,18 +57,21 @@ namespace _Project.Scripts.Services
 
         private void DestroyEmptyPlaces()
         {
-            for (int i = 0; i < AllPlayerPlaces.Count; i++)
+            for (int i = AllPlayerPlaces.Count - 1; i >= 0; i--)
             {
-                if(i >= PhotonNetwork.CurrentRoom.MaxPlayers)
+                if (i >= PhotonNetwork.CurrentRoom.MaxPlayers)
+                {
                     Destroy(AllPlayerPlaces[i].gameObject);
+                    AllPlayerPlaces.RemoveAt(i);
+                }
             }
         }
 
         private void OnDestroy()
         {
-            _networkCallBacks.PlayerEntered -= PlayerEnteredToRoom;
-            _networkCallBacks.PlayerJoined -= PlayerJoinedToRoom;
-            _networkCallBacks.PlayerLeft -= PlayerLeft;
+            _networkCallBacks.PlayerEnteredToRoom -= PlayerEnteredToRoom;
+            _networkCallBacks.PlayerJoinedToRoom -= PlayerJoinedToRoom;
+            _networkCallBacks.PlayerLeftRoom -= PlayerLeft;
         }
     }
 }
