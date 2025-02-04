@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8065795169483938490}
   - component: {fileID: 6956251233841629632}
   - component: {fileID: 4506719722894185142}
+  - component: {fileID: 8967248680645198464}
   m_Layer: 0
   m_Name: Card1
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Rank>k__BackingField: 0
   <Suit>k__BackingField: 0
+  <PhotonView>k__BackingField: {fileID: 4506719722894185142}
 --- !u!114 &4506719722894185142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +123,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8967248680645198464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5279358120333290012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

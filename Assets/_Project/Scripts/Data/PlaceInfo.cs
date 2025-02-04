@@ -17,7 +17,7 @@ namespace _Project.Scripts.Data
         [field: SerializeField] public PlaceInfo NextPlace { get; private set; }
         [field: SerializeField] public int NumberPlace { get; private set; }
         [field: SerializeField] public Transform PlayerPoint { get; set; }
-        [field: SerializeField] public Transform CardsParent { get; set; }
+        [field: SerializeField] public PhotonView CardsParent { get; set; }
         [field: SerializeField] public List<Transform> CardPoints { get; set; } = new ();
         public List<PlayingCard> PlayingCards { get; set; } = new ();
         private bool IsFree { get; set; }

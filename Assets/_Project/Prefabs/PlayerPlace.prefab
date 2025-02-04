@@ -416,7 +416,7 @@ MonoBehaviour:
   <NextPlace>k__BackingField: {fileID: 0}
   <NumberPlace>k__BackingField: -1
   <PlayerPoint>k__BackingField: {fileID: 458004699475767397}
-  <CardsParent>k__BackingField: {fileID: 1277564644088236553}
+  <CardsParent>k__BackingField: {fileID: 4181750190102609643}
   <CardPoints>k__BackingField:
   - {fileID: 5091917076765433429}
   - {fileID: 9079791807750517841}
@@ -499,6 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1277564644088236553}
+  - component: {fileID: 4181750190102609643}
   m_Layer: 0
   m_Name: Cards
   m_TagString: Untagged
@@ -526,6 +527,28 @@ Transform:
   - {fileID: 4131616636846115351}
   m_Father: {fileID: 2360872006432714567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4181750190102609643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9152676955761227718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1180701403334512031
 PrefabInstance:
   m_ObjectHideFlags: 0

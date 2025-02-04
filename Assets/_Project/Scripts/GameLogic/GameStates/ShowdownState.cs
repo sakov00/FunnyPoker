@@ -4,6 +4,8 @@ namespace _Project.Scripts.GameLogic.GameStates
 {
     public class ShowdownState : IGameState
     {
+        public bool IsCompleted { get; set; }
+        
         public void EnterState()
         {
             

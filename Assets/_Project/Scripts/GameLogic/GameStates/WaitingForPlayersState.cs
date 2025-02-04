@@ -10,31 +10,35 @@ using Zenject;
 
 namespace _Project.Scripts.GameLogic.GameStates
 {
-    public class WaitingForPlayersState : IGameState
+    public class WaitingForPlayersState : IGameState, IFixedTickable
     {
         [Inject] private GameStateManager _gameStateManager;
-        [Inject] private NetworkCallBacks _networkCallBacks;
         [Inject] private PlacesManager _placesManager;
+        
+        public bool IsCompleted { get; set; }
         
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
-            _networkCallBacks.PlayerEnteredToRoom += CheckPlayersCount;
+            IsCompleted = false;
         }
         
-        private void CheckPlayersCount(Player player)
+        public void FixedTick()
         {
-            var connectedPlayers = _placesManager.AllPlayerPlaces.Count(place => !place.IsFreeSync);
-            if (connectedPlayers == PhotonNetwork.CurrentRoom.MaxPlayers)
-            {
-                _placesManager.ActivateRandomPlace();
-                _gameStateManager.SetState<DealingCardsState>();
-            }
+            if (IsCompleted)
+                return;
+
+            if (PhotonNetwork.CurrentRoom == null ||
+                PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
+                return;
+            
+            _placesManager.ActivateRandomPlace();
+            _gameStateManager.SetState<DealingCardsState>();
         }
 
         public void ExitState()
         {
-            _networkCallBacks.PlayerEnteredToRoom -= CheckPlayersCount;
+            IsCompleted = true;
             Debug.Log("Все игроки подключены. Начинаем игру.");
         }
     }

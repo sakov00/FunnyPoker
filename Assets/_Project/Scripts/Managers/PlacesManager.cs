@@ -27,26 +27,25 @@ namespace _Project.Scripts.Services
         {
             DestroyEmptyPlaces();
             AllPlayerPlaces.ForEach(place => place.LoadInfoFromPhoton());
-            
+
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
+            playerPlaceInfo.PlayerActorNumberSync = PhotonNetwork.LocalPlayer.ActorNumber;
+            playerPlaceInfo.IsFreeSync = false;
             _playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
         }
 
         private void PlayerEnteredToRoom(Player player)
         {
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
-            playerPlaceInfo.PlayerActorNumberSync = PhotonNetwork.LocalPlayer.ActorNumber;
+            playerPlaceInfo.PlayerActorNumberSync = player.ActorNumber;
             playerPlaceInfo.IsFreeSync = false;
         }
         
         private void PlayerLeft(Player player)
         {
-            if(!PhotonNetwork.IsMasterClient)
-                return;
-            
             var placeInfo = AllPlayerPlaces.First(place => place.PlayerActorNumberSync == player.ActorNumber);
             placeInfo.PlayerActorNumberSync = 0;
-            placeInfo.IsFreeSync = false;
+            placeInfo.IsFreeSync = true;
         }
         
         public void ActivateRandomPlace()

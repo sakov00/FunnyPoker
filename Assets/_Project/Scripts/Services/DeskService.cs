@@ -8,7 +8,7 @@ using Zenject;
 
 namespace _Project.Scripts.Services
 {
-    public class DeskService : MonoBehaviour
+    public class DeskService : MonoBehaviourPun
     {
         [Inject] private PlacesManager _placesManager;
         
@@ -23,17 +23,35 @@ namespace _Project.Scripts.Services
                 {
                     var card = GetRandomPlayingCard();
                     place.PlayingCards.Add(card);
-                    card.transform.SetParent(place.CardsParent);
-                    card.transform.localPosition = place.CardPoints[i].localPosition;
-                    card.transform.localRotation = place.CardPoints[i].localRotation;
+                    
+                    photonView.RPC(nameof(UpdateCardTransformRPC), RpcTarget.AllBuffered,
+                        card.PhotonView.ViewID, place.CardsParent.ViewID, place.CardPoints[i].localPosition, place.CardPoints[i].localRotation);
                 }
+            }
+        }
+
+        [PunRPC]
+        private void UpdateCardTransformRPC(int cardViewID, int parentViewID, Vector3 position, Quaternion rotation)
+        {
+            PhotonView cardPhotonView = PhotonView.Find(cardViewID);
+            PhotonView parentPhotonView = PhotonView.Find(parentViewID);
+
+            if (cardPhotonView != null && parentPhotonView != null)
+            {
+                var card = cardPhotonView.transform;
+                card.SetParent(parentPhotonView.transform);
+                card.localPosition = position;
+                card.localRotation = rotation;
             }
         }
 
         private PlayingCard GetRandomPlayingCard()
         {
             var card = playingCards.FirstOrDefault();
-            playingCards.Remove(card);
+            if (card != null)
+            {
+                playingCards.Remove(card);
+            }
             return card;
         }
     }

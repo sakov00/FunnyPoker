@@ -11,6 +11,8 @@ namespace _Project.Scripts.GameLogic.GameStates
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private DeskService _deskService;
         
+        public bool IsCompleted { get; set; }
+        
         public void EnterState()
         {
             Debug.Log("Раздача карт...");
