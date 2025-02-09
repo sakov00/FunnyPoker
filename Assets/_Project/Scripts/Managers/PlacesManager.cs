@@ -10,38 +10,30 @@ using Zenject;
 
 namespace _Project.Scripts.Services
 {
-    public class PlacesManager : MonoBehaviour
+    public class PlacesManager : MonoBehaviourPunCallbacks
     {
-        [Inject] private NetworkCallBacks _networkCallBacks;
         [Inject] private PlayerFactory _playerFactory;
         [field: SerializeField] public List<PlaceInfo> AllPlayerPlaces { get; private set; }
         
-        private void Awake()
-        {
-            _networkCallBacks.PlayerEnteredToRoom += PlayerEnteredToRoom;
-            _networkCallBacks.PlayerJoinedToRoom += PlayerJoinedToRoom;
-            _networkCallBacks.PlayerLeftRoom += PlayerLeft;
-        }
-        
-        private void PlayerJoinedToRoom()
+        public override void OnJoinedRoom()
         {
             DestroyEmptyPlaces();
             AllPlayerPlaces.ForEach(place => place.LoadInfoFromPhoton());
-
+            
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
             playerPlaceInfo.PlayerActorNumberSync = PhotonNetwork.LocalPlayer.ActorNumber;
             playerPlaceInfo.IsFreeSync = false;
             _playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
         }
 
-        private void PlayerEnteredToRoom(Player player)
+        public override void OnPlayerEnteredRoom(Player player)
         {
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFreeSync);
             playerPlaceInfo.PlayerActorNumberSync = player.ActorNumber;
             playerPlaceInfo.IsFreeSync = false;
         }
         
-        private void PlayerLeft(Player player)
+        public override void OnPlayerLeftRoom(Player player)
         {
             var placeInfo = AllPlayerPlaces.First(place => place.PlayerActorNumberSync == player.ActorNumber);
             placeInfo.PlayerActorNumberSync = 0;
@@ -52,6 +44,11 @@ namespace _Project.Scripts.Services
         {
             var random = Random.Range(0, AllPlayerPlaces.Count);
             AllPlayerPlaces.ElementAt(random).IsEnableSync = true;
+        }
+        
+        public void AllPlacesIsEnable(bool isEnable)
+        {
+            AllPlayerPlaces.ForEach(place => place.IsEnableSync = isEnable);
         }
 
         private void DestroyEmptyPlaces()
@@ -64,13 +61,6 @@ namespace _Project.Scripts.Services
                     AllPlayerPlaces.RemoveAt(i);
                 }
             }
-        }
-
-        private void OnDestroy()
-        {
-            _networkCallBacks.PlayerEnteredToRoom -= PlayerEnteredToRoom;
-            _networkCallBacks.PlayerJoinedToRoom -= PlayerJoinedToRoom;
-            _networkCallBacks.PlayerLeftRoom -= PlayerLeft;
         }
     }
 }

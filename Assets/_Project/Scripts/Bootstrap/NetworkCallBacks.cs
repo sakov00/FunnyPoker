@@ -7,10 +7,6 @@ namespace _Project.Scripts.Bootstrap
 {
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
-        public Action PlayerJoinedToRoom;
-        public Action<Player> PlayerEnteredToRoom;
-        public Action<Player> PlayerLeftRoom;
-
         public void Initialize()
         {
             PhotonNetwork.ConnectUsingSettings();
@@ -29,22 +25,22 @@ namespace _Project.Scripts.Bootstrap
 
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
+            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
         }
 
         public override void OnPlayerEnteredRoom(Player player)
         {
-            PlayerEnteredToRoom?.Invoke(player);
+
         }
 
         public override void OnJoinedRoom()
         { 
-            PlayerJoinedToRoom?.Invoke();
+
         }
 
         public override void OnPlayerLeftRoom(Player player)
         {
-            PlayerLeftRoom?.Invoke(player);
+            
         }
     }
 }

@@ -13,7 +13,6 @@ namespace _Project.Scripts.Services
         [Inject] private PlacesManager _placesManager;
         
         [SerializeField] private List<PlayingCard> playingCards = new ();
-        [SerializeField] private Transform playingCardsParent;
         
         public void DealCards(int count)
         {
@@ -22,12 +21,23 @@ namespace _Project.Scripts.Services
                 foreach (var place in _placesManager.AllPlayerPlaces)
                 {
                     var card = GetRandomPlayingCard();
+                    card.gameObject.SetActive(true);
                     place.PlayingCards.Add(card);
                     
                     photonView.RPC(nameof(UpdateCardTransformRPC), RpcTarget.AllBuffered,
                         card.PhotonView.ViewID, place.CardsParent.ViewID, place.CardPoints[i].localPosition, place.CardPoints[i].localRotation);
                 }
             }
+        }
+        
+        private PlayingCard GetRandomPlayingCard()
+        {
+            var card = playingCards.FirstOrDefault();
+            if (card != null)
+            {
+                playingCards.Remove(card);
+            }
+            return card;
         }
 
         [PunRPC]
@@ -43,16 +53,6 @@ namespace _Project.Scripts.Services
                 card.localPosition = position;
                 card.localRotation = rotation;
             }
-        }
-
-        private PlayingCard GetRandomPlayingCard()
-        {
-            var card = playingCards.FirstOrDefault();
-            if (card != null)
-            {
-                playingCards.Remove(card);
-            }
-            return card;
         }
     }
 }

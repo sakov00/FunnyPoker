@@ -10,6 +10,11 @@ namespace _Project.Scripts.GameLogic.GameStates
         {
             
         }
+        
+        public void FixedUpdate()
+        {
+            
+        }
 
         public void ExitState()
         {

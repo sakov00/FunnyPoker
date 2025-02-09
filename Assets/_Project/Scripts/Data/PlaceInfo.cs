@@ -20,7 +20,7 @@ namespace _Project.Scripts.Data
         [field: SerializeField] public PhotonView CardsParent { get; set; }
         [field: SerializeField] public List<Transform> CardPoints { get; set; } = new ();
         public List<PlayingCard> PlayingCards { get; set; } = new ();
-        private bool IsFree { get; set; }
+        private bool IsFree { get; set; } = true;
         public bool IsFreeSync
         {
             get => IsFree;
@@ -50,9 +50,9 @@ namespace _Project.Scripts.Data
                 IsEnable = value;
                 SyncProperty(nameof(IsEnable) + NumberPlace, value);
             }
-        }   
-        
-        private int PlayerActorNumber { get; set; }
+        }
+
+        private int PlayerActorNumber { get; set; } = 0;
         public int PlayerActorNumberSync
         {
             get => PlayerActorNumber;
@@ -63,18 +63,11 @@ namespace _Project.Scripts.Data
             }
         }
 
-        public override void OnJoinedRoom()
+        public void Awake()
         {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                IsFreeSync = true;
-                IsEnableSync = false;
-                PlayerActorNumberSync = 0;
-            }
-            else
-            {
-                LoadInfoFromPhoton();
-            }
+            IsFree = true;
+            IsEnable = false;
+            PlayerActorNumber = 0;
         }
 
         private void SyncProperty(string key, object value)

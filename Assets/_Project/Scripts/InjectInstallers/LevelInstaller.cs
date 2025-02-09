@@ -25,6 +25,9 @@ namespace _Project.Scripts.InjectInstallers
         [Header("Services")]
         [SerializeField] private DeskService deskService;
         
+        [Header("GameStates")]
+        [SerializeField] private WaitingPlayersState waitingPlayersState;
+        
         public override void InstallBindings()
         {
             BindNetwork();
@@ -57,7 +60,7 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindGameStates()
         {
-            Container.BindInterfacesAndSelfTo<WaitingForPlayersState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<WaitingPlayersState>().FromInstance(waitingPlayersState).AsSingle();
             Container.BindInterfacesAndSelfTo<DealingCardsState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BettingState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ShowdownState>().AsSingle();

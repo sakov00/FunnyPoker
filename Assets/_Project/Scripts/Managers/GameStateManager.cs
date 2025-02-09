@@ -22,7 +22,12 @@ namespace _Project.Scripts.Managers
                 _gameStates[state.GetType()] = state;
             }
         }
-        
+
+        public override void OnJoinedRoom()
+        {
+            LoadInfoFromPhoton();
+        }
+
         public void SetState<T>() where T : IGameState
         {
             if(!PhotonNetwork.IsMasterClient)
@@ -36,8 +41,8 @@ namespace _Project.Scripts.Managers
             
             _currentState?.EnterState();
         }
-        
-        public void LoadInfoFromPhoton()
+
+        private void LoadInfoFromPhoton()
         {
             var currentRoom = PhotonNetwork.CurrentRoom;
 
@@ -53,7 +58,12 @@ namespace _Project.Scripts.Managers
             if (changedProps.ContainsKey(GameStateKey))
             {
                 var currentType = Type.GetType((string)changedProps[GameStateKey]);
-                _gameStates.TryGetValue(currentType, out _currentState);
+                if (_currentState.GetType() != currentType)
+                {
+                    _currentState?.ExitState();
+                    _gameStates.TryGetValue(currentType, out _currentState);
+                    _currentState?.EnterState();
+                }
             }
         }
     }
