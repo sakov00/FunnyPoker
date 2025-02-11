@@ -5,55 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlaceData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlaceData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters/PlacePresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views/PlaceView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views/PlaceView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/JudgeMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/JudgeMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Club08.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Club08.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Diamond11.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Diamond11.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Diamond12.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Diamond12.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Spade03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/Playing Cards/Image/PlayingCards/Materials/Spade03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Materials/Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (1).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (1).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (2).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (2).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (3).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1 (3).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Card1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cube (1).prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cube (1).prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Judge.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Judge.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_dir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_light.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_light.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_shadowmask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/Lightmap-0_comp_shadowmask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlaceInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters/PlacePresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayerData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayerData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayingCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayingCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/PlayingCard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayingCard.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingForPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingForPlayersState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Interfaces/IGameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Interfaces/IGameState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +47,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/60e86e30be2149bea172ff312879398410fc00/3b/140c5a08/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/64861216782042de93237b5c061bff1b951c00/3a/caa535ca/ProfilerWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ec8e29954a6455daa48484a381ec41846ac00/9a/783a898a/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/49/997d537e/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/9e/b04e5de9/IFixedTickable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -137,10 +117,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6712">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12500">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6712" />
+      <option name="pid" value="12500" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -191,7 +171,9 @@
       <workItem from="1738701480349" duration="1685000" />
       <workItem from="1738864649420" duration="141000" />
       <workItem from="1739101991474" duration="10000" />
-      <workItem from="1739102008208" duration="5708000" />
+      <workItem from="1739102008208" duration="7226000" />
+      <workItem from="1739294643848" duration="7044000" />
+      <workItem from="1739301811309" duration="4337000" />
     </task>
     <servers />
   </component>
@@ -223,6 +205,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs</url>
+          <line>34</line>
+          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\MVP\Models\DataSync\PlaceSync.cs" containingFunctionPresentation="Constructor 'PlaceSync'">
+            <startOffsets>
+              <option value="1246" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1247" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs</url>
+          <line>45</line>
+          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\MVP\Models\DataSync\PlaceSync.cs" containingFunctionPresentation="Method 'SyncProperty'">
+            <startOffsets>
+              <option value="1959" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1960" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

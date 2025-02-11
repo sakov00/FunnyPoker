@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using _Project.Scripts.Data;
+using _Project.Scripts.MVP.Models.Data;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -22,10 +22,11 @@ namespace _Project.Scripts.Services
                 {
                     var card = GetRandomPlayingCard();
                     card.gameObject.SetActive(true);
-                    place.PlayingCards.Add(card);
+                    place.Data.PlayingCards.Add(card);
                     
                     photonView.RPC(nameof(UpdateCardTransformRPC), RpcTarget.AllBuffered,
-                        card.PhotonView.ViewID, place.CardsParent.ViewID, place.CardPoints[i].localPosition, place.CardPoints[i].localRotation);
+                        card.PhotonView.ViewID, place.Data.CardsParent.ViewID,
+                        place.Data.CardPoints[i].localPosition, place.Data.CardPoints[i].localRotation);
                 }
             }
         }

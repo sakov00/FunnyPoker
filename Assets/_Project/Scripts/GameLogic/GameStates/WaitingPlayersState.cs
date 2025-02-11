@@ -30,7 +30,6 @@ namespace _Project.Scripts.GameLogic.GameStates
                 return;
             
             _gameStateManager.SetState<DealingCardsState>();
-            _placesManager.AllPlacesIsEnable(true);
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -43,7 +42,6 @@ namespace _Project.Scripts.GameLogic.GameStates
                 return;
             
             _gameStateManager.SetState<DealingCardsState>();
-            _placesManager.AllPlacesIsEnable(true);
         }
 
         public void ExitState()

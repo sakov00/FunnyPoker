@@ -1,15 +1,16 @@
-using _Project.Scripts.Data;
 using _Project.Scripts.GameLogic.Buttons;
+using _Project.Scripts.MVP.Presenters;
 using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace _Project.Scripts.GameLogic.PlayerInGame
 {
     public class PlaceHandler : MonoBehaviourPun
     {
-        [SerializeField] private PlaceInfo _placeInfo;
+        [SerializeField] private PlacePresenter placePresenter;
         [SerializeField] private NextStepButton _nextPlayerButton;
         
         [Inject] private PlacesManager _playersInfo;
@@ -23,14 +24,14 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
         {
             Debug.Log("Player Clicked");
             
-            if(PhotonNetwork.LocalPlayer.ActorNumber !=_placeInfo.PlayerActorNumberSync)
+            if(PhotonNetwork.LocalPlayer.ActorNumber !=placePresenter.PlayerActorNumber)
                 return;
             
-            if(!_placeInfo.IsEnableSync)
+            if(!placePresenter.IsEnabled)
                 return;
             
-            _placeInfo.IsEnableSync = false;
-            _placeInfo.NextPlace.IsEnableSync = true;
+            placePresenter.IsEnabled = false;
+            placePresenter.Data.Next.IsEnabled = true;
         } 
 
         private void OnDestroy()
