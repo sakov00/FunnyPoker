@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Factories;
-using _Project.Scripts.MVP.Presenters;
+using _Project.Scripts.MVP.Place;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -19,35 +19,35 @@ namespace _Project.Scripts.Services
             DestroyEmptyPlaces();
             AllPlayerPlaces.ForEach(place => place.LoadFromPhoton());
             
-            var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFree);
-            playerPlaceInfo.PlayerActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-            playerPlaceInfo.IsFree = false;
+            var playerPlaceInfo = AllPlayerPlaces.First(place => place.Sync.IsFree);
+            playerPlaceInfo.Sync.PlayerActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
+            playerPlaceInfo.Sync.IsFree = false;
             _playerFactory.CreatePlayer(playerPlaceInfo.Data.PlayerPoint.position, playerPlaceInfo.Data.PlayerPoint.rotation);
         }
 
         public override void OnPlayerEnteredRoom(Player player)
         {
-            var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFree);
-            playerPlaceInfo.PlayerActorNumber = player.ActorNumber;
-            playerPlaceInfo.IsFree = false;
+            var playerPlaceInfo = AllPlayerPlaces.First(place => place.Sync.IsFree);
+            playerPlaceInfo.Sync.PlayerActorNumber = player.ActorNumber;
+            playerPlaceInfo.Sync.IsFree = false;
         }
         
         public override void OnPlayerLeftRoom(Player player)
         {
-            var placeInfo = AllPlayerPlaces.First(place => place.PlayerActorNumber == player.ActorNumber);
-            placeInfo.PlayerActorNumber = 0;
-            placeInfo.IsFree = true;
+            var placeInfo = AllPlayerPlaces.First(place => place.Sync.PlayerActorNumber == player.ActorNumber);
+            placeInfo.Sync.PlayerActorNumber = 0;
+            placeInfo.Sync.IsFree = true;
         }
         
         public void GetPlaceInfoByNumber(int number)
         {
             var random = Random.Range(0, AllPlayerPlaces.Count);
-            AllPlayerPlaces.ElementAt(random).IsEnabled = true;
+            AllPlayerPlaces.ElementAt(random).Sync.IsEnabled = true;
         }
         
         public void AllPlacesIsEnable(bool isEnable)
         {
-            AllPlayerPlaces.ForEach(place => place.IsEnabled = isEnable);
+            AllPlayerPlaces.ForEach(place => place.Sync.IsEnabled = isEnable);
         }
 
         private void DestroyEmptyPlaces()

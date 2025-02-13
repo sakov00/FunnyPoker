@@ -16,8 +16,11 @@ namespace _Project.Scripts.GameLogic.GameStates
         public async void EnterState()
         {
             Debug.Log("Раздача карт...");
+            
+            if(!PhotonNetwork.IsMasterClient)
+                return;
+            
             _deskService.DealCards(2);
-            await Task.Delay(3000);
             _gameStateManager.SetState<BettingState>();
         }
         

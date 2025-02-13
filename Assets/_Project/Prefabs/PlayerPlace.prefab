@@ -424,15 +424,15 @@ MonoBehaviour:
     - {fileID: 2905084995213807759}
     <PlayingCards>k__BackingField: []
   <Sync>k__BackingField:
-    isFree:
+    isFreeReactive:
       value: 1
-    isEnabled:
+    isEnabledReactive:
       value: 0
-    playerActorNumber:
+    playerActorNumberReactive:
       value: 0
-    isSmallBlind:
+    isSmallBlindReactive:
       value: 0
-    isBigBlind:
+    isBigBlindReactive:
       value: 0
   <View>k__BackingField:
     _greenButton: {fileID: 3106138374909852960}

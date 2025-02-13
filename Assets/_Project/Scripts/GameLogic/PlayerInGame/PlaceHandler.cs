@@ -1,5 +1,5 @@
 using _Project.Scripts.GameLogic.Buttons;
-using _Project.Scripts.MVP.Presenters;
+using _Project.Scripts.MVP.Place;
 using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
@@ -24,14 +24,14 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
         {
             Debug.Log("Player Clicked");
             
-            if(PhotonNetwork.LocalPlayer.ActorNumber !=placePresenter.PlayerActorNumber)
+            if(PhotonNetwork.LocalPlayer.ActorNumber !=placePresenter.Sync.PlayerActorNumber)
                 return;
             
-            if(!placePresenter.IsEnabled)
+            if(!placePresenter.Sync.IsEnabled)
                 return;
             
-            placePresenter.IsEnabled = false;
-            placePresenter.Data.Next.IsEnabled = true;
+            placePresenter.Sync.IsEnabled = false;
+            placePresenter.Data.Next.Sync.IsEnabled = true;
         } 
 
         private void OnDestroy()

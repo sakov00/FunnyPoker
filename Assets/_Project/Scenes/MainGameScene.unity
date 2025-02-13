@@ -381,6 +381,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3892096090227724946}
     - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
+      propertyPath: <Sync>k__BackingField.isFreeReactive.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
       propertyPath: <Data>k__BackingField.<Next>k__BackingField
       value: 
       objectReference: {fileID: 727834407}
@@ -1196,6 +1200,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 244862695}
     - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
+      propertyPath: <Sync>k__BackingField.isFreeReactive.value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
       propertyPath: <Data>k__BackingField.<Next>k__BackingField
       value: 
       objectReference: {fileID: 3892096090227724946}
@@ -1203,6 +1211,10 @@ PrefabInstance:
       propertyPath: <Data>k__BackingField.<Previous>k__BackingField
       value: 
       objectReference: {fileID: 244862695}
+    - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
+      propertyPath: <Data>k__BackingField.<PlayingCards>k__BackingField.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3229691463637208285, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -3131,6 +3143,10 @@ PrefabInstance:
       propertyPath: <PreviousPlace>k__BackingField
       value: 
       objectReference: {fileID: 727834407}
+    - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
+      propertyPath: <Sync>k__BackingField.isFreeReactive.value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2964840458393991852, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
       propertyPath: <Data>k__BackingField.<Next>k__BackingField
       value: 

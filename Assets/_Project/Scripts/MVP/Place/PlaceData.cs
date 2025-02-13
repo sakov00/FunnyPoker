@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using _Project.Scripts.MVP.Presenters;
 using Photon.Pun;
 using UnityEngine;
 
-namespace _Project.Scripts.MVP.Models.Data
+namespace _Project.Scripts.MVP.Place
 {
     [Serializable]
     public class PlaceData
@@ -18,6 +17,6 @@ namespace _Project.Scripts.MVP.Models.Data
         [field: SerializeField] public PhotonView CardsParent { get; private set; }
         
         [field: SerializeField] public List<Transform> CardPoints { get; set; } = new();
-        [field: SerializeField] public List<PlayingCard> PlayingCards { get; set; } = new();
+        [field: SerializeField] public List<PlayingCard.PlayingCard> PlayingCards { get; set; } = new();
     }
 }
