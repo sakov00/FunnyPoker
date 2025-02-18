@@ -17,7 +17,7 @@ namespace _Project.Scripts.Services
         public override void OnJoinedRoom()
         {
             DestroyEmptyPlaces();
-            AllPlayerPlaces.ForEach(place => place.LoadFromPhoton());
+            AllPlayerPlaces.ForEach(place => place.Sync.LoadFromPhoton());
             
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.Sync.IsFree);
             playerPlaceInfo.Sync.PlayerActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;

@@ -11,7 +11,7 @@ namespace _Project.Scripts.GameLogic.GameStates
     public class DealingCardsState : IGameState
     {
         [Inject] private GameStateManager _gameStateManager;
-        [Inject] private DeskService _deskService;
+        [Inject] private CardsService _cardsService;
         
         public async void EnterState()
         {
@@ -20,7 +20,7 @@ namespace _Project.Scripts.GameLogic.GameStates
             if(!PhotonNetwork.IsMasterClient)
                 return;
             
-            _deskService.DealCards(2);
+            _cardsService.DealTwoCardsToPlayers();
             _gameStateManager.SetState<BettingState>();
         }
         

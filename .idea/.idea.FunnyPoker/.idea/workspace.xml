@@ -5,35 +5,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Materials/Card_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Materials/Card_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_9.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_A.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_A.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_J.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_J.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_K.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_K.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_Q.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Heart_Q.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_9.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_A.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_A.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_J.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_J.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_K.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_K.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_Q.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Peak_Q.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_9.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_A.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_A.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_J.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_J.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_K.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_K.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_Q.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Rhomb_Q.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_9.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_J.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_J.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_K.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_K.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_Q.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_Q.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_А.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Trash/TestResources/Prefabs/Cards/Сross_А.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (1).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (1).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (10).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (10).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (11).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (11).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (12).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (12).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (2).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (2).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (3).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (3).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (4).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (4).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (5).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (5).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (6).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (6).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (7).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (7).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (8).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (8).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (9).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub (9).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Cards/Club/CardClub.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/PlayerPlace.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlaceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlaceData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Player/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayerData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Player/PlayerData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayingCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard/PlayingCard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/Data/PlayingCard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard/PlayingCard.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Models/DataSync/PlaceSync.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters/PlacePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Presenters/PlacePresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views/PlaceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Views/PlaceView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard/PlayingCard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/PlayingCard/PlayingCard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DeskService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +130,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/49/997d537e/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/9e/b04e5de9/IFixedTickable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.9/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Core/Utilities/LinqUtility.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -175,6 +252,9 @@
       <workItem from="1739294643848" duration="7044000" />
       <workItem from="1739301811309" duration="4497000" />
       <workItem from="1739376388699" duration="5764000" />
+      <workItem from="1739739535321" duration="18000" />
+      <workItem from="1739807684881" duration="4726000" />
+      <workItem from="1739899303848" duration="8058000" />
     </task>
     <servers />
   </component>
@@ -206,32 +286,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs</url>
-          <line>58</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\MVP\Models\DataSync\PlaceSync.cs" containingFunctionPresentation="Constructor 'PlaceSync'">
-            <startOffsets>
-              <option value="1974" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1975" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs</url>
-          <line>69</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\MVP\Models\DataSync\PlaceSync.cs" containingFunctionPresentation="Method 'SyncProperty'">
-            <startOffsets>
-              <option value="2767" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2768" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

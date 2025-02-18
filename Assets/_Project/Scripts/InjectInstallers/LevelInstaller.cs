@@ -22,8 +22,9 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private PlacesManager placesManager;
         [SerializeField] private GameStateManager gameStateManager;
         
+        [FormerlySerializedAs("deskService")]
         [Header("Services")]
-        [SerializeField] private DeskService deskService;
+        [SerializeField] private CardsService cardsService;
         
         [Header("GameStates")]
         [SerializeField] private WaitingPlayersState waitingPlayersState;
@@ -55,7 +56,7 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindServices()
         {
-            Container.BindInstance(deskService).AsSingle();
+            Container.BindInstance(cardsService).AsSingle();
         }
 
         private void BindGameStates()
