@@ -12,7 +12,7 @@ namespace _Project.Scripts.Services
     {
         [Inject] private PlacesManager _placesManager;
         
-        [SerializeField] private List<CardPresenter> playingCards = new ();
+        [field: SerializeField] public List<CardPresenter> PlayingCards { get; private set; }
         
         public void DealTwoCardsToPlayers()
         {
@@ -33,12 +33,12 @@ namespace _Project.Scripts.Services
         
         private CardPresenter GetRandomPlayingCard()
         {
-            if (playingCards.Count == 0)
+            if (PlayingCards.Count == 0)
                 return null;
 
-            var index = Random.Range(0, playingCards.Count);
-            var card = playingCards[index];
-            playingCards.RemoveAt(index);
+            var index = Random.Range(0, PlayingCards.Count);
+            var card = PlayingCards[index];
+            PlayingCards.RemoveAt(index);
             return card;
         }
     }

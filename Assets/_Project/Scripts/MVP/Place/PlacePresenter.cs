@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.MVP.Views;
 using ExitGames.Client.Photon;
 using Photon.Pun;
@@ -30,11 +31,6 @@ namespace _Project.Scripts.MVP.Place
         private void Start()
         {
             Sync.IsEnabledReactive.Subscribe(value => View.UpdateButton(value)).AddTo(_disposables);
-        }
-        
-        public Transform GetLastOccupiedCardPlace()
-        {
-            return Data.CardPoints[Sync.PlayingCardIdsInHand.Count - 1];
         }
         
         private void OnDestroy()

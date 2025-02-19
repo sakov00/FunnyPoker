@@ -22,7 +22,6 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private PlacesManager placesManager;
         [SerializeField] private GameStateManager gameStateManager;
         
-        [FormerlySerializedAs("deskService")]
         [Header("Services")]
         [SerializeField] private CardsService cardsService;
         

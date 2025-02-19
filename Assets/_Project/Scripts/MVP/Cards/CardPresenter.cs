@@ -1,13 +1,19 @@
 using System;
+using System.Linq;
 using _Project.Scripts.Enums;
+using _Project.Scripts.Services;
 using Photon.Pun;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.MVP.Cards
 {
     public class CardPresenter : MonoBehaviourPun
     {
+        [Inject] private PlacesManager _placesManager;
+        [Inject] private CardsService _cardsService;
+        
         private readonly CompositeDisposable _disposables = new ();
         
         [field: SerializeField] public CardData Data { get; private set; }
@@ -26,7 +32,19 @@ namespace _Project.Scripts.MVP.Cards
 
         private void Start()
         {
-            Sync.OwnerPlaceIdReactive.Subscribe(value => View.UpdateCardOwner(value)).AddTo(_disposables);
+            Sync.OwnerPlaceIdReactive.Subscribe(value => UpdateCardOwner()).AddTo(_disposables);
+        }
+
+        private void UpdateCardOwner()
+        {
+            var ownerPlace = _placesManager.AllPlayerPlaces
+                .FirstOrDefault(place => place.Sync.PlayingCardIdsInHand.Contains(Data.Id));
+            
+            if (ownerPlace == null)
+                return;
+            
+            int cardPlaceIndex = ownerPlace.Sync.PlayingCardIdsInHand.IndexOf(Data.Id);
+            View.UpdateCardOwner(ownerPlace.Data.ParentCards, ownerPlace.Data.CardPoints[cardPlaceIndex]);
         }
 
         private void OnDestroy()

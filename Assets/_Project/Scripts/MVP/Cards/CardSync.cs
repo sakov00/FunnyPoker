@@ -24,6 +24,12 @@ namespace _Project.Scripts.MVP.Cards
             set => ownerPlaceIdReactive.Value = value;
         }
         
+        private void OnValidate()
+        {
+            if (data == null)
+                data = GetComponent<CardData>();
+        }
+        
         public void Start()
         {
             OwnerPlaceIdReactive.Skip(1).Subscribe(value => SyncProperty(nameof(ownerPlaceIdReactive), value)).AddTo(_disposableProperties);

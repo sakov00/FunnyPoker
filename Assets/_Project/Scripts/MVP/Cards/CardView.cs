@@ -8,15 +8,11 @@ namespace _Project.Scripts.MVP.Cards
 {
     public class CardView : MonoBehaviour
     {
-        [Inject] private PlacesManager _placesManager;
-        
-        public void UpdateCardOwner(int ownerPlaceId)
+        public void UpdateCardOwner(Transform parent, Transform point)
         {
-            var ownerPlace = _placesManager.AllPlayerPlaces[ownerPlaceId];
-            transform.SetParent(ownerPlace.Data.ParentCards);
-            var freeCardPlace = ownerPlace.GetLastOccupiedCardPlace();
-            transform.localPosition = freeCardPlace.localPosition;
-            transform.localRotation = freeCardPlace.localRotation;
+            transform.SetParent(parent);
+            transform.localPosition = point.localPosition;
+            transform.localRotation = point.localRotation;
         }
     }
 }
