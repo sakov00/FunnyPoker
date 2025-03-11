@@ -60,7 +60,7 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindGameStates()
         {
-            Container.BindInterfacesAndSelfTo<WaitingPlayersState>().FromInstance(waitingPlayersState).AsSingle();
+            Container.BindInterfacesAndSelfTo<WaitingPlayersState>().AsSingle();
             Container.BindInterfacesAndSelfTo<DealingCardsState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BettingState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ShowdownState>().AsSingle();

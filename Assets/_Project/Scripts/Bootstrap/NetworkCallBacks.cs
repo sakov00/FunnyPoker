@@ -7,6 +7,10 @@ namespace _Project.Scripts.Bootstrap
 {
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
+        public Action CallbackOnJoinedRoom;
+        public Action CallbackOnLeftRoom;
+        public Action<Player> CallbackOnPlayerEnteredRoom;
+        
         public void Initialize()
         {
             PhotonNetwork.ConnectUsingSettings();

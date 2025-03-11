@@ -20,9 +20,9 @@ namespace _Project.Scripts.GameLogic.GameStates
             
             var random = Random.Range(0, _placesManager.AllPlayerPlaces.Count);
             var placeInfo = _placesManager.AllPlayerPlaces.ElementAt(random);
-            placeInfo.Sync.IsSmallBlind = true;
-            placeInfo.Data.Next.Sync.IsBigBlind = true;
-            placeInfo.Data.Next.Data.Next.Sync.IsEnabled = true;
+            placeInfo.IsSmallBlind = true;
+            placeInfo.Next.IsBigBlind = true;
+            placeInfo.Next.Next.IsEnabled = true;
         }
         
         public void FixedUpdate()

@@ -6,8 +6,8 @@ namespace _Project.Scripts.MVP.Cards
 {
     public class CardData : MonoBehaviourPun
     {
-        [field: SerializeField] public int Id { get; private set; }
-        [field: SerializeField] public PlayingCardRank Rank { get; set; }
-        [field: SerializeField] public PlayingCardSuit Suit { get; set; }
+        [SerializeField] public int id;
+        [SerializeField] public PlayingCardRank rank;
+        [SerializeField] public PlayingCardSuit suit;
     }
 }

@@ -13,7 +13,7 @@ namespace _Project.Scripts.GameLogic.GameStates
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private CardsService _cardsService;
         
-        public async void EnterState()
+        public void EnterState()
         {
             Debug.Log("Раздача карт...");
             

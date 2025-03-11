@@ -24,14 +24,14 @@ namespace _Project.Scripts.GameLogic.PlayerInGame
         {
             Debug.Log("Player Clicked");
             
-            if(PhotonNetwork.LocalPlayer.ActorNumber !=placePresenter.Sync.PlayerActorNumber)
+            if(PhotonNetwork.LocalPlayer.ActorNumber !=placePresenter.PlayerActorNumber)
                 return;
             
-            if(!placePresenter.Sync.IsEnabled)
+            if(!placePresenter.IsEnabled)
                 return;
             
-            placePresenter.Sync.IsEnabled = false;
-            placePresenter.Data.Next.Sync.IsEnabled = true;
+            placePresenter.IsEnabled = false;
+            placePresenter.Next.IsEnabled = true;
         } 
 
         private void OnDestroy()

@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/PlacesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,23 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor &amp; Play.executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Unity Player.Unity.exe (AssetImportWorker1).executor&quot;: &quot;Debug&quot;,
-    &quot;Attach to Unity Player.Unity.exe (Unknown Project).executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor & Play.executor": "Debug",
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "Attach to Unity Player.Unity.exe (AssetImportWorker1).executor": "Debug",
+    "Attach to Unity Player.Unity.exe (Unknown Project).executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../FunnyPokerBuild\FunnyPoker.exe" />
@@ -157,7 +166,8 @@
       <workItem from="1739739535321" duration="18000" />
       <workItem from="1739807684881" duration="4726000" />
       <workItem from="1739899303848" duration="8058000" />
-      <workItem from="1739980865746" duration="2853000" />
+      <workItem from="1739980865746" duration="2998000" />
+      <workItem from="1741711274012" duration="5673000" />
     </task>
     <servers />
   </component>

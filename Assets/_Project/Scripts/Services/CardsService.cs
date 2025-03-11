@@ -26,8 +26,8 @@ namespace _Project.Scripts.Services
             {
                 var card = GetRandomPlayingCard();
                 card.gameObject.SetActive(true);
-                place.Sync.PlayingCardIdsInHand.Add(card.Data.Id);
-                card.Sync.OwnerPlaceId = place.Data.Id;
+                place.HandPlayingCards.Add(card.Id);
+                card.OwnerPlaceId = place.Id;
             }
         }
         

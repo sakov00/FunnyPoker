@@ -10,17 +10,20 @@ using Zenject;
 
 namespace _Project.Scripts.GameLogic.GameStates
 {
-    public class WaitingPlayersState : MonoBehaviourPunCallbacks, IGameState
+    public class WaitingPlayersState : IGameState
     {
+        [Inject] private NetworkCallBacks _networkCallBacks;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private PlacesManager _placesManager;
         
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
+            _networkCallBacks.CallbackOnJoinedRoom += OnJoinedRoom;
+            _networkCallBacks.CallbackOnPlayerEnteredRoom += OnPlayerEnteredRoom;
         }
 
-        public override void OnJoinedRoom()
+        private void OnJoinedRoom()
         {
             if(!PhotonNetwork.IsMasterClient)
                 return;
@@ -32,7 +35,7 @@ namespace _Project.Scripts.GameLogic.GameStates
             _gameStateManager.SetState<DealingCardsState>();
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        private void OnPlayerEnteredRoom(Player newPlayer)
         {
             if(!PhotonNetwork.IsMasterClient)
                 return;
@@ -46,6 +49,8 @@ namespace _Project.Scripts.GameLogic.GameStates
 
         public void ExitState()
         {
+            _networkCallBacks.CallbackOnJoinedRoom -= OnJoinedRoom;
+            _networkCallBacks.CallbackOnPlayerEnteredRoom -= OnPlayerEnteredRoom;
             Debug.Log("Все игроки подключены. Начинаем игру.");
         }
     }
