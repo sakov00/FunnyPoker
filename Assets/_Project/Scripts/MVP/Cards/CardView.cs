@@ -8,7 +8,7 @@ namespace _Project.Scripts.MVP.Cards
 {
     public class CardView : MonoBehaviour
     {
-        public void UpdateCardOwner(Transform parent, Transform point)
+        public void UpdateCardPosition(Transform parent, Transform point)
         {
             transform.SetParent(parent);
             transform.localPosition = point.localPosition;

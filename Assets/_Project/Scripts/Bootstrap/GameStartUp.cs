@@ -7,13 +7,7 @@ using Zenject;
 
 namespace _Project.Scripts.Bootstrap
 {
-    public class GameStartUp : MonoBehaviourPunCallbacks
+    public class GameStartUp : MonoBehaviour
     {
-        [Inject] private GameStateManager _gameStateManager;
-
-        public override void OnJoinedRoom()
-        {
-            _gameStateManager.SetState<WaitingPlayersState>();
-        }
     }
 }

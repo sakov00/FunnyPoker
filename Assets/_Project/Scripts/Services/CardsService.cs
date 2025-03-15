@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.MVP.Cards;
+using _Project.Scripts.MVP.Place;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,8 +11,9 @@ namespace _Project.Scripts.Services
 {
     public class CardsService : MonoBehaviourPun
     {
-        [Inject] private PlacesManager _placesManager;
+        [Inject] private PlacesManager placesManager;
         
+        [field: SerializeField] public Transform DealerCardsParent { get; private set; }
         [field: SerializeField] public List<CardPresenter> PlayingCards { get; private set; }
         
         public void DealTwoCardsToPlayers()
@@ -22,12 +24,11 @@ namespace _Project.Scripts.Services
         
         private void DealCardToPlayers()
         {
-            foreach (var place in _placesManager.AllPlayerPlaces)
+            foreach (var place in placesManager.AllPlayerPlaces)
             {
                 var card = GetRandomPlayingCard();
                 card.gameObject.SetActive(true);
                 place.HandPlayingCards.Add(card.Id);
-                card.OwnerPlaceId = place.Id;
             }
         }
         

@@ -3,6 +3,7 @@ using _Project.Scripts.Factories;
 using _Project.Scripts.GameLogic.GameStates;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
+using _Project.Scripts.MVP.Table;
 using _Project.Scripts.Services;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,8 +16,9 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private GameObject cameraPrefab;
         [SerializeField] private NetworkCallBacks networkCallBacks;
-        [SerializeField] private GameStartUp gameStartUp;
         
+        [Header("Game Objects")]
+        [SerializeField] private TablePresenter tablePresenter;
         
         [Header("Managers")]
         [SerializeField] private PlacesManager placesManager;
@@ -25,13 +27,10 @@ namespace _Project.Scripts.InjectInstallers
         [Header("Services")]
         [SerializeField] private CardsService cardsService;
         
-        [Header("GameStates")]
-        [SerializeField] private WaitingPlayersState waitingPlayersState;
-        
         public override void InstallBindings()
         {
             BindNetwork();
-            BindGame();
+            BindGameObjects();
             BindFactories();
             BindServices();
             BindGameStates();
@@ -43,9 +42,9 @@ namespace _Project.Scripts.InjectInstallers
             Container.BindInterfacesAndSelfTo<NetworkCallBacks>().FromInstance(networkCallBacks).AsSingle().NonLazy();
         }
 
-        private void BindGame()
+        private void BindGameObjects()
         {
-            Container.BindInstance(gameStartUp).AsSingle();
+            Container.BindInstance(tablePresenter).AsSingle();
         }
 
         private void BindFactories()
@@ -62,7 +61,7 @@ namespace _Project.Scripts.InjectInstallers
         {
             Container.BindInterfacesAndSelfTo<WaitingPlayersState>().AsSingle();
             Container.BindInterfacesAndSelfTo<DealingCardsState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BettingState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PreflopState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ShowdownState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ResultState>().AsSingle();
         }

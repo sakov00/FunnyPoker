@@ -5,11 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/PlayerAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/PlayerAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/PlayerCanvas.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Enums/PlayerCanvas.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/InputHandlers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/InputHandlers/BaseInputHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/InputHandlers/BaseInputHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/EndGameCanvas.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/EndGameCanvas.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/MainGameCanvas.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/MainGameCanvas.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/StartGameCanvas.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerCanvases/StartGameCanvas.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/FlopState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/FlopState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/RiverState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/RiverState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/TurnState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/TurnState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TablePresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TablePresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableSync.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableSync.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Table/TableView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CanvasesService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CanvasesService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerInputSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlaceHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerInputSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerRaycastClick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerRaycastClick.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/GameStartUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/Buttons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/Buttons/NextStepButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/Buttons/NextStepButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/PreflopState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/BettingState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/PreflopState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/DealingCardsState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/DealingCardsState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/DealingCardsState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/ResultState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ResultState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/ResultState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/ShowdownState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/ShowdownState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/ShowdownState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/WaitingPlayersState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/GameStates/WaitingPlayersState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/WaitingPlayersState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/CameraController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInGame/PlayerInputSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/InjectInstallers/LevelInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardSync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Cards/CardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceSync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlaceView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/CardsService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,24 +98,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor & Play.executor": "Debug",
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "Attach to Unity Player.Unity.exe (AssetImportWorker1).executor": "Debug",
-    "Attach to Unity Player.Unity.exe (Unknown Project).executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor &amp; Play.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Unity Player.Unity.exe (AssetImportWorker1).executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Unity Player.Unity.exe (Unknown Project).executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../FunnyPokerBuild\FunnyPoker.exe" />
@@ -157,7 +214,9 @@
       <workItem from="1739807684881" duration="4726000" />
       <workItem from="1739899303848" duration="8058000" />
       <workItem from="1739980865746" duration="2998000" />
-      <workItem from="1741711274012" duration="7401000" />
+      <workItem from="1741711274012" duration="7816000" />
+      <workItem from="1741879214907" duration="7568000" />
+      <workItem from="1742045773952" duration="5971000" />
     </task>
     <servers />
   </component>

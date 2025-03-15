@@ -1,15 +1,22 @@
 using System.Collections.Generic;
+using System.Linq;
+using _Project.Scripts.MVP.Table;
 using _Project.Scripts.MVP.Views;
+using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.MVP.Place
 {
     public class PlacePresenter : MonoBehaviourPunCallbacks
     {
-        private readonly CompositeDisposable _disposable = new ();
+        [Inject] private CardsService cardsService;
+        [Inject] private TablePresenter tablePresenter;
+        
+        private readonly CompositeDisposable disposable = new ();
 
         [SerializeField] private PlaceData data;
         [SerializeField] private PlaceSync sync;
@@ -19,7 +26,7 @@ namespace _Project.Scripts.MVP.Place
         public PlacePresenter Previous => data.previous;
         public PlacePresenter Next => data.next;
         public Transform PlayerPoint => data.playerPoint;
-        public Transform ParentCards => data.parentCards;
+        public Transform PlayerCardsParent => data.playerCardsParent;
         public List<Transform> CardPoints => data.cardPoints;
         
         public bool IsFree
@@ -38,6 +45,23 @@ namespace _Project.Scripts.MVP.Place
         {
             get => sync.playerActorNumberReactive.Value;
             set => sync.playerActorNumberReactive.Value = value;
+        }
+        
+        public int Money
+        {
+            get => sync.moneyReactive.Value;
+            set => sync.moneyReactive.Value = value;
+        }
+        
+        public int BettingMoney
+        {
+            get => sync.bettingMoneyReactive.Value;
+            set
+            {
+                Money -= value - sync.bettingMoneyReactive.Value;
+                tablePresenter.Bank += value - sync.bettingMoneyReactive.Value;
+                sync.bettingMoneyReactive.Value = value;
+            }
         }
         
         public bool IsSmallBlind
@@ -63,18 +87,22 @@ namespace _Project.Scripts.MVP.Place
 
         private void Start()
         {            
-            sync.isFreeReactive.Subscribe(value => SyncProperty(nameof(sync.isFreeReactive), value)).AddTo(_disposable);
+            sync.isFreeReactive.Subscribe(value => SyncProperty(nameof(sync.isFreeReactive), value)).AddTo(disposable);
             sync.isEnabledReactive.Subscribe(value =>
             {
                 SyncProperty(nameof(sync.isEnabledReactive), value);
                 view.UpdateButton(value);
-            }).AddTo(_disposable);
-            sync.playerActorNumberReactive.Subscribe(value => SyncProperty(nameof(sync.playerActorNumberReactive), value)).AddTo(_disposable);
-            sync.isSmallBlindReactive.Subscribe(value => SyncProperty(nameof(sync.isSmallBlindReactive), value)).AddTo(_disposable);
-            sync.isBigBlindReactive.Subscribe(value => SyncProperty(nameof(sync.isBigBlindReactive), value)).AddTo(_disposable);
+            }).AddTo(disposable);
+            sync.playerActorNumberReactive.Subscribe(value => SyncProperty(nameof(sync.playerActorNumberReactive), value)).AddTo(disposable);
             
-            sync.handPlayingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(_disposable);
-            sync.handPlayingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(_disposable);
+            sync.moneyReactive.Subscribe(value => SyncProperty(nameof(sync.moneyReactive), value)).AddTo(disposable);
+            sync.bettingMoneyReactive.Subscribe(value => SyncProperty(nameof(sync.bettingMoneyReactive), value)).AddTo(disposable);
+            
+            sync.isSmallBlindReactive.Subscribe(value => SyncProperty(nameof(sync.isSmallBlindReactive), value)).AddTo(disposable);
+            sync.isBigBlindReactive.Subscribe(value => SyncProperty(nameof(sync.isBigBlindReactive), value)).AddTo(disposable);
+            
+            sync.handPlayingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
+            sync.handPlayingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
         }
         
         private void SyncProperty(string propertyName, object value)
@@ -100,6 +128,12 @@ namespace _Project.Scripts.MVP.Place
 
             if (roomProps.TryGetValue(nameof(sync.playerActorNumberReactive) + data.id, out var actorNumber))
                 sync.playerActorNumberReactive.Value = (int)actorNumber;
+            
+            if (roomProps.TryGetValue(nameof(sync.moneyReactive) + data.id, out var money))
+                sync.moneyReactive.Value = (int)money;
+            
+            if (roomProps.TryGetValue(nameof(sync.bettingMoneyReactive) + data.id, out var bettingMoney))
+                sync.bettingMoneyReactive.Value = (int)bettingMoney;
 
             if (roomProps.TryGetValue(nameof(sync.isSmallBlindReactive) + data.id, out var isSmallBlind))
                 sync.isSmallBlindReactive.Value = (bool)isSmallBlind;
@@ -113,30 +147,36 @@ namespace _Project.Scripts.MVP.Place
         private void AddHandPlayingCard(int value)
         {
             if(PhotonNetwork.IsMasterClient)
-                photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.Others, value);
+                photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.All, value);
         }
         
         private void RemoveHandPlayingCard(int value)
         {
             if(PhotonNetwork.IsMasterClient)
-                photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.Others, value);
+                photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.All, value);
         }
         
         [PunRPC]
         private void SyncAddHandPlayingCardRPC(int addedCardId)
         {
             sync.handPlayingCards.Add(addedCardId);
+            int cardPlaceIndex = HandPlayingCards.IndexOf(addedCardId);
+            var movedCard = cardsService.PlayingCards.First(card => card.Id == addedCardId);
+            movedCard.UpdateCardPosition(PlayerCardsParent, CardPoints[cardPlaceIndex]);
         }
         
         [PunRPC]
         private void SyncRemoveHandPlayingCardRPC(int removedCardId)
         {
             sync.handPlayingCards.Remove(removedCardId);
+            int cardPlaceIndex = HandPlayingCards.IndexOf(removedCardId);
+            var movedCard = cardsService.PlayingCards.First(card => card.Id == removedCardId);
+            movedCard.UpdateCardPosition(cardsService.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
         
         private void OnDestroy()
         {
-            _disposable.Dispose();
+            disposable.Dispose();
         }
     }
 }

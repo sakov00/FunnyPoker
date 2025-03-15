@@ -6,8 +6,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.MVP.Cards
 {
-    public class CardSync : MonoBehaviourPunCallbacks
+    [Serializable]
+    public class CardSync
     {
-        [SerializeField] public IntReactiveProperty ownerPlaceIdReactive = new ();
+
     }
 }

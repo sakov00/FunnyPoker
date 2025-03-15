@@ -21,13 +21,9 @@ namespace _Project.Scripts.GameLogic.GameStates
                 return;
             
             _cardsService.DealTwoCardsToPlayers();
-            _gameStateManager.SetState<BettingState>();
+            _gameStateManager.SetState<PreflopState>();
         }
-        
-        public void FixedUpdate()
-        {
-            
-        }
+
 
         public void ExitState()
         {
