@@ -1,15 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using _Project.Scripts.MVP.Cards;
-using _Project.Scripts.MVP.Place;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
-namespace _Project.Scripts.Services
+namespace _Project.Scripts.Managers
 {
-    public class CardsService : MonoBehaviourPun
+    public class CardsManager : MonoBehaviour
     {
         [Inject] private PlacesManager placesManager;
         
@@ -39,7 +36,6 @@ namespace _Project.Scripts.Services
 
             var index = Random.Range(0, PlayingCards.Count);
             var card = PlayingCards[index];
-            PlayingCards.RemoveAt(index);
             return card;
         }
     }

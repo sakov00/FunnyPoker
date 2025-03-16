@@ -1,17 +1,19 @@
 using System.Linq;
 using _Project.Scripts.Enums;
 using _Project.Scripts.Interfaces;
+using _Project.Scripts.Managers;
 using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.GameLogic.GameStates
+namespace _Project.Scripts.GameStates
 {
     public class PreflopState : IGameState
     {
         [Inject] private PlacesManager placesManager;
-        [Inject] private CanvasesService canvasesService;
+        [Inject] private CanvasesManager canvasesManager;
+        [Inject] private RoundService roundService;
         
         public void EnterState()
         {
@@ -30,14 +32,16 @@ namespace _Project.Scripts.GameLogic.GameStates
             placeInfo.Next.BettingMoney = 10;
             
             placeInfo.Next.Next.IsEnabled = true;
-            canvasesService.ShowCanvas(PlayerCanvas.StartGame);
+            canvasesManager.ShowCanvas(PlayerCanvas.StartGame);
+            
+            roundService.SetOrderPlaces(placeInfo.Next.Next);
         }
 
         public void ExitState()
         {
             placesManager.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
             
-            canvasesService.ShowCanvas(PlayerCanvas.None);
+            canvasesManager.ShowCanvas(PlayerCanvas.None);
 
             Debug.Log("Ставки приняты PreflopState");
         }

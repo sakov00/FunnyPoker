@@ -10,6 +10,7 @@ namespace _Project.Scripts.MVP.Place
     {
         [SerializeField] public BoolReactiveProperty isFreeReactive = new ();
         [SerializeField] public BoolReactiveProperty isEnabledReactive = new ();
+        [SerializeField] public BoolReactiveProperty isFoldedReactive = new ();
         
         [SerializeField] public IntReactiveProperty moneyReactive = new ();
         [SerializeField] public IntReactiveProperty bettingMoneyReactive = new ();

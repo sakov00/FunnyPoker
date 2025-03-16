@@ -1,12 +1,7 @@
-using System.Linq;
-using _Project.Scripts.MVP.Place;
-using _Project.Scripts.Services;
-using Photon.Pun;
 using UniRx;
 using UnityEngine;
-using Zenject;
 
-namespace _Project.Scripts.GameLogic.PlayerInGame
+namespace _Project.Scripts.GameLogic.PlayerInput
 {
     public class PlayerInputSystem : MonoBehaviour
     {

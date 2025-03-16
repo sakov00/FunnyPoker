@@ -4,7 +4,6 @@ namespace _Project.Scripts.Enums
     {
         Check,
         Fold,
-        Bet,
         Raise,
         Call,
     }

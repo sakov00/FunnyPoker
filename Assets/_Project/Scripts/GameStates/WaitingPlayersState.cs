@@ -1,14 +1,12 @@
-using System.Linq;
 using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
-using _Project.Scripts.Services;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.GameLogic.GameStates
+namespace _Project.Scripts.GameStates
 {
     public class WaitingPlayersState : IGameState
     {
@@ -32,7 +30,7 @@ namespace _Project.Scripts.GameLogic.GameStates
                 PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
                 return;
             
-            _gameStateManager.SetState<DealingCardsState>();
+            _gameStateManager.Next();
         }
 
         private void OnPlayerEnteredRoom(Player newPlayer)
@@ -44,7 +42,7 @@ namespace _Project.Scripts.GameLogic.GameStates
                 PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
                 return;
             
-            _gameStateManager.SetState<DealingCardsState>();
+            _gameStateManager.Next();
         }
 
         public void ExitState()

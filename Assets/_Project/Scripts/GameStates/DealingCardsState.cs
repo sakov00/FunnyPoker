@@ -1,17 +1,15 @@
-using System.Threading.Tasks;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
-using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.GameLogic.GameStates
+namespace _Project.Scripts.GameStates
 {
     public class DealingCardsState : IGameState
     {
-        [Inject] private GameStateManager _gameStateManager;
-        [Inject] private CardsService _cardsService;
+        [Inject] private GameStateManager gameStateManager;
+        [Inject] private CardsManager cardsManager;
         
         public void EnterState()
         {
@@ -20,8 +18,8 @@ namespace _Project.Scripts.GameLogic.GameStates
             if(!PhotonNetwork.IsMasterClient)
                 return;
             
-            _cardsService.DealTwoCardsToPlayers();
-            _gameStateManager.SetState<PreflopState>();
+            cardsManager.DealTwoCardsToPlayers();
+            gameStateManager.Next();
         }
 
 

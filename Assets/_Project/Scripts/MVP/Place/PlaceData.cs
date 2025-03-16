@@ -8,7 +8,6 @@ namespace _Project.Scripts.MVP.Place
     [Serializable]
     public class PlaceData
     {
-        [SerializeField] public int id;
         [SerializeField] public PlacePresenter previous;
         [SerializeField] public PlacePresenter next;
         [SerializeField] public Transform playerPoint;

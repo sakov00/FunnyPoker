@@ -7,11 +7,11 @@ using Photon.Realtime;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.Services
+namespace _Project.Scripts.Managers
 {
     public class PlacesManager : MonoBehaviourPunCallbacks
     {
-        [Inject] private PlayerFactory _playerFactory;
+        [Inject] private PlayerFactory playerFactory;
         [field: SerializeField] public List<PlacePresenter> AllPlayerPlaces { get; private set; }
         
         public override void OnJoinedRoom()
@@ -22,7 +22,7 @@ namespace _Project.Scripts.Services
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFree);
             playerPlaceInfo.PlayerActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
             playerPlaceInfo.IsFree = false;
-            _playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
+            playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
         }
 
         public override void OnPlayerEnteredRoom(Player player)

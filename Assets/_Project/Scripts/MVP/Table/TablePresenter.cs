@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using _Project.Scripts.Services;
+using _Project.Scripts.Managers;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UniRx;
@@ -19,6 +19,7 @@ namespace _Project.Scripts.MVP.Table
         [SerializeField] private TableSync sync;
         [SerializeField] private TableView view;
         
+        public int Id => photonView.ViewID;
         public int MaxPlayerBet => placesManager.AllPlayerPlaces.Max(p => p.BettingMoney);
         
         public int Bank
@@ -34,11 +35,14 @@ namespace _Project.Scripts.MVP.Table
 
         private void Start()
         {
-            sync.bank.Subscribe(value => SyncProperty(nameof(sync.bank), value)).AddTo(disposable);
+            sync.bank.Skip(1).Subscribe(value => SyncProperty(nameof(sync.bank), value)).AddTo(disposable);
         }
 
         private void SyncProperty(string propertyName, object value)
         {
+            if (!PhotonNetwork.IsMasterClient)
+                return;
+            
             Hashtable property = new() { { "Table" + propertyName, value } };
             PhotonNetwork.CurrentRoom.SetCustomProperties(property);
         }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.Scripts.GameLogic.PlayerInGame
+namespace _Project.Scripts.GameLogic.PlayerInput
 {
     public class CameraController : MonoBehaviour
     {

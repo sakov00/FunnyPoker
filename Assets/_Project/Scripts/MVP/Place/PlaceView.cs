@@ -1,9 +1,8 @@
 using System;
 using _Project.Scripts.GameLogic.Rendering;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _Project.Scripts.MVP.Views
+namespace _Project.Scripts.MVP.Place
 {
     [Serializable]
     public class PlaceView : MonoBehaviour

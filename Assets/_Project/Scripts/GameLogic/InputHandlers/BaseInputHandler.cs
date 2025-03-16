@@ -1,6 +1,7 @@
 using System.Linq;
 using _Project.Scripts.Enums;
-using _Project.Scripts.GameLogic.PlayerInGame;
+using _Project.Scripts.GameLogic.PlayerInput;
+using _Project.Scripts.Managers;
 using _Project.Scripts.MVP.Place;
 using _Project.Scripts.MVP.Table;
 using _Project.Scripts.Services;
@@ -16,6 +17,7 @@ namespace _Project.Scripts.GameLogic.InputHandlers
         [Inject] private PlayerInputSystem playerInputSystem;
         [Inject] private PlacesManager playersInfo;
         [Inject] private TablePresenter tablePresenter;
+        [Inject] private RoundService roundService;
         
         private PlacePresenter playerPlacePresenter;
 
@@ -26,7 +28,6 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             
             playerInputSystem.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Check)).AddTo(this);
             playerInputSystem.OnW.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
-            playerInputSystem.OnE.Subscribe(_ => PlayerAct(PlayerAction.Bet)).AddTo(this);
             playerInputSystem.OnR.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(this);
             playerInputSystem.OnT.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
         }
@@ -40,13 +41,13 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             {
                 case PlayerAction.Check : Check(); break;
                 case PlayerAction.Fold : Fold(); break;
-                case PlayerAction.Bet : Bet(50); break;
                 case PlayerAction.Call : Call(); break;
                 case PlayerAction.Raise : Raise(50); break;
             }
             
             playerPlacePresenter.IsEnabled = false;
             playerPlacePresenter.Next.IsEnabled = true;
+            roundService.CheckRoundEnd();
         }
 
         private void Check()
@@ -56,12 +57,8 @@ namespace _Project.Scripts.GameLogic.InputHandlers
 
         private void Fold()
         {
+            playerPlacePresenter.IsFolded = true;
             playerPlacePresenter.HandPlayingCards.Clear();
-        }
-        
-        private void Bet(int value)
-        {
-            playerPlacePresenter.BettingMoney = value;
         }
         
         private void Call()

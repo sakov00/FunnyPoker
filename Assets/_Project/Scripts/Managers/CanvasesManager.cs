@@ -5,15 +5,24 @@ using Photon.Pun;
 using Photon.Realtime;
 using Zenject;
 
-namespace _Project.Scripts.Services
+namespace _Project.Scripts.Managers
 {
-    public class CanvasesService : IInRoomCallbacks
+    public class CanvasesManager : IInRoomCallbacks
     {
         [Inject] private StartGameCanvas startGameCanvas;
         [Inject] private MainGameCanvas mainGameCanvas;
         [Inject] private EndGameCanvas endGameCanvas;
+        
+        private const string PlayerCanvasKey = "PlayerCanvas";
+        
+        [Inject]
+        public void Initialize()
+        {
+            
+            PhotonNetwork.AddCallbackTarget(this);
+        }
 
-        public void ShowCanvas(PlayerCanvas playerCanvas)
+        public void ShowCanvas(PlayerCanvas playerCanvas, bool isNetwork = true)
         {
             switch (playerCanvas)
             {
@@ -30,10 +39,12 @@ namespace _Project.Scripts.Services
                     endGameCanvas.gameObject.SetActive(true);
                     break;
             }
-            
-            var props = new Hashtable();
-            props["PlayerCanvas"] = (int)playerCanvas;
-            PhotonNetwork.CurrentRoom.SetCustomProperties(props);
+
+            if (isNetwork)
+            {
+                Hashtable property = new() { { PlayerCanvasKey, (int)playerCanvas } };
+                PhotonNetwork.CurrentRoom.SetCustomProperties(property);
+            }
         }
         
         private void HideCurrentCanvas()
@@ -42,19 +53,20 @@ namespace _Project.Scripts.Services
             mainGameCanvas.gameObject.SetActive(false);
             endGameCanvas.gameObject.SetActive(false);
         }
-
-        public void OnRoomPropertiesUpdate(Hashtable properties)
-        {
-            if (properties.ContainsKey("PlayerCanvas"))
-            {
-                PlayerCanvas canvas = (PlayerCanvas)(int)properties["PlayerCanvas"];
-                ShowCanvas(canvas);
-            }
-        }
         
         public void OnPlayerEnteredRoom(Player newPlayer) { }
         public void OnPlayerLeftRoom(Player otherPlayer) { }
         public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) { }
+
+        public void OnRoomPropertiesUpdate(Hashtable changedProps)
+        {
+            if (changedProps.TryGetValue(PlayerCanvasKey, out var playerCanvasKey))
+            {
+                PlayerCanvas canvas = (PlayerCanvas)(int)playerCanvasKey;
+                ShowCanvas(canvas, false);
+            }
+        }
         public void OnMasterClientSwitched(Player newMasterClient) { }
+        
     }
 }

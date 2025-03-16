@@ -1,6 +1,6 @@
 using _Project.Scripts.Interfaces;
 
-namespace _Project.Scripts.GameLogic.GameStates
+namespace _Project.Scripts.GameStates
 {
     public class ResultState : IGameState
     {

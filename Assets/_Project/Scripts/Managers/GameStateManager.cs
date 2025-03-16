@@ -1,68 +1,77 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.Interfaces;
+using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
 using Photon.Pun;
+using Photon.Realtime;
 using Zenject;
 
 namespace _Project.Scripts.Managers
 {
-    public class GameStateManager : MonoBehaviourPunCallbacks
+    public class GameStateManager : IInRoomCallbacks
     {
         private const string GameStateKey = "GameState";
-        private Dictionary<Type, IGameState> _gameStates;
-        private IGameState _currentState;
+        private Dictionary<int, IGameState> gameStates;
+        private IGameState currentState;
 
         [Inject]
         public void Initialize(List<IGameState> states)
         {
-            _gameStates = new Dictionary<Type, IGameState>();
-            foreach (var state in states)
+            PhotonNetwork.AddCallbackTarget(this);
+            gameStates = new Dictionary<int, IGameState>();
+            for (int i = 0; i < states.Count; i++)
             {
-                _gameStates[state.GetType()] = state;
+                gameStates[i] = states[i];
             }
         }
-
-        public override void OnJoinedRoom()
+        
+        public void Next()
         {
-            LoadInfoFromPhoton();
+            if (!PhotonNetwork.IsMasterClient)
+                return;
+            
+            int currentKey = gameStates.FirstOrDefault(x => x.Value == currentState).Key;
+
+            SetState(currentKey + 1);
         }
 
-        public void SetState<T>() where T : IGameState
+        public void SetState(int stateKey)
         {
             if(!PhotonNetwork.IsMasterClient)
                 return;
             
-            _currentState?.ExitState();
-            _currentState = _gameStates[typeof(T)];
+            if (!gameStates.ContainsKey(stateKey))
+                return;
             
-            var property = new Hashtable { { GameStateKey, _currentState.GetType().AssemblyQualifiedName } };
+            currentState?.ExitState();
+            currentState = gameStates[stateKey];
+            
+            var property = new Hashtable { { GameStateKey, stateKey } };
             PhotonNetwork.CurrentRoom.SetCustomProperties(property);
-            
-            _currentState?.EnterState();
+
+            currentState?.EnterState();
         }
 
-        private void LoadInfoFromPhoton()
-        {
-            var currentRoom = PhotonNetwork.CurrentRoom;
+        public void OnPlayerEnteredRoom(Player newPlayer) { }
+        public void OnPlayerLeftRoom(Player otherPlayer) { }
+        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) { }
+        public void OnRoomPropertiesUpdate(Hashtable changedProps) { LoadFromPhoton(); }
+        public void OnMasterClientSwitched(Player newMasterClient) { }
 
-            if (currentRoom.CustomProperties.ContainsKey(GameStateKey))
-            {
-                var currentType = Type.GetType((string)currentRoom.CustomProperties[GameStateKey]);
-                _gameStates.TryGetValue(currentType, out _currentState);
-            }
-        }
-        
-        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
+        private void LoadFromPhoton()
         {
-            if (changedProps.ContainsKey(GameStateKey))
+            var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
+
+            if (roomProps.TryGetValue(GameStateKey, out var gameStateKey))
             {
-                var currentType = Type.GetType((string)changedProps[GameStateKey]);
-                if (_currentState.GetType() != currentType)
+                gameStates.TryGetValue((int)gameStateKey, out var photonState);
+                if (photonState != currentState)
                 {
-                    _currentState?.ExitState();
-                    _gameStates.TryGetValue(currentType, out _currentState);
-                    _currentState?.EnterState();
+                    currentState?.ExitState();
+                    currentState = photonState;
+                    currentState?.EnterState();
                 }
             }
         }

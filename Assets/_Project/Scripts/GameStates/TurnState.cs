@@ -1,17 +1,17 @@
 using System.Linq;
 using _Project.Scripts.Enums;
 using _Project.Scripts.Interfaces;
-using _Project.Scripts.Services;
+using _Project.Scripts.Managers;
 using Photon.Pun;
 using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.GameLogic.GameStates
+namespace _Project.Scripts.GameStates
 {
     public class TurnState : IGameState
     {
         [Inject] private PlacesManager placesManager;
-        [Inject] private CanvasesService canvasesService;
+        [Inject] private CanvasesManager canvasesManager;
         
         public void EnterState()
         {
@@ -23,14 +23,14 @@ namespace _Project.Scripts.GameLogic.GameStates
             var bigBlindPlace = placesManager.AllPlayerPlaces.First(place => place.IsBigBlind);
             bigBlindPlace.Next.IsEnabled = true;
             
-            canvasesService.ShowCanvas(PlayerCanvas.StartGame);
+            canvasesManager.ShowCanvas(PlayerCanvas.StartGame);
         }
 
         public void ExitState()
         {
             placesManager.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
             
-            canvasesService.ShowCanvas(PlayerCanvas.None);
+            canvasesManager.ShowCanvas(PlayerCanvas.None);
 
             Debug.Log("Ставки приняты TurnState");
         }

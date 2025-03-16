@@ -120,124 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 6607604671190314206}
   _material: {fileID: 2100000, guid: f80565efec000d142b5af479519d9cd6, type: 2}
---- !u!1 &3229691463637208285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5061602424700466765}
-  - component: {fileID: 5454822046775166351}
-  - component: {fileID: 2229078018806710187}
-  - component: {fileID: 1091950233197666853}
-  - component: {fileID: 5050860281324341861}
-  m_Layer: 0
-  m_Name: NextPlayerButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &5061602424700466765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229691463637208285}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2360872006432714567}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5454822046775166351
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229691463637208285}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2229078018806710187
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229691463637208285}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1091950233197666853
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229691463637208285}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5050860281324341861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229691463637208285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5e56f0e88a74ff68a4a85649fc4dab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7294754795021812028
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2360872006432714567}
   - component: {fileID: 4291163019006397326}
-  - component: {fileID: 1295849062131097926}
-  - component: {fileID: 6810903858851355957}
   - component: {fileID: 2964840458393991852}
   - component: {fileID: 7966418346512561685}
   - component: {fileID: 1904254723815781649}
@@ -397,7 +277,6 @@ Transform:
   - {fileID: 1277564644088236553}
   - {fileID: 5339113480503866355}
   - {fileID: 7464913294502384345}
-  - {fileID: 5061602424700466765}
   - {fileID: 8566692425981875169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -423,49 +302,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1295849062131097926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728917499003808948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76193ff980704f5eace195cf65001e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Number>k__BackingField: 0
-  <Previous>k__BackingField: {fileID: 0}
-  <Next>k__BackingField: {fileID: 0}
-  <PlayerPoint>k__BackingField: {fileID: 458004699475767397}
-  <ParentCards>k__BackingField: {fileID: 1277564644088236553}
-  <CardPoints>k__BackingField:
-  - {fileID: 7510497280183301364}
-  - {fileID: 5033531350454079053}
---- !u!114 &6810903858851355957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728917499003808948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c250bc46771142e4b8895cf16c941ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFreeReactive:
-    value: 1
-  isEnabledReactive:
-    value: 0
-  playerActorNumberReactive:
-    value: 0
-  isSmallBlindReactive:
-    value: 0
-  isBigBlindReactive:
-    value: 0
-  data: {fileID: 1295849062131097926}
 --- !u!114 &2964840458393991852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,9 +314,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9125d9643a1043f5bf85a24235e2f467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 1295849062131097926}
-  <Sync>k__BackingField: {fileID: 6810903858851355957}
-  <View>k__BackingField: {fileID: 7966418346512561685}
+  data:
+    id: 0
+    previous: {fileID: 0}
+    next: {fileID: 0}
+    playerPoint: {fileID: 458004699475767397}
+    playerCardsParent: {fileID: 1277564644088236553}
+    cardPoints:
+    - {fileID: 7510497280183301364}
+    - {fileID: 5033531350454079053}
+  sync:
+    isFreeReactive:
+      value: 1
+    isEnabledReactive:
+      value: 0
+    isFoldedReactive:
+      value: 0
+    moneyReactive:
+      value: 1000
+    bettingMoneyReactive:
+      value: 0
+    isSmallBlindReactive:
+      value: 0
+    isBigBlindReactive:
+      value: 0
+    playerActorNumberReactive:
+      value: 0
+  view: {fileID: 7966418346512561685}
 --- !u!114 &7966418346512561685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,8 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17e75367a354d628eb297faab3faf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placePresenter: {fileID: 2964840458393991852}
-  _nextPlayerButton: {fileID: 5050860281324341861}
 --- !u!1 &9096239151726686727
 GameObject:
   m_ObjectHideFlags: 0
