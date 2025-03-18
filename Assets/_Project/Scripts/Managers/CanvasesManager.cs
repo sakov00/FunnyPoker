@@ -18,7 +18,6 @@ namespace _Project.Scripts.Managers
         [Inject]
         public void Initialize()
         {
-            
             PhotonNetwork.AddCallbackTarget(this);
         }
 
@@ -60,6 +59,9 @@ namespace _Project.Scripts.Managers
 
         public void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
+            if (PhotonNetwork.IsMasterClient)
+                return;
+            
             if (changedProps.TryGetValue(PlayerCanvasKey, out var playerCanvasKey))
             {
                 PlayerCanvas canvas = (PlayerCanvas)(int)playerCanvasKey;

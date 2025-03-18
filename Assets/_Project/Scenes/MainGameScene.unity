@@ -1989,6 +1989,8 @@ Transform:
   m_Children:
   - {fileID: 1180209697}
   - {fileID: 1024623255}
+  - {fileID: 892548932}
+  - {fileID: 1115183255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &333235792
@@ -4654,6 +4656,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3838427425032951532, guid: f69b440380a4e744588cb10f433a83f5, type: 3}
   m_PrefabInstance: {fileID: 223432672}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &892548931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 892548932}
+  - component: {fileID: 892548933}
+  m_Layer: 0
+  m_Name: PlayerInputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &892548932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892548931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332143542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892548933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892548931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17e75367a354d628eb297faab3faf8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &895666136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 321648419490640285, guid: 6fee879d7be34854281a7bf50ef4845a, type: 3}
@@ -5172,7 +5218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DealerCardsParent>k__BackingField: {fileID: 1906171960}
-  <PlayingCards>k__BackingField:
+  <AllPlayingCards>k__BackingField:
   - {fileID: 1104540857}
   - {fileID: 2077835944}
   - {fileID: 576980013}
@@ -5225,6 +5271,7 @@ MonoBehaviour:
   - {fileID: 2123873678}
   - {fileID: 1698627060}
   - {fileID: 680708717}
+  <CurrentPlayingCards>k__BackingField: []
 --- !u!1001 &1035650708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5450,6 +5497,50 @@ MonoBehaviour:
     rank: 0
     suit: 0
   view: {fileID: 1104540856}
+--- !u!1 &1115183254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1115183255}
+  - component: {fileID: 1115183256}
+  m_Layer: 0
+  m_Name: InputHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1115183255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115183254}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 332143542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115183256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115183254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fdb6e6485c4749a49242455023d156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1125338861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 614313872758462527, guid: 8bd1e14c51be8b543956e0a03eb8463c, type: 3}
@@ -10144,8 +10235,10 @@ MonoBehaviour:
   cameraPrefab: {fileID: 587340636821943716, guid: 3a0cdac158c6d1246b49b1b4ec3aece5, type: 3}
   networkCallBacks: {fileID: 899396491}
   tablePresenter: {fileID: 1324862743}
+  inputHandler: {fileID: 1115183256}
   cardsManager: {fileID: 1024623256}
   placesManager: {fileID: 1180209698}
+  playerInputManager: {fileID: 892548933}
   startGameCanvas: {fileID: 61685253}
   mainGameCanvas: {fileID: 1766512417}
   endGameCanvas: {fileID: 695845231}

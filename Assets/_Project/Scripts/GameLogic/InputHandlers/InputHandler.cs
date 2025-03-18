@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Enums;
 using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.Managers;
@@ -12,24 +14,24 @@ using Zenject;
 
 namespace _Project.Scripts.GameLogic.InputHandlers
 {
-    public class BaseInputHandler : MonoBehaviour
+    public class InputHandler : MonoBehaviour
     {
-        [Inject] private PlayerInputSystem playerInputSystem;
+        [Inject] private PlayerInputManager playerInputManager;
         [Inject] private PlacesManager playersInfo;
         [Inject] private TablePresenter tablePresenter;
         [Inject] private RoundService roundService;
         
         private PlacePresenter playerPlacePresenter;
 
-        private void Start()
+        public void Initialize()
         {
             playerPlacePresenter = playersInfo.AllPlayerPlaces.FirstOrDefault(placePresenter =>
                 placePresenter.PlayerActorNumber == PhotonNetwork.LocalPlayer.ActorNumber);
             
-            playerInputSystem.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Check)).AddTo(this);
-            playerInputSystem.OnW.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
-            playerInputSystem.OnR.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(this);
-            playerInputSystem.OnT.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
+            playerInputManager.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Check)).AddTo(this);
+            playerInputManager.OnW.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
+            playerInputManager.OnE.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(this);
+            playerInputManager.OnR.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
         }
 
         private void PlayerAct(PlayerAction playerAction)
@@ -47,7 +49,7 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             
             playerPlacePresenter.IsEnabled = false;
             playerPlacePresenter.Next.IsEnabled = true;
-            roundService.CheckRoundEnd();
+            //roundService.CheckRoundEnd();
         }
 
         private void Check()

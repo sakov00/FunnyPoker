@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.GameLogic.PlayerInput
 {
-    public class PlayerInputSystem : MonoBehaviour
+    public class PlayerInputManager : MonoBehaviour
     {
         public readonly ReactiveCommand OnQ = new();
         public readonly ReactiveCommand OnW = new();
@@ -24,6 +24,26 @@ namespace _Project.Scripts.GameLogic.PlayerInput
             // inputActions.Poker.Raise.performed += _ => { OnRaise.Execute(); }; // R
             // inputActions.Poker.Fold.performed += _ => { OnIncreaseBet.Execute(); };
             // inputActions.Poker.Raise.performed += _ => { OnDecreaseBet.Execute(); };
+        }
+        
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                OnQ.Execute();
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                OnW.Execute();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnE.Execute();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                OnR.Execute();
+            }
         }
     }
 }

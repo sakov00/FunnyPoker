@@ -49,13 +49,16 @@ namespace _Project.Scripts.MVP.Table
         
         public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            LoadFromPhoton();
+            if (PhotonNetwork.IsMasterClient)
+                return;
+            
+            if (changedProps.TryGetValue("Table" + nameof(sync.bank), out var owner))
+                sync.bank.Value = (int)owner;
         }
 
         public void LoadFromPhoton()
         {
             var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
-
             if (roomProps.TryGetValue("Table" + nameof(sync.bank), out var owner))
                 sync.bank.Value = (int)owner;
         }

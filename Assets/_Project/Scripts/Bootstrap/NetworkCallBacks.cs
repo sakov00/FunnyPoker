@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Scripts.GameLogic.InputHandlers;
 using _Project.Scripts.Managers;
 using Photon.Pun;
 using Photon.Realtime;
@@ -9,9 +10,11 @@ namespace _Project.Scripts.Bootstrap
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
         [Inject] private GameStateManager gameStateManager;
+        [Inject] private PlacesManager placesManager;
+        [Inject] private InputHandler inputHandler;
         
         public Action CallbackOnJoinedRoom;
-        public Action CallbackOnLeftRoom;
+        public Action<Player> CallbackOnLeftRoom;
         public Action<Player> CallbackOnPlayerEnteredRoom;
         
         public void Initialize()
@@ -37,18 +40,23 @@ namespace _Project.Scripts.Bootstrap
 
         public override void OnPlayerEnteredRoom(Player player)
         {
+            placesManager.OnPlayerEnteredRoom(player);
             CallbackOnPlayerEnteredRoom?.Invoke(player);
         }
 
         public override void OnJoinedRoom()
         { 
             gameStateManager.SetState(0);
+            placesManager.OnJoinedRoom();
+            inputHandler.Initialize();
+            
             CallbackOnJoinedRoom?.Invoke();
         }
 
         public override void OnPlayerLeftRoom(Player player)
         {
-            CallbackOnLeftRoom?.Invoke();
+            placesManager.OnPlayerLeftRoom(player);
+            CallbackOnLeftRoom?.Invoke(player);
         }
     }
 }

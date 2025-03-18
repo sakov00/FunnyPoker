@@ -9,12 +9,12 @@ using Zenject;
 
 namespace _Project.Scripts.Managers
 {
-    public class PlacesManager : MonoBehaviourPunCallbacks
+    public class PlacesManager : MonoBehaviour
     {
         [Inject] private PlayerFactory playerFactory;
         [field: SerializeField] public List<PlacePresenter> AllPlayerPlaces { get; private set; }
         
-        public override void OnJoinedRoom()
+        public void OnJoinedRoom()
         {
             DestroyEmptyPlaces();
             AllPlayerPlaces.ForEach(place => place.LoadFromPhoton());
@@ -25,14 +25,14 @@ namespace _Project.Scripts.Managers
             playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
         }
 
-        public override void OnPlayerEnteredRoom(Player player)
+        public void OnPlayerEnteredRoom(Player player)
         {
             var playerPlaceInfo = AllPlayerPlaces.First(place => place.IsFree);
             playerPlaceInfo.PlayerActorNumber = player.ActorNumber;
             playerPlaceInfo.IsFree = false;
         }
         
-        public override void OnPlayerLeftRoom(Player player)
+        public void OnPlayerLeftRoom(Player player)
         {
             var placeInfo = AllPlayerPlaces.First(place => place.PlayerActorNumber == player.ActorNumber);
             placeInfo.PlayerActorNumber = 0;

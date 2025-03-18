@@ -57,14 +57,13 @@ namespace _Project.Scripts.Managers
         public void OnPlayerEnteredRoom(Player newPlayer) { }
         public void OnPlayerLeftRoom(Player otherPlayer) { }
         public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) { }
-        public void OnRoomPropertiesUpdate(Hashtable changedProps) { LoadFromPhoton(); }
-        public void OnMasterClientSwitched(Player newMasterClient) { }
 
-        private void LoadFromPhoton()
+        public void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
-
-            if (roomProps.TryGetValue(GameStateKey, out var gameStateKey))
+            if (PhotonNetwork.IsMasterClient)
+                return;
+            
+            if (changedProps.TryGetValue(GameStateKey, out var gameStateKey))
             {
                 gameStates.TryGetValue((int)gameStateKey, out var photonState);
                 if (photonState != currentState)
@@ -75,5 +74,7 @@ namespace _Project.Scripts.Managers
                 }
             }
         }
+        
+        public void OnMasterClientSwitched(Player newMasterClient) { }
     }
 }

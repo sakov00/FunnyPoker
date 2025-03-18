@@ -124,7 +124,7 @@ namespace _Project.Scripts.MVP.Place
         
         private void SyncProperty(string propertyName, object value)
         {
-            if (!PhotonNetwork.IsMasterClient)
+            if(!sync.isSyncData)
                 return;
             
             Hashtable property = new() { { propertyName + Id, value } };
@@ -140,6 +140,8 @@ namespace _Project.Scripts.MVP.Place
         {
             var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
 
+            sync.isSyncData = false;
+            
             if (roomProps.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
                 sync.isFreeReactive.Value = (bool)isFree;
 
@@ -164,19 +166,19 @@ namespace _Project.Scripts.MVP.Place
             if (roomProps.TryGetValue(nameof(sync.isBigBlindReactive) + Id, out var isBigBlind))
                 sync.isBigBlindReactive.Value = (bool)isBigBlind;
             
+            sync.isSyncData = true;
+            
             //TODO sync HandPlayingCards when player join to room for reconnect
         }
         
         private void AddHandPlayingCard(int value)
         {
-            if(PhotonNetwork.IsMasterClient)
-                photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.All, value);
+            photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.All, value);
         }
         
         private void RemoveHandPlayingCard(int value)
         {
-            if(PhotonNetwork.IsMasterClient)
-                photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.All, value);
+            photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.All, value);
         }
         
         [PunRPC]
@@ -186,7 +188,7 @@ namespace _Project.Scripts.MVP.Place
                 sync.handPlayingCards.Add(addedCardId);
             
             int cardPlaceIndex = HandPlayingCards.IndexOf(addedCardId);
-            var movedCard = cardsManager.PlayingCards.First(card => card.Id == addedCardId);
+            var movedCard = cardsManager.AllPlayingCards.First(card => card.Id == addedCardId);
             movedCard.UpdateCardPosition(PlayerCardsParent, CardPoints[cardPlaceIndex]);
         }
         
@@ -197,7 +199,7 @@ namespace _Project.Scripts.MVP.Place
                 sync.handPlayingCards.Remove(removedCardId);
             
             int cardPlaceIndex = HandPlayingCards.IndexOf(removedCardId);
-            var movedCard = cardsManager.PlayingCards.First(card => card.Id == removedCardId);
+            var movedCard = cardsManager.AllPlayingCards.First(card => card.Id == removedCardId);
             movedCard.UpdateCardPosition(cardsManager.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
         

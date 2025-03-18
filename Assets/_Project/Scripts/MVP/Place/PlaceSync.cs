@@ -8,6 +8,8 @@ namespace _Project.Scripts.MVP.Place
     [Serializable]
     public class PlaceSync
     {
+        [SerializeField] public bool isSyncData = true;
+        
         [SerializeField] public BoolReactiveProperty isFreeReactive = new ();
         [SerializeField] public BoolReactiveProperty isEnabledReactive = new ();
         [SerializeField] public BoolReactiveProperty isFoldedReactive = new ();
