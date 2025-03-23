@@ -16,8 +16,7 @@ namespace _Project.Scripts.GameLogic.Rendering
             _propertyBlock ??= new MaterialPropertyBlock();
             
             _renderer.GetPropertyBlock(_propertyBlock);
-            
-            _propertyBlock.SetColor(EmissionColor, isEnabled ? _material.GetColor(EmissionColor) : Color.gray);
+            _propertyBlock.SetColor(EmissionColor, isEnabled ? _material.GetColor(EmissionColor) : Color.black);
 
             _renderer.SetPropertyBlock(_propertyBlock);
         }

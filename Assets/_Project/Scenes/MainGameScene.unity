@@ -1116,6 +1116,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 171979133}
 --- !u!1 &188125498 stripped
 GameObject:
@@ -1192,6 +1194,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 193203722}
 --- !u!4 &193240229 stripped
 Transform:
@@ -1264,6 +1268,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 193240235}
 --- !u!1 &197332950
 GameObject:
@@ -1952,6 +1958,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 283205938}
 --- !u!4 &292203139 stripped
 Transform:
@@ -2396,6 +2404,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 482277817}
 --- !u!1001 &497609605
 PrefabInstance:
@@ -2545,6 +2555,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 503718867}
 --- !u!1001 &511240212
 PrefabInstance:
@@ -2790,6 +2802,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 564567439}
 --- !u!1 &576980006 stripped
 GameObject:
@@ -2862,6 +2876,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 576980012}
 --- !u!1 &577475672 stripped
 GameObject:
@@ -3367,6 +3383,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 680708716}
 --- !u!4 &686899373 stripped
 Transform:
@@ -3661,6 +3679,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 699375753}
 --- !u!1 &705507993
 GameObject:
@@ -4340,6 +4360,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 778377505}
 --- !u!1001 &779574087
 PrefabInstance:
@@ -4984,6 +5006,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 939548898}
 --- !u!4 &997550175 stripped
 Transform:
@@ -5424,6 +5448,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1061265921}
 --- !u!4 &1104540850 stripped
 Transform:
@@ -5496,6 +5522,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1104540856}
 --- !u!1 &1115183254
 GameObject:
@@ -5617,6 +5645,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1140660946}
 --- !u!4 &1142439513 stripped
 Transform:
@@ -5737,6 +5767,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1161658125}
 --- !u!1001 &1174008912
 PrefabInstance:
@@ -6120,6 +6152,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1210069980}
 --- !u!1 &1220623496
 GameObject:
@@ -6236,6 +6270,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1254266735}
 --- !u!1 &1262043096
 GameObject:
@@ -6363,6 +6399,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1325241909}
 --- !u!4 &1339761398 stripped
 Transform:
@@ -6516,6 +6554,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1342084043}
 --- !u!1 &1356787604
 GameObject:
@@ -6815,6 +6855,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1388153578}
 --- !u!1001 &1397148076
 PrefabInstance:
@@ -7040,6 +7082,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1518400739}
 --- !u!4 &1534484687 stripped
 Transform:
@@ -7112,6 +7156,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1534484693}
 --- !u!1001 &1538045175
 PrefabInstance:
@@ -7526,6 +7572,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1624087454}
 --- !u!1001 &1627831524
 PrefabInstance:
@@ -7674,6 +7722,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1629054335}
 --- !u!4 &1658328250 stripped
 Transform:
@@ -7745,6 +7795,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1658328256}
 --- !u!1 &1662273716 stripped
 GameObject:
@@ -7816,6 +7868,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1662273722}
 --- !u!1001 &1682012541
 PrefabInstance:
@@ -7965,6 +8019,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1685108208}
 --- !u!4 &1685483006 stripped
 Transform:
@@ -8224,6 +8280,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1698627059}
 --- !u!1 &1698791031 stripped
 GameObject:
@@ -8296,6 +8354,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1698791037}
 --- !u!4 &1719043987 stripped
 Transform:
@@ -8373,6 +8433,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1737613881}
 --- !u!4 &1740125137 stripped
 Transform:
@@ -8444,6 +8506,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1740125143}
 --- !u!1001 &1766512414
 PrefabInstance:
@@ -8638,6 +8702,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1767619268}
 --- !u!4 &1767724839 stripped
 Transform:
@@ -8715,6 +8781,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1770041022}
 --- !u!1001 &1771026141
 PrefabInstance:
@@ -8864,6 +8932,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1779909577}
 --- !u!1 &1781233252 stripped
 GameObject:
@@ -8935,6 +9005,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1781233258}
 --- !u!1 &1817762865 stripped
 GameObject:
@@ -9007,6 +9079,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1817762871}
 --- !u!4 &1841450941 stripped
 Transform:
@@ -9083,6 +9157,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1854750162}
 --- !u!1001 &1875285443
 PrefabInstance:
@@ -9309,6 +9385,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1896331648}
 --- !u!1 &1906171959
 GameObject:
@@ -9464,6 +9542,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1912551227}
 --- !u!1001 &1932798980
 PrefabInstance:
@@ -9612,6 +9692,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1933612658}
 --- !u!1 &1954758406 stripped
 GameObject:
@@ -9684,6 +9766,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1954758412}
 --- !u!1 &1962045466 stripped
 GameObject:
@@ -9755,6 +9839,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 1962045472}
 --- !u!1001 &1978560699
 PrefabInstance:
@@ -9981,6 +10067,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2006946540}
 --- !u!1001 &2011374980
 PrefabInstance:
@@ -10130,6 +10218,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2012890417}
 --- !u!1 &2018773169 stripped
 GameObject:
@@ -10201,6 +10291,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2018773175}
 --- !u!1 &2029355641
 GameObject:
@@ -10328,6 +10420,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2033056780}
 --- !u!1 &2064624763 stripped
 GameObject:
@@ -10400,6 +10494,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2064624769}
 --- !u!1 &2066429036 stripped
 GameObject:
@@ -10471,6 +10567,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2066429042}
 --- !u!1 &2077835937 stripped
 GameObject:
@@ -10543,6 +10641,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2077835943}
 --- !u!1 &2118770098 stripped
 GameObject:
@@ -10614,6 +10714,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2118770104}
 --- !u!1 &2123873671 stripped
 GameObject:
@@ -10686,6 +10788,8 @@ MonoBehaviour:
   data:
     rank: 0
     suit: 0
+  sync:
+    isSyncData: 1
   view: {fileID: 2123873677}
 --- !u!1001 &3892096090227724945
 PrefabInstance:

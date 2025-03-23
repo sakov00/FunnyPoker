@@ -315,7 +315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    id: 0
     previous: {fileID: 0}
     next: {fileID: 0}
     playerPoint: {fileID: 458004699475767397}
@@ -324,6 +323,7 @@ MonoBehaviour:
     - {fileID: 7510497280183301364}
     - {fileID: 5033531350454079053}
   sync:
+    isSyncData: 1
     isFreeReactive:
       value: 1
     isEnabledReactive:

@@ -101,13 +101,11 @@ namespace _Project.Scripts.MVP.Place
         }
 
         private void Start()
-        {            
+        {
             sync.isFreeReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isFreeReactive), value)).AddTo(disposable);
-            sync.isEnabledReactive.Skip(1).Subscribe(value =>
-            {
-                SyncProperty(nameof(sync.isEnabledReactive), value);
-                view.UpdateButton(value);
-            }).AddTo(disposable);
+            sync.isEnabledReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isEnabledReactive), value)).AddTo(disposable);
+            sync.isEnabledReactive.Subscribe(value => view.UpdateButton(value)).AddTo(disposable);
+            
             sync.isFoldedReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isFoldedReactive), value)).AddTo(disposable);
             
             sync.playerActorNumberReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.playerActorNumberReactive), value)).AddTo(disposable);
@@ -118,8 +116,8 @@ namespace _Project.Scripts.MVP.Place
             sync.isSmallBlindReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isSmallBlindReactive), value)).AddTo(disposable);
             sync.isBigBlindReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isBigBlindReactive), value)).AddTo(disposable);
             
-            sync.handPlayingCards.ObserveAdd().Skip(1).Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
-            sync.handPlayingCards.ObserveRemove().Skip(1).Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
+            sync.handPlayingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
+            sync.handPlayingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
         }
         
         private void SyncProperty(string propertyName, object value)
@@ -133,37 +131,37 @@ namespace _Project.Scripts.MVP.Place
         
         public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            LoadFromPhoton();
+            LoadFromPhoton(changedProps);
         }
 
-        public void LoadFromPhoton()
+        public void LoadFromPhoton(Hashtable properties = null)
         {
-            var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
+            properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
 
             sync.isSyncData = false;
             
-            if (roomProps.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
+            if (properties.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
                 sync.isFreeReactive.Value = (bool)isFree;
 
-            if (roomProps.TryGetValue(nameof(sync.isEnabledReactive) + Id, out var isEnabled))
+            if (properties.TryGetValue(nameof(sync.isEnabledReactive) + Id, out var isEnabled))
                 sync.isEnabledReactive.Value = (bool)isEnabled;
             
-            if (roomProps.TryGetValue(nameof(sync.isFoldedReactive) + Id, out var isFolded))
+            if (properties.TryGetValue(nameof(sync.isFoldedReactive) + Id, out var isFolded))
                 sync.isFoldedReactive.Value = (bool)isFolded;
 
-            if (roomProps.TryGetValue(nameof(sync.playerActorNumberReactive) + Id, out var actorNumber))
+            if (properties.TryGetValue(nameof(sync.playerActorNumberReactive) + Id, out var actorNumber))
                 sync.playerActorNumberReactive.Value = (int)actorNumber;
             
-            if (roomProps.TryGetValue(nameof(sync.moneyReactive) + Id, out var money))
+            if (properties.TryGetValue(nameof(sync.moneyReactive) + Id, out var money))
                 sync.moneyReactive.Value = (int)money;
             
-            if (roomProps.TryGetValue(nameof(sync.bettingMoneyReactive) + Id, out var bettingMoney))
+            if (properties.TryGetValue(nameof(sync.bettingMoneyReactive) + Id, out var bettingMoney))
                 sync.bettingMoneyReactive.Value = (int)bettingMoney;
 
-            if (roomProps.TryGetValue(nameof(sync.isSmallBlindReactive) + Id, out var isSmallBlind))
+            if (properties.TryGetValue(nameof(sync.isSmallBlindReactive) + Id, out var isSmallBlind))
                 sync.isSmallBlindReactive.Value = (bool)isSmallBlind;
 
-            if (roomProps.TryGetValue(nameof(sync.isBigBlindReactive) + Id, out var isBigBlind))
+            if (properties.TryGetValue(nameof(sync.isBigBlindReactive) + Id, out var isBigBlind))
                 sync.isBigBlindReactive.Value = (bool)isBigBlind;
             
             sync.isSyncData = true;

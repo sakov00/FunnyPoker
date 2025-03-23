@@ -9,6 +9,6 @@ namespace _Project.Scripts.MVP.Cards
     [Serializable]
     public class CardSync
     {
-
+        [SerializeField] public bool isSyncData = true;
     }
 }

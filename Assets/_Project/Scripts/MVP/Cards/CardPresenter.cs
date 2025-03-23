@@ -33,7 +33,7 @@ namespace _Project.Scripts.MVP.Cards
         
         private void SyncProperty(string propertyName, object value)
         {
-            if (!PhotonNetwork.IsMasterClient)
+            if(!sync.isSyncData)
                 return;
             
             Hashtable property = new() { { propertyName + Id, value } };
@@ -42,15 +42,18 @@ namespace _Project.Scripts.MVP.Cards
         
         public override void OnRoomPropertiesUpdate(Hashtable changedProps)
         {
-            LoadFromPhoton();
+            LoadFromPhoton(changedProps);
         }
         
-        public void LoadFromPhoton()
+        public void LoadFromPhoton(Hashtable properties = null)
         {
-            var roomProps = PhotonNetwork.CurrentRoom.CustomProperties;
+            properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
             
-            // if (roomProps.TryGetValue(nameof(sync.ownerPlaceIdReactive) + data.id, out var owner))
+            sync.isSyncData = false;
+            // if (properties.TryGetValue(nameof(sync.ownerPlaceIdReactive) + data.id, out var owner))
             //     sync.ownerPlaceIdReactive.Value = (int)owner;
+            
+            sync.isSyncData = true;
         }
 
         private void OnDestroy()
