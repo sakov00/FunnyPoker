@@ -996,6 +996,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 171979133}
 --- !u!1 &188125498 stripped
 GameObject:
@@ -1074,6 +1076,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 193203722}
 --- !u!4 &193240229 stripped
 Transform:
@@ -1148,6 +1152,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 193240235}
 --- !u!1 &197332950
 GameObject:
@@ -1576,7 +1582,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 39
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1904254723815781649, guid: 8caa3ab838ff1f54cb69140f289d8c8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1838,47 +1845,14 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 283205938}
 --- !u!4 &292203139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7808731976481060243, guid: 499647d2dd0c85b49bee868166bb6ca3, type: 3}
   m_PrefabInstance: {fileID: 497609605}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &332143541
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 332143542}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &332143542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332143541}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1180209697}
-  - {fileID: 1024623255}
-  - {fileID: 892548932}
-  - {fileID: 1115183255}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &333235792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2284,6 +2258,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 482277817}
 --- !u!1001 &497609605
 PrefabInstance:
@@ -2435,6 +2411,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 503718867}
 --- !u!1001 &511240212
 PrefabInstance:
@@ -2682,6 +2660,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 564567439}
 --- !u!1 &576980006 stripped
 GameObject:
@@ -2756,6 +2736,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 576980012}
 --- !u!1 &577475672 stripped
 GameObject:
@@ -3263,6 +3245,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 680708716}
 --- !u!4 &686899373 stripped
 Transform:
@@ -3446,6 +3430,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 699375753}
 --- !u!1 &705507993
 GameObject:
@@ -4127,6 +4113,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 778377505}
 --- !u!1001 &779574087
 PrefabInstance:
@@ -4443,50 +4431,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3838427425032951532, guid: f69b440380a4e744588cb10f433a83f5, type: 3}
   m_PrefabInstance: {fileID: 223432672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &892548931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 892548932}
-  - component: {fileID: 892548933}
-  m_Layer: 0
-  m_Name: PlayerInputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &892548932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892548931}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 332143542}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &892548933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892548931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17e75367a354d628eb297faab3faf8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &895666136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 321648419490640285, guid: 6fee879d7be34854281a7bf50ef4845a, type: 3}
@@ -4773,6 +4717,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 939548898}
 --- !u!4 &997550175 stripped
 Transform:
@@ -4856,6 +4802,109 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 482277817}
   m_SourcePrefab: {fileID: 100100000, guid: 1650c37bc6761714a980abf620b5b9a6, type: 3}
+--- !u!1 &1000003147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000003149}
+  - component: {fileID: 1000003148}
+  m_Layer: 0
+  m_Name: GameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1000003148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000003147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775e24fdaca44e6ea915882c87b25697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DealerCardsParent>k__BackingField: {fileID: 1906171960}
+  <AllPlayerPlaces>k__BackingField:
+  - {fileID: 727834407}
+  - {fileID: 3892096090227724946}
+  - {fileID: 244862695}
+  <AllPlayingCards>k__BackingField:
+  - {fileID: 1104540857}
+  - {fileID: 2077835944}
+  - {fileID: 576980013}
+  - {fileID: 1325241910}
+  - {fileID: 1254266736}
+  - {fileID: 1912551228}
+  - {fileID: 1770041023}
+  - {fileID: 1954758413}
+  - {fileID: 939548899}
+  - {fileID: 1817762872}
+  - {fileID: 778377506}
+  - {fileID: 1698791038}
+  - {fileID: 1767619269}
+  - {fileID: 1658328257}
+  - {fileID: 1685108209}
+  - {fileID: 1740125144}
+  - {fileID: 2006946541}
+  - {fileID: 171979134}
+  - {fileID: 1210069981}
+  - {fileID: 1140660947}
+  - {fileID: 503718868}
+  - {fileID: 283205939}
+  - {fileID: 2012890418}
+  - {fileID: 1518400740}
+  - {fileID: 564567440}
+  - {fileID: 1896331649}
+  - {fileID: 2064624770}
+  - {fileID: 1534484694}
+  - {fileID: 1161658126}
+  - {fileID: 193240236}
+  - {fileID: 1061265922}
+  - {fileID: 482277818}
+  - {fileID: 2066429043}
+  - {fileID: 193203723}
+  - {fileID: 1342084044}
+  - {fileID: 1962045473}
+  - {fileID: 1624087455}
+  - {fileID: 1388153579}
+  - {fileID: 1662273723}
+  - {fileID: 2118770105}
+  - {fileID: 2033056781}
+  - {fileID: 1781233259}
+  - {fileID: 1737613882}
+  - {fileID: 1854750163}
+  - {fileID: 1629054336}
+  - {fileID: 699375754}
+  - {fileID: 1779909578}
+  - {fileID: 2018773176}
+  - {fileID: 1933612659}
+  - {fileID: 2123873678}
+  - {fileID: 1698627060}
+  - {fileID: 680708717}
+  <TablePresenter>k__BackingField: {fileID: 1324862743}
+--- !u!4 &1000003149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000003147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021032104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,105 +5011,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1157553982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1024623254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1024623255}
-  - component: {fileID: 1024623256}
-  m_Layer: 0
-  m_Name: CardsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1024623255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024623254}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 332143542}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1024623256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024623254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534928869ef42909ad34ed2fefc7f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <DealerCardsParent>k__BackingField: {fileID: 1906171960}
-  <AllPlayingCards>k__BackingField:
-  - {fileID: 1104540857}
-  - {fileID: 2077835944}
-  - {fileID: 576980013}
-  - {fileID: 1325241910}
-  - {fileID: 1254266736}
-  - {fileID: 1912551228}
-  - {fileID: 1770041023}
-  - {fileID: 1954758413}
-  - {fileID: 939548899}
-  - {fileID: 1817762872}
-  - {fileID: 778377506}
-  - {fileID: 1698791038}
-  - {fileID: 1767619269}
-  - {fileID: 1658328257}
-  - {fileID: 1685108209}
-  - {fileID: 1740125144}
-  - {fileID: 2006946541}
-  - {fileID: 171979134}
-  - {fileID: 1210069981}
-  - {fileID: 1140660947}
-  - {fileID: 503718868}
-  - {fileID: 283205939}
-  - {fileID: 2012890418}
-  - {fileID: 1518400740}
-  - {fileID: 564567440}
-  - {fileID: 1896331649}
-  - {fileID: 2064624770}
-  - {fileID: 1534484694}
-  - {fileID: 1161658126}
-  - {fileID: 193240236}
-  - {fileID: 1061265922}
-  - {fileID: 482277818}
-  - {fileID: 2066429043}
-  - {fileID: 193203723}
-  - {fileID: 1342084044}
-  - {fileID: 1962045473}
-  - {fileID: 1624087455}
-  - {fileID: 1388153579}
-  - {fileID: 1662273723}
-  - {fileID: 2118770105}
-  - {fileID: 2033056781}
-  - {fileID: 1781233259}
-  - {fileID: 1737613882}
-  - {fileID: 1854750163}
-  - {fileID: 1629054336}
-  - {fileID: 699375754}
-  - {fileID: 1779909578}
-  - {fileID: 2018773176}
-  - {fileID: 1933612659}
-  - {fileID: 2123873678}
-  - {fileID: 1698627060}
-  - {fileID: 680708717}
-  <CurrentPlayingCards>k__BackingField: []
 --- !u!1001 &1035650708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5215,6 +5165,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1061265921}
 --- !u!4 &1104540850 stripped
 Transform:
@@ -5289,51 +5241,9 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1104540856}
---- !u!1 &1115183254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1115183255}
-  - component: {fileID: 1115183256}
-  m_Layer: 0
-  m_Name: InputHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1115183255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115183254}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 332143542}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1115183256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115183254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49fdb6e6485c4749a49242455023d156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1125338861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 614313872758462527, guid: 8bd1e14c51be8b543956e0a03eb8463c, type: 3}
@@ -5412,6 +5322,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1140660946}
 --- !u!4 &1142439513 stripped
 Transform:
@@ -5534,6 +5446,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1161658125}
 --- !u!1001 &1174008912
 PrefabInstance:
@@ -5694,77 +5608,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8704572763742390912, guid: af4bcb275ae4621438d7952fcf406445, type: 3}
   m_PrefabInstance: {fileID: 1567574995}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1180209696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1180209697}
-  - component: {fileID: 1180209699}
-  - component: {fileID: 1180209698}
-  m_Layer: 0
-  m_Name: PlacesManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1180209697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180209696}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 332143542}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1180209698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180209696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324bc64a575943c79b02115a141577c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <AllPlayerPlaces>k__BackingField:
-  - {fileID: 727834407}
-  - {fileID: 3892096090227724946}
-  - {fileID: 244862695}
---- !u!114 &1180209699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180209696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 28
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1191184954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5280512528469090909, guid: 0c352b932f1330c4eaf14c0e774064e2, type: 3}
@@ -5919,6 +5762,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1210069980}
 --- !u!1 &1220623496
 GameObject:
@@ -6035,6 +5880,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1254266735}
 --- !u!1 &1262043096
 GameObject:
@@ -6164,6 +6011,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1325241909}
 --- !u!4 &1339761398 stripped
 Transform:
@@ -6319,6 +6168,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1342084043}
 --- !u!1 &1356787604
 GameObject:
@@ -6620,6 +6471,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1388153578}
 --- !u!1001 &1397148076
 PrefabInstance:
@@ -6847,6 +6700,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1518400739}
 --- !u!4 &1534484687 stripped
 Transform:
@@ -6921,6 +6776,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1534484693}
 --- !u!1001 &1538045175
 PrefabInstance:
@@ -7337,6 +7194,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1624087454}
 --- !u!1001 &1627831524
 PrefabInstance:
@@ -7487,6 +7346,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1629054335}
 --- !u!4 &1658328250 stripped
 Transform:
@@ -7560,6 +7421,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1658328256}
 --- !u!1 &1662273716 stripped
 GameObject:
@@ -7633,6 +7496,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1662273722}
 --- !u!1001 &1682012541
 PrefabInstance:
@@ -7784,6 +7649,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1685108208}
 --- !u!4 &1685483006 stripped
 Transform:
@@ -8045,6 +7912,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1698627059}
 --- !u!1 &1698791031 stripped
 GameObject:
@@ -8119,6 +7988,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1698791037}
 --- !u!4 &1719043987 stripped
 Transform:
@@ -8198,6 +8069,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1737613881}
 --- !u!4 &1740125137 stripped
 Transform:
@@ -8271,6 +8144,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1740125143}
 --- !u!1001 &1766512414
 PrefabInstance:
@@ -8475,6 +8350,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1767619268}
 --- !u!4 &1767724839 stripped
 Transform:
@@ -8554,6 +8431,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1770041022}
 --- !u!1001 &1771026141
 PrefabInstance:
@@ -8705,6 +8584,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1779909577}
 --- !u!1 &1781233252 stripped
 GameObject:
@@ -8778,6 +8659,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1781233258}
 --- !u!1 &1817762865 stripped
 GameObject:
@@ -8852,6 +8735,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1817762871}
 --- !u!4 &1841450941 stripped
 Transform:
@@ -8930,6 +8815,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1854750162}
 --- !u!1001 &1875285443
 PrefabInstance:
@@ -9158,6 +9045,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1896331648}
 --- !u!1 &1906171959
 GameObject:
@@ -9315,6 +9204,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1912551227}
 --- !u!1001 &1932798980
 PrefabInstance:
@@ -9465,6 +9356,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1933612658}
 --- !u!1 &1954758406 stripped
 GameObject:
@@ -9539,6 +9432,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1954758412}
 --- !u!1 &1962045466 stripped
 GameObject:
@@ -9612,6 +9507,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 1962045472}
 --- !u!1001 &1978560699
 PrefabInstance:
@@ -9840,6 +9737,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2006946540}
 --- !u!1001 &2011374980
 PrefabInstance:
@@ -9991,6 +9890,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2012890417}
 --- !u!1 &2018773169 stripped
 GameObject:
@@ -10064,6 +9965,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2018773175}
 --- !u!1 &2029355641
 GameObject:
@@ -10098,10 +10001,6 @@ MonoBehaviour:
   cameraPrefab: {fileID: 587340636821943716, guid: 3a0cdac158c6d1246b49b1b4ec3aece5, type: 3}
   networkCallBacks: {fileID: 899396491}
   tablePresenter: {fileID: 1324862743}
-  inputHandler: {fileID: 1115183256}
-  cardsManager: {fileID: 1024623256}
-  placesManager: {fileID: 1180209698}
-  playerInputManager: {fileID: 892548933}
   startGameCanvas: {fileID: 0}
   mainGameCanvas: {fileID: 1766512417}
   endGameCanvas: {fileID: 0}
@@ -10193,6 +10092,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2033056780}
 --- !u!1 &2064624763 stripped
 GameObject:
@@ -10267,6 +10168,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2064624769}
 --- !u!1 &2066429036 stripped
 GameObject:
@@ -10340,6 +10243,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2066429042}
 --- !u!1 &2077835937 stripped
 GameObject:
@@ -10414,6 +10319,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2077835943}
 --- !u!1 &2118770098 stripped
 GameObject:
@@ -10487,6 +10394,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2118770104}
 --- !u!1 &2123873671 stripped
 GameObject:
@@ -10561,6 +10470,8 @@ MonoBehaviour:
     suit: 0
   sync:
     isSyncData: 1
+    isFreeReactive:
+      value: 1
   view: {fileID: 2123873677}
 --- !u!1001 &3892096090227724945
 PrefabInstance:
@@ -11046,8 +10957,8 @@ SceneRoots:
   - {fileID: 197332952}
   - {fileID: 382300264}
   - {fileID: 899396492}
+  - {fileID: 1000003149}
   - {fileID: 1220623497}
-  - {fileID: 332143542}
   - {fileID: 1157553982}
   - {fileID: 1262043097}
   - {fileID: 1356787607}

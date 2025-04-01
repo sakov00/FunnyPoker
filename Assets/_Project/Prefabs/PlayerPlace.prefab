@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 4291163019006397326}
   - component: {fileID: 2964840458393991852}
   - component: {fileID: 7966418346512561685}
-  - component: {fileID: 1904254723815781649}
   m_Layer: 0
   m_Name: PlayerPlace
   m_TagString: Untagged
@@ -355,18 +354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenButton: {fileID: 3106138374909852960}
   yellowButton: {fileID: 698554637433208941}
---- !u!114 &1904254723815781649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728917499003808948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17e75367a354d628eb297faab3faf8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9096239151726686727
 GameObject:
   m_ObjectHideFlags: 0

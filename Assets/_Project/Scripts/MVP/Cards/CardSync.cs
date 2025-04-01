@@ -10,5 +10,7 @@ namespace _Project.Scripts.MVP.Cards
     public class CardSync
     {
         [SerializeField] public bool isSyncData = true;
+        
+        [SerializeField] public BoolReactiveProperty isFreeReactive = new(true);
     }
 }

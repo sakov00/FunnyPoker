@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.GameLogic.InputHandlers;
+using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.Managers;
 using Photon.Pun;
 using Photon.Realtime;
@@ -11,7 +11,7 @@ namespace _Project.Scripts.Bootstrap
     {
         [Inject] private GameStateManager gameStateManager;
         [Inject] private PlacesManager placesManager;
-        [Inject] private InputHandler inputHandler;
+        [Inject] private PlayerInputHandler playerInputHandler;
         
         public Action CallbackOnJoinedRoom;
         public Action<Player> CallbackOnLeftRoom;
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Bootstrap
         { 
             gameStateManager.SetState(0);
             placesManager.OnJoinedRoom();
-            inputHandler.Initialize();
+            playerInputHandler.Initialize();
             
             CallbackOnJoinedRoom?.Invoke();
         }

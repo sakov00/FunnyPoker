@@ -1,9 +1,10 @@
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.GameLogic.PlayerInput
 {
-    public class PlayerInputManager : MonoBehaviour
+    public class PlayerInput : ITickable
     {
         public readonly ReactiveCommand OnQ = new();
         public readonly ReactiveCommand OnW = new();
@@ -26,7 +27,7 @@ namespace _Project.Scripts.GameLogic.PlayerInput
             // inputActions.Poker.Raise.performed += _ => { OnDecreaseBet.Execute(); };
         }
         
-        void Update()
+        public void Tick()
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {

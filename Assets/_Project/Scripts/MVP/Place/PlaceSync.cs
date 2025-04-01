@@ -10,7 +10,7 @@ namespace _Project.Scripts.MVP.Place
     {
         [SerializeField] public bool isSyncData = true;
         
-        [SerializeField] public BoolReactiveProperty isFreeReactive = new ();
+        [SerializeField] public BoolReactiveProperty isFreeReactive = new (true);
         [SerializeField] public BoolReactiveProperty isEnabledReactive = new ();
         [SerializeField] public BoolReactiveProperty isFoldedReactive = new ();
         

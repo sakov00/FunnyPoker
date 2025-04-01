@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.MVP.Cards;
 using Photon.Pun;
 using UnityEngine;
@@ -8,18 +10,9 @@ using Random = UnityEngine.Random;
 
 namespace _Project.Scripts.Managers
 {
-    public class CardsManager : MonoBehaviour
+    public class CardsManager
     {
-        [Inject] private PlacesManager placesManager;
-        
-        [field: SerializeField] public Transform DealerCardsParent { get; private set; }
-        [field: SerializeField] public List<CardPresenter> AllPlayingCards { get; private set; } = new();
-        [field: SerializeField] public List<CardPresenter> CurrentPlayingCards { get; private set; } = new();
-
-        private void Start()
-        {
-            CurrentPlayingCards.AddRange(AllPlayingCards);
-        }
+        [Inject] private GameData gameData;
 
         public void DealTwoCardsToPlayers()
         {
@@ -29,7 +22,7 @@ namespace _Project.Scripts.Managers
         
         private void DealCardToPlayers()
         {
-            foreach (var place in placesManager.AllPlayerPlaces)
+            foreach (var place in gameData.AllPlayerPlaces)
             {
                 var card = GetRandomPlayingCard();
                 card.gameObject.SetActive(true);
@@ -39,12 +32,13 @@ namespace _Project.Scripts.Managers
         
         private CardPresenter GetRandomPlayingCard()
         {
-            if (CurrentPlayingCards.Count == 0)
+            var freePlayingCards = gameData.AllPlayingCards.Where(x => x.IsFree).ToList();
+            if (!freePlayingCards.Any())
                 return null;
 
-            var index = Random.Range(0, CurrentPlayingCards.Count);
-            var card = CurrentPlayingCards[index];
-            CurrentPlayingCards.RemoveAt(index);
+            var index = Random.Range(0, freePlayingCards.Count);
+            var card = freePlayingCards[index];
+            card.IsFree = false;
             return card;
         }
     }

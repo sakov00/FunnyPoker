@@ -1,5 +1,5 @@
 using System;
-using _Project.Scripts.GameLogic.InputHandlers;
+using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.Managers;
 using Photon.Pun;
 using UnityEngine;
@@ -9,7 +9,7 @@ namespace _Project.Scripts.Bootstrap
 {
     public class GameStartUp : MonoBehaviour
     {
-        [Inject] private InputHandler inputHandler;
+        [Inject] private PlayerInputHandler playerInputHandler;
         [Inject] private PlacesManager placesManager;
     }
 }

@@ -1,36 +1,32 @@
-using System;
 using System.Linq;
-using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Enums;
-using _Project.Scripts.GameLogic.PlayerInput;
-using _Project.Scripts.Managers;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.MVP.Place;
-using _Project.Scripts.MVP.Table;
 using _Project.Scripts.Services;
 using Photon.Pun;
 using UniRx;
-using UnityEngine;
 using Zenject;
 
-namespace _Project.Scripts.GameLogic.InputHandlers
+namespace _Project.Scripts.GameLogic.PlayerInput
 {
-    public class InputHandler : MonoBehaviour
+    public class PlayerInputHandler
     {
-        [Inject] private PlayerInputManager playerInputManager;
-        [Inject] private PlacesManager playersInfo;
-        [Inject] private TablePresenter tablePresenter;
+        [Inject] private PlayerInput playerInput;
+        [Inject] private GameData gameData;
         [Inject] private RoundService roundService;
+        
+        private readonly CompositeDisposable disposable = new ();
         
         private PlacePresenter playerPlacePresenter;
 
         public void Initialize()
         {
-            playerPlacePresenter = playersInfo.AllPlayerPlaces.FirstOrDefault(placePresenter =>
+            playerPlacePresenter = gameData.AllPlayerPlaces.FirstOrDefault(placePresenter =>
                 placePresenter.PlayerActorNumber == PhotonNetwork.LocalPlayer.ActorNumber);
             
-            playerInputManager.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
-            playerInputManager.OnW.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
-            playerInputManager.OnE.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(this);
+            playerInput.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(disposable);
+            playerInput.OnW.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(disposable);
+            playerInput.OnE.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(disposable);
         }
 
         private void PlayerAct(PlayerAction playerAction)
@@ -47,7 +43,6 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             
             playerPlacePresenter.IsEnabled = false;
             playerPlacePresenter.Next.IsEnabled = true;
-            //roundService.CheckRoundEnd();
         }
 
         private void Check()
@@ -63,12 +58,17 @@ namespace _Project.Scripts.GameLogic.InputHandlers
         
         private void Call()
         {
-            playerPlacePresenter.BettingMoney = tablePresenter.MaxPlayerBet;
+            playerPlacePresenter.BettingMoney = gameData.TablePresenter.MaxPlayerBet;
         }
         
         private void Raise(int value)
         {
             playerPlacePresenter.BettingMoney += value;
+        }
+
+        public void Dispose()
+        {
+            disposable.Dispose();
         }
     }
 }

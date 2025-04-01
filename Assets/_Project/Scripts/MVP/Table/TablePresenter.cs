@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.Managers;
 using ExitGames.Client.Photon;
 using Photon.Pun;
@@ -12,8 +13,7 @@ namespace _Project.Scripts.MVP.Table
 {
     public class TablePresenter : MonoBehaviourPunCallbacks
     {
-        [Inject] private PlacesManager placesManager;
-        [Inject] private CardsManager cardsManager;
+        [Inject] private GameData gameData;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -24,7 +24,7 @@ namespace _Project.Scripts.MVP.Table
         public int Id => photonView.ViewID;
         public Transform CardsParent => data.cardsParent;
         public List<Transform> CardPoints => data.cardPoints;
-        public int MaxPlayerBet => placesManager.AllPlayerPlaces.Max(p => p.BettingMoney);
+        public int MaxPlayerBet => gameData.AllPlayerPlaces.Max(p => p.BettingMoney);
         
         public int Bank
         {
@@ -36,6 +36,8 @@ namespace _Project.Scripts.MVP.Table
 
         private void OnValidate()
         {
+            data ??= GetComponent<TableData>();
+            sync ??= GetComponent<TableSync>();
             view ??= GetComponent<TableView>();
         }
 
@@ -95,7 +97,7 @@ namespace _Project.Scripts.MVP.Table
                 sync.playingCards.Add(addedCardId);
             
             int cardPlaceIndex = PlayingCards.IndexOf(addedCardId);
-            var movedCard = cardsManager.AllPlayingCards.First(card => card.Id == addedCardId);
+            var movedCard = gameData.AllPlayingCards.First(card => card.Id == addedCardId);
             movedCard.UpdateCardPosition(CardsParent, CardPoints[cardPlaceIndex]);
         }
         
@@ -106,8 +108,8 @@ namespace _Project.Scripts.MVP.Table
                 sync.playingCards.Remove(removedCardId);
             
             int cardPlaceIndex = PlayingCards.IndexOf(removedCardId);
-            var movedCard = cardsManager.AllPlayingCards.First(card => card.Id == removedCardId);
-            movedCard.UpdateCardPosition(cardsManager.DealerCardsParent, CardPoints[cardPlaceIndex]);
+            var movedCard = gameData.AllPlayingCards.First(card => card.Id == removedCardId);
+            movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
 
         private void OnDestroy()

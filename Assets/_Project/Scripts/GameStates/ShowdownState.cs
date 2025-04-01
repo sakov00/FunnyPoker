@@ -1,4 +1,5 @@
 using _Project.Scripts.Enums;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
 using UnityEngine;
@@ -8,20 +9,16 @@ namespace _Project.Scripts.GameStates
 {
     public class ShowdownState : IGameState
     {
-        [Inject] private PlacesManager placesManager;
-        [Inject] private CanvasesManager canvasesManager;
+        [Inject] private GameData gameData;
         
         public void EnterState()
         {
             
-            canvasesManager.ShowCanvas(PlayerCanvas.EndGame);
         }
 
         public void ExitState()
         {
-            placesManager.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
-            
-            canvasesManager.ShowCanvas(PlayerCanvas.None);
+            gameData.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
 
             Debug.Log("Ставки приняты");
         }

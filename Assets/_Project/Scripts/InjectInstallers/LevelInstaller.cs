@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Factories;
-using _Project.Scripts.GameLogic.InputHandlers;
 using _Project.Scripts.GameLogic.PlayerCanvases;
 using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.GameStates;
@@ -21,12 +20,12 @@ namespace _Project.Scripts.InjectInstallers
         
         [Header("Game Objects")]
         [SerializeField] private TablePresenter tablePresenter;
-        [SerializeField] private InputHandler inputHandler;
+        [SerializeField] private PlayerInputHandler playerInputHandler;
         
         [Header("Managers")]
         [SerializeField] private CardsManager cardsManager;
         [SerializeField] private PlacesManager placesManager;
-        [SerializeField] private PlayerInputManager playerInputManager;
+        [SerializeField] private PlayerInput playerInput;
         
         [Header("Canvases")]
         [SerializeField] private StartGameCanvas startGameCanvas;    
@@ -51,7 +50,7 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindGameObjects()
         {
-            Container.BindInstance(inputHandler).AsSingle();
+            Container.BindInstance(playerInputHandler).AsSingle();
             Container.BindInstance(tablePresenter).AsSingle();
         }
         
@@ -61,7 +60,7 @@ namespace _Project.Scripts.InjectInstallers
                 .WithArguments(Container.ResolveAll<IGameState>());
             Container.BindInstance(placesManager).AsSingle();
             Container.BindInstance(cardsManager).AsSingle();
-            Container.BindInstance(playerInputManager).AsSingle();
+            Container.BindInstance(playerInput).AsSingle();
             Container.Bind<CanvasesManager>().AsSingle();
         }
         

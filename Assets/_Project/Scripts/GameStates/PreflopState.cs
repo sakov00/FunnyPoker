@@ -1,5 +1,6 @@
 using System.Linq;
 using _Project.Scripts.Enums;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
 using _Project.Scripts.MVP.Table;
@@ -12,8 +13,7 @@ namespace _Project.Scripts.GameStates
 {
     public class PreflopState : IGameState
     {
-        [Inject] private PlacesManager placesManager;
-        [Inject] private TablePresenter tablePresenter;
+        [Inject] private GameData gameData;
         
         public void EnterState()
         {
@@ -22,8 +22,8 @@ namespace _Project.Scripts.GameStates
             if(!PhotonNetwork.IsMasterClient)
                 return;
             
-            var random = Random.Range(0, placesManager.AllPlayerPlaces.Count);
-            var placeInfo = placesManager.AllPlayerPlaces.ElementAt(random);
+            var random = Random.Range(0, gameData.AllPlayerPlaces.Count);
+            var placeInfo = gameData.AllPlayerPlaces.ElementAt(random);
             
             placeInfo.IsSmallBlind = true;
             placeInfo.BettingMoney = 5;
@@ -33,12 +33,12 @@ namespace _Project.Scripts.GameStates
             
             placeInfo.Next.Next.IsEnabled = true;
 
-            tablePresenter.ThrowCards();
+            gameData.TablePresenter.ThrowCards();
         }
 
         public void ExitState()
         {
-            placesManager.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
+            gameData.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
 
             Debug.Log("Ставки приняты PreflopState");
         }
