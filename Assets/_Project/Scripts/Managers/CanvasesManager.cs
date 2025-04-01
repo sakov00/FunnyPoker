@@ -23,6 +23,7 @@ namespace _Project.Scripts.Managers
 
         public void ShowCanvas(PlayerCanvas playerCanvas, bool isNetwork = true)
         {
+            return;
             switch (playerCanvas)
             {
                 case PlayerCanvas.None: 

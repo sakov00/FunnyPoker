@@ -28,10 +28,9 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             playerPlacePresenter = playersInfo.AllPlayerPlaces.FirstOrDefault(placePresenter =>
                 placePresenter.PlayerActorNumber == PhotonNetwork.LocalPlayer.ActorNumber);
             
-            playerInputManager.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Check)).AddTo(this);
-            playerInputManager.OnW.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
+            playerInputManager.OnQ.Subscribe(_ => PlayerAct(PlayerAction.Fold)).AddTo(this);
+            playerInputManager.OnW.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
             playerInputManager.OnE.Subscribe(_ => PlayerAct(PlayerAction.Raise)).AddTo(this);
-            playerInputManager.OnR.Subscribe(_ => PlayerAct(PlayerAction.Call)).AddTo(this);
         }
 
         private void PlayerAct(PlayerAction playerAction)
@@ -41,7 +40,6 @@ namespace _Project.Scripts.GameLogic.InputHandlers
             
             switch (playerAction)
             {
-                case PlayerAction.Check : Check(); break;
                 case PlayerAction.Fold : Fold(); break;
                 case PlayerAction.Call : Call(); break;
                 case PlayerAction.Raise : Raise(50); break;

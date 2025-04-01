@@ -10,5 +10,6 @@ namespace _Project.Scripts.MVP.Table
         [SerializeField] public bool isSyncData = true;
         
         [SerializeField] public IntReactiveProperty bank = new();
+        [SerializeField] public ReactiveCollection<int> playingCards = new();
     }
 }

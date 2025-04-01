@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Managers;
 using _Project.Scripts.MVP.Table;
+using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UniRx;
@@ -14,6 +15,7 @@ namespace _Project.Scripts.MVP.Place
     {
         [Inject] private CardsManager cardsManager;
         [Inject] private TablePresenter tablePresenter;
+        [Inject] private RoundService roundService;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -46,6 +48,8 @@ namespace _Project.Scripts.MVP.Place
                 else
                 {
                     sync.isEnabledReactive.Value = value;
+                    if (value)
+                        roundService.CheckRoundEnd(this);
                 }
             }
         }
@@ -141,28 +145,28 @@ namespace _Project.Scripts.MVP.Place
             sync.isSyncData = false;
             
             if (properties.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
-                sync.isFreeReactive.Value = (bool)isFree;
+                IsFree = (bool)isFree;
 
             if (properties.TryGetValue(nameof(sync.isEnabledReactive) + Id, out var isEnabled))
-                sync.isEnabledReactive.Value = (bool)isEnabled;
+                IsEnabled = (bool)isEnabled;
             
             if (properties.TryGetValue(nameof(sync.isFoldedReactive) + Id, out var isFolded))
-                sync.isFoldedReactive.Value = (bool)isFolded;
+                IsFolded = (bool)isFolded;
 
             if (properties.TryGetValue(nameof(sync.playerActorNumberReactive) + Id, out var actorNumber))
-                sync.playerActorNumberReactive.Value = (int)actorNumber;
+                PlayerActorNumber = (int)actorNumber;
             
             if (properties.TryGetValue(nameof(sync.moneyReactive) + Id, out var money))
-                sync.moneyReactive.Value = (int)money;
+                Money = (int)money;
             
             if (properties.TryGetValue(nameof(sync.bettingMoneyReactive) + Id, out var bettingMoney))
                 sync.bettingMoneyReactive.Value = (int)bettingMoney;
 
             if (properties.TryGetValue(nameof(sync.isSmallBlindReactive) + Id, out var isSmallBlind))
-                sync.isSmallBlindReactive.Value = (bool)isSmallBlind;
+                IsSmallBlind = (bool)isSmallBlind;
 
             if (properties.TryGetValue(nameof(sync.isBigBlindReactive) + Id, out var isBigBlind))
-                sync.isBigBlindReactive.Value = (bool)isBigBlind;
+                IsBigBlind = (bool)isBigBlind;
             
             sync.isSyncData = true;
             
@@ -182,7 +186,7 @@ namespace _Project.Scripts.MVP.Place
         [PunRPC]
         private void SyncAddHandPlayingCardRPC(int addedCardId)
         {
-            if (!PhotonNetwork.IsMasterClient)
+            if(!sync.handPlayingCards.Contains(addedCardId))
                 sync.handPlayingCards.Add(addedCardId);
             
             int cardPlaceIndex = HandPlayingCards.IndexOf(addedCardId);
@@ -193,7 +197,7 @@ namespace _Project.Scripts.MVP.Place
         [PunRPC]
         private void SyncRemoveHandPlayingCardRPC(int removedCardId)
         {
-            if (!PhotonNetwork.IsMasterClient)
+            if(!sync.handPlayingCards.Contains(removedCardId))
                 sync.handPlayingCards.Remove(removedCardId);
             
             int cardPlaceIndex = HandPlayingCards.IndexOf(removedCardId);

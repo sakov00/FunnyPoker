@@ -2,6 +2,7 @@ using System.Linq;
 using _Project.Scripts.Enums;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Managers;
+using _Project.Scripts.MVP.Table;
 using _Project.Scripts.Services;
 using Photon.Pun;
 using UnityEngine;
@@ -12,8 +13,7 @@ namespace _Project.Scripts.GameStates
     public class PreflopState : IGameState
     {
         [Inject] private PlacesManager placesManager;
-        [Inject] private CanvasesManager canvasesManager;
-        [Inject] private RoundService roundService;
+        [Inject] private TablePresenter tablePresenter;
         
         public void EnterState()
         {
@@ -32,16 +32,13 @@ namespace _Project.Scripts.GameStates
             placeInfo.Next.BettingMoney = 10;
             
             placeInfo.Next.Next.IsEnabled = true;
-            canvasesManager.ShowCanvas(PlayerCanvas.StartGame);
-            
-            roundService.SetOrderPlaces(placeInfo.Next.Next);
+
+            tablePresenter.ThrowCards();
         }
 
         public void ExitState()
         {
             placesManager.AllPlayerPlaces.ForEach(place => place.IsEnabled = false);
-            
-            canvasesManager.ShowCanvas(PlayerCanvas.None);
 
             Debug.Log("Ставки приняты PreflopState");
         }
