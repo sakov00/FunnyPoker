@@ -12,10 +12,11 @@ using Zenject;
 
 namespace _Project.Scripts.MVP.Place
 {
-    public class PlacePresenter : MonoBehaviourPunCallbacks
+    public class PlacePresenter : MonoBehaviourPun
     {
         [Inject] private GameData gameData;
         [Inject] private RoundService roundService;
+        [Inject] private SyncData syncData;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -24,6 +25,7 @@ namespace _Project.Scripts.MVP.Place
         [SerializeField] private PlaceView view;
         
         public int Id => photonView.ViewID;
+        public string ObjectName => nameof(PlacePresenter) + Id;
         public PlacePresenter Previous => data.previous;
         public PlacePresenter Next => data.next;
         public Transform PlayerPoint => data.playerPoint;
@@ -106,71 +108,41 @@ namespace _Project.Scripts.MVP.Place
 
         private void Start()
         {
-            sync.isFreeReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isFreeReactive), value)).AddTo(disposable);
-            sync.isEnabledReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isEnabledReactive), value)).AddTo(disposable);
-            sync.isEnabledReactive.Subscribe(value => view.UpdateButton(value)).AddTo(disposable);
+            var syncPropertiesBool = new Dictionary<ReactiveProperty<bool>, string>
+            {
+                { sync.isFreeReactive, nameof(IsFree) },
+                { sync.isEnabledReactive, nameof(IsEnabled) },
+                { sync.isFoldedReactive, nameof(IsFolded) },
+                { sync.isSmallBlindReactive, nameof(IsSmallBlind) },
+                { sync.isBigBlindReactive, nameof(IsBigBlind) }
+            };
+            var syncPropertiesInt = new Dictionary<ReactiveProperty<int>, string>
+            {
+                { sync.playerActorNumberReactive, nameof(PlayerActorNumber) },
+                { sync.moneyReactive, nameof(Money) },
+                { sync.bettingMoneyReactive, nameof(BettingMoney) },
+            };
+
+            BindSyncProperties(syncPropertiesBool);
+            BindSyncProperties(syncPropertiesInt);
             
-            sync.isFoldedReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isFoldedReactive), value)).AddTo(disposable);
-            
-            sync.playerActorNumberReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.playerActorNumberReactive), value)).AddTo(disposable);
-            
-            sync.moneyReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.moneyReactive), value)).AddTo(disposable);
-            sync.bettingMoneyReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.bettingMoneyReactive), value)).AddTo(disposable);
-            
-            sync.isSmallBlindReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isSmallBlindReactive), value)).AddTo(disposable);
-            sync.isBigBlindReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isBigBlindReactive), value)).AddTo(disposable);
+            sync.isEnabledReactive
+                .Subscribe(value => view.UpdateButton(value))
+                .AddTo(disposable);
             
             sync.handPlayingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
             sync.handPlayingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
         }
         
-        private void SyncProperty(string propertyName, object value)
+        private void BindSyncProperties<T>(Dictionary<ReactiveProperty<T>, string> properties)
         {
-            if(!sync.isSyncData)
-                return;
-            
-            Hashtable property = new() { { propertyName + Id, value } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
-        }
-        
-        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
-        {
-            LoadFromPhoton(changedProps);
-        }
-
-        public void LoadFromPhoton(Hashtable properties = null)
-        {
-            properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
-
-            sync.isSyncData = false;
-            
-            if (properties.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
-                IsFree = (bool)isFree;
-
-            if (properties.TryGetValue(nameof(sync.isEnabledReactive) + Id, out var isEnabled))
-                IsEnabled = (bool)isEnabled;
-            
-            if (properties.TryGetValue(nameof(sync.isFoldedReactive) + Id, out var isFolded))
-                IsFolded = (bool)isFolded;
-
-            if (properties.TryGetValue(nameof(sync.playerActorNumberReactive) + Id, out var actorNumber))
-                PlayerActorNumber = (int)actorNumber;
-            
-            if (properties.TryGetValue(nameof(sync.moneyReactive) + Id, out var money))
-                Money = (int)money;
-            
-            if (properties.TryGetValue(nameof(sync.bettingMoneyReactive) + Id, out var bettingMoney))
-                sync.bettingMoneyReactive.Value = (int)bettingMoney;
-
-            if (properties.TryGetValue(nameof(sync.isSmallBlindReactive) + Id, out var isSmallBlind))
-                IsSmallBlind = (bool)isSmallBlind;
-
-            if (properties.TryGetValue(nameof(sync.isBigBlindReactive) + Id, out var isBigBlind))
-                IsBigBlind = (bool)isBigBlind;
-            
-            sync.isSyncData = true;
-            
-            //TODO sync HandPlayingCards when player join to room for reconnect
+            foreach (var pair in properties)
+            {
+                pair.Key
+                    .Skip(1)
+                    .Subscribe(value => syncData.SyncProperty(ObjectName, pair.Value, value))
+                    .AddTo(disposable);
+            }
         }
         
         private void AddHandPlayingCard(int value)

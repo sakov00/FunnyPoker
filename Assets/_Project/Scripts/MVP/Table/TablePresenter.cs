@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.Managers;
+using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UniRx;
@@ -11,9 +12,10 @@ using Zenject;
 
 namespace _Project.Scripts.MVP.Table
 {
-    public class TablePresenter : MonoBehaviourPunCallbacks
+    public class TablePresenter : MonoBehaviourPun
     {
         [Inject] private GameData gameData;
+        [Inject] private SyncData syncData;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -22,6 +24,7 @@ namespace _Project.Scripts.MVP.Table
         [SerializeField] private TableView view;
         
         public int Id => photonView.ViewID;
+        public string ObjectName => nameof(TablePresenter) + Id;
         public Transform CardsParent => data.cardsParent;
         public List<Transform> CardPoints => data.cardPoints;
         public int MaxPlayerBet => gameData.AllPlayerPlaces.Max(p => p.BettingMoney);
@@ -43,7 +46,10 @@ namespace _Project.Scripts.MVP.Table
 
         private void Start()
         {
-            sync.bank.Skip(1).Subscribe(value => SyncProperty(nameof(sync.bank), value)).AddTo(disposable);
+            sync.bank
+                .Skip(1)
+                .Subscribe(value => syncData.SyncProperty(ObjectName, nameof(Bank), value))
+                .AddTo(disposable);
             
             sync.playingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
             sync.playingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
@@ -52,32 +58,6 @@ namespace _Project.Scripts.MVP.Table
         public void ThrowCards()
         {
             
-        }
-
-        private void SyncProperty(string propertyName, object value)
-        {
-            if(!sync.isSyncData)
-                return;
-            
-            Hashtable property = new() { { "Table" + propertyName, value } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
-        }
-        
-        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
-        {
-            LoadFromPhoton(changedProps);
-        }
-
-        public void LoadFromPhoton(Hashtable properties = null)
-        {
-            properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
-            
-            sync.isSyncData = false;
-            
-            if (properties.TryGetValue("Table" + nameof(sync.bank), out var owner))
-                sync.bank.Value = (int)owner;
-            
-            sync.isSyncData = true;
         }
         
         private void AddHandPlayingCard(int value)

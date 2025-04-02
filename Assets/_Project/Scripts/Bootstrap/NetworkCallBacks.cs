@@ -10,12 +10,7 @@ namespace _Project.Scripts.Bootstrap
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
         [Inject] private GameStateManager gameStateManager;
-        [Inject] private PlacesManager placesManager;
         [Inject] private PlayerInputHandler playerInputHandler;
-        
-        public Action CallbackOnJoinedRoom;
-        public Action<Player> CallbackOnLeftRoom;
-        public Action<Player> CallbackOnPlayerEnteredRoom;
         
         public void Initialize()
         {
@@ -38,25 +33,9 @@ namespace _Project.Scripts.Bootstrap
             PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
         }
 
-        public override void OnPlayerEnteredRoom(Player player)
-        {
-            placesManager.OnPlayerEnteredRoom(player);
-            CallbackOnPlayerEnteredRoom?.Invoke(player);
-        }
-
         public override void OnJoinedRoom()
         { 
             gameStateManager.SetState(0);
-            placesManager.OnJoinedRoom();
-            playerInputHandler.Initialize();
-            
-            CallbackOnJoinedRoom?.Invoke();
-        }
-
-        public override void OnPlayerLeftRoom(Player player)
-        {
-            placesManager.OnPlayerLeftRoom(player);
-            CallbackOnLeftRoom?.Invoke(player);
         }
     }
 }

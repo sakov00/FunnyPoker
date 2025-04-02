@@ -10,15 +10,14 @@ namespace _Project.Scripts.GameStates
 {
     public class WaitingPlayersState : IGameState
     {
-        [Inject] private NetworkCallBacks _networkCallBacks;
-        [Inject] private GameStateManager _gameStateManager;
-        [Inject] private PlacesManager _placesManager;
+        [Inject] private NetworkCallBacks networkCallBacks;
+        [Inject] private GameStateManager gameStateManager;
         
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
-            _networkCallBacks.CallbackOnJoinedRoom += OnJoinedRoom;
-            _networkCallBacks.CallbackOnPlayerEnteredRoom += OnPlayerEnteredRoom;
+            networkCallBacks.CallbackOnJoinedRoom += OnJoinedRoom;
+            networkCallBacks.CallbackOnPlayerEnteredRoom += OnPlayerEnteredRoom;
         }
 
         private void OnJoinedRoom()
@@ -30,7 +29,7 @@ namespace _Project.Scripts.GameStates
                 PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
                 return;
             
-            _gameStateManager.Next();
+            gameStateManager.Next();
         }
 
         private void OnPlayerEnteredRoom(Player newPlayer)
@@ -42,13 +41,13 @@ namespace _Project.Scripts.GameStates
                 PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
                 return;
             
-            _gameStateManager.Next();
+            gameStateManager.Next();
         }
 
         public void ExitState()
         {
-            _networkCallBacks.CallbackOnJoinedRoom -= OnJoinedRoom;
-            _networkCallBacks.CallbackOnPlayerEnteredRoom -= OnPlayerEnteredRoom;
+            networkCallBacks.CallbackOnJoinedRoom -= OnJoinedRoom;
+            networkCallBacks.CallbackOnPlayerEnteredRoom -= OnPlayerEnteredRoom;
             Debug.Log("Все игроки подключены. Начинаем игру.");
         }
     }

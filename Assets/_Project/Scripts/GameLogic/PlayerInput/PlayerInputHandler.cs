@@ -9,7 +9,7 @@ using Zenject;
 
 namespace _Project.Scripts.GameLogic.PlayerInput
 {
-    public class PlayerInputHandler
+    public class PlayerInputHandler : IInitializable
     {
         [Inject] private PlayerInput playerInput;
         [Inject] private GameData gameData;

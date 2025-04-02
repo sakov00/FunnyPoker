@@ -20,12 +20,6 @@ namespace _Project.Scripts.InjectInstallers
         
         [Header("Game Objects")]
         [SerializeField] private TablePresenter tablePresenter;
-        [SerializeField] private PlayerInputHandler playerInputHandler;
-        
-        [Header("Managers")]
-        [SerializeField] private CardsManager cardsManager;
-        [SerializeField] private PlacesManager placesManager;
-        [SerializeField] private PlayerInput playerInput;
         
         [Header("Canvases")]
         [SerializeField] private StartGameCanvas startGameCanvas;    
@@ -50,7 +44,7 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindGameObjects()
         {
-            Container.BindInstance(playerInputHandler).AsSingle();
+            Container.Bind<PlayerInputHandler>().AsSingle();
             Container.BindInstance(tablePresenter).AsSingle();
         }
         
@@ -58,9 +52,8 @@ namespace _Project.Scripts.InjectInstallers
         {
             Container.Bind<GameStateManager>().AsSingle()
                 .WithArguments(Container.ResolveAll<IGameState>());
-            Container.BindInstance(placesManager).AsSingle();
-            Container.BindInstance(cardsManager).AsSingle();
-            Container.BindInstance(playerInput).AsSingle();
+            Container.Bind<CardsManager>().AsSingle();
+            Container.Bind<PlayerInput>().AsSingle();
             Container.Bind<CanvasesManager>().AsSingle();
         }
         

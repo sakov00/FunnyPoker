@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using _Project.Scripts.Enums;
+using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UniRx;
@@ -9,8 +10,10 @@ using Zenject;
 
 namespace _Project.Scripts.MVP.Cards
 {
-    public class CardPresenter : MonoBehaviourPunCallbacks
+    public class CardPresenter : MonoBehaviourPun
     {
+        [Inject] private SyncData syncData;
+        
         private readonly CompositeDisposable disposable = new ();
 
         [SerializeField] private CardData data;
@@ -18,6 +21,7 @@ namespace _Project.Scripts.MVP.Cards
         [SerializeField] private CardView view;
 
         public int Id => photonView.ViewID;
+        public string ObjectName => nameof(CardPresenter) + Id;
         public PlayingCardRank Rank => data.rank;
         public PlayingCardSuit Suit => data.suit;
         
@@ -36,37 +40,14 @@ namespace _Project.Scripts.MVP.Cards
         
         private void Start()
         {
-            sync.isFreeReactive.Skip(1).Subscribe(value => SyncProperty(nameof(sync.isFreeReactive), value)).AddTo(disposable);
+            sync.isFreeReactive
+                .Skip(1)
+                .Subscribe(value => syncData.SyncProperty(ObjectName, nameof(IsFree), value))
+                .AddTo(disposable);
         }
 
         public void UpdateCardPosition(Transform parent, Transform point)
             => view.UpdateCardPosition(parent, point);
-        
-        private void SyncProperty(string propertyName, object value)
-        {
-            if(!sync.isSyncData)
-                return;
-            
-            Hashtable property = new() { { propertyName + Id, value } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
-        }
-        
-        public override void OnRoomPropertiesUpdate(Hashtable changedProps)
-        {
-            LoadFromPhoton(changedProps);
-        }
-
-        public void LoadFromPhoton(Hashtable properties = null)
-        {
-            properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
-
-            sync.isSyncData = false;
-            
-            if (properties.TryGetValue(nameof(sync.isFreeReactive) + Id, out var isFree))
-                IsFree = (bool)isFree;
-            
-            sync.isSyncData = true;
-        }
 
         private void OnDestroy()
         {

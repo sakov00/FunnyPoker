@@ -10,6 +10,5 @@ namespace _Project.Scripts.Bootstrap
     public class GameStartUp : MonoBehaviour
     {
         [Inject] private PlayerInputHandler playerInputHandler;
-        [Inject] private PlacesManager placesManager;
     }
 }
