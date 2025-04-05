@@ -1,6 +1,7 @@
 ﻿using System;
 using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.Managers;
+using Cysharp.Threading.Tasks;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -38,8 +39,9 @@ namespace _Project.Scripts.Bootstrap
             PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 3 });
         }
 
-        public override void OnJoinedRoom()
+        public async override void OnJoinedRoom()
         { 
+            await UniTask.Yield();
             Joined?.Invoke();
         }
 

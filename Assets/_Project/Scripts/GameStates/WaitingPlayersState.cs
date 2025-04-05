@@ -16,6 +16,10 @@ namespace _Project.Scripts.GameStates
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
+            
+            if(!PhotonNetwork.IsMasterClient)
+                return;
+            
             networkCallBacks.Entered += OnPlayerEnteredRoom;
         }
 
@@ -33,8 +37,12 @@ namespace _Project.Scripts.GameStates
 
         public void ExitState()
         {
-            networkCallBacks.Entered -= OnPlayerEnteredRoom;
             Debug.Log("Все игроки подключены. Начинаем игру.");
+            
+            if(!PhotonNetwork.IsMasterClient)
+                return;
+            
+            networkCallBacks.Entered -= OnPlayerEnteredRoom;
         }
     }
 }

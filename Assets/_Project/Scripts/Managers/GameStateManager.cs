@@ -5,6 +5,7 @@ using _Project.Scripts.Bootstrap;
 using _Project.Scripts.GameStates;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Services;
+using Cysharp.Threading.Tasks;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -22,8 +23,13 @@ namespace _Project.Scripts.Managers
         
         public void Initialize()
         {
-            SetState<WaitingPlayersState>();
             networkCallBacks.PropertiesUpdated += PropertiesUpdate;
+            networkCallBacks.Joined += PlayerJoined;
+        }
+
+        private void PlayerJoined()
+        {
+            SetState<WaitingPlayersState>();
         }
         
         public void Next()
@@ -89,6 +95,7 @@ namespace _Project.Scripts.Managers
         public void Dispose()
         {
             networkCallBacks.PropertiesUpdated -= PropertiesUpdate;
+            networkCallBacks.Joined -= PlayerJoined;
         }
     }
 }

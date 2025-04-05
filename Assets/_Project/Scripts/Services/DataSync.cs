@@ -58,33 +58,28 @@ namespace _Project.Scripts.Services
 
             foreach (var property in properties)
             {
-                
-            }
+                var objAndProp = property.Key.ToString();
+                Match match = Regex.Match(objAndProp, @"^(\D*\d+)(\D+)$");
 
-            properties.TryGetValue()
+                string objectName = match.Groups[1].Value;
+                string propertyName = match.Groups[2].Value;
+                var value = property.Value;
 
-            var hashtable = properties.First();
-            var objAndProp = hashtable.Key.ToString();
-            Match match = Regex.Match(objAndProp, @"^(\D*\d+)(\D+)$");
-
-            string objectName = match.Groups[1].Value;
-            string propertyName = match.Groups[2].Value;
-            var value = hashtable.Value;
-
-            if (properties.ContainsKey(nameof(PlacePresenter)))
-            {
-                var targetObject = gameData.AllPlayerPlaces.FirstOrDefault(x => x.ObjectName == objectName);
-                ApplyPlaceData(targetObject, propertyName, value);
-            }
-            else if (objectName.Contains(nameof(CardPresenter)))
-            {
-                var targetObject = gameData.AllPlayingCards.FirstOrDefault(x => x.ObjectName == objectName);
-                ApplyCardData(targetObject, propertyName, value);
-            }
-            else if (objectName.Contains(nameof(TablePresenter)))
-            {
-                var targetObject = gameData.TablePresenter;
-                ApplyTableData(targetObject, propertyName, value);
+                if (objectName.Contains(nameof(PlacePresenter)))
+                {
+                    var targetObject = gameData.AllPlayerPlaces.FirstOrDefault(x => x.ObjectName == objectName);
+                    ApplyPlaceData(targetObject, propertyName, value);
+                }
+                else if (objectName.Contains(nameof(CardPresenter)))
+                {
+                    var targetObject = gameData.AllPlayingCards.FirstOrDefault(x => x.ObjectName == objectName);
+                    ApplyCardData(targetObject, propertyName, value);
+                }
+                else if (objectName.Contains(nameof(TablePresenter)))
+                {
+                    var targetObject = gameData.TablePresenter;
+                    ApplyTableData(targetObject, propertyName, value);
+                }
             }
 
             isSyncData = true;
