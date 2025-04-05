@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Bootstrap/NetworkCallBacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/WaitingPlayersState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameStates/WaitingPlayersState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DataSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DataSync.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17732">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20512">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17732" />
+      <option name="pid" value="20512" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -179,6 +175,7 @@
       <workItem from="1743856714800" duration="2984000" />
       <workItem from="1743859720089" duration="1490000" />
       <workItem from="1743861234451" duration="471000" />
+      <workItem from="1743873368136" duration="3492000" />
     </task>
     <servers />
   </component>
@@ -226,29 +223,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputHandler.cs</url>
-          <line>33</line>
+          <line>32</line>
           <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\GameLogic\PlayerInput\PlayerInputHandler.cs" containingFunctionPresentation="Method 'PlayerAct'">
             <startOffsets>
-              <option value="1205" />
+              <option value="1191" />
             </startOffsets>
             <endOffsets>
-              <option value="1240" />
+              <option value="1192" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/Managers/GameStateManager.cs</url>
-          <line>64</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\Managers\GameStateManager.cs" containingFunctionPresentation="Method 'SetState'">
-            <startOffsets>
-              <option value="1875" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1928" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

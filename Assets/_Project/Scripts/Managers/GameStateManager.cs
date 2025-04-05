@@ -58,11 +58,10 @@ namespace _Project.Scripts.Managers
             var newState = gameStates.FirstOrDefault(state => state.GetType() == stateType);
             if (newState == null || newState == currentState)
                 return;
-
-            ChangeState(newState);
-
+            
+            var oldProps = new Hashtable {{ GameStateKey, currentState?.GetType().AssemblyQualifiedName }};
             var props = new Hashtable {{ GameStateKey, stateType.AssemblyQualifiedName }};
-            PhotonNetwork.CurrentRoom.SetCustomProperties(props);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(props, oldProps);
         }
         
         private void ChangeState(IGameState newState)
@@ -74,22 +73,19 @@ namespace _Project.Scripts.Managers
 
         private void PropertiesUpdate(Hashtable changedProps)
         {
-            if (PhotonNetwork.IsMasterClient)
+            if (!changedProps.TryGetValue(GameStateKey, out var stateTypeNameObj) ||
+                stateTypeNameObj is not string stateTypeName)
                 return;
             
-            if (changedProps.TryGetValue(GameStateKey, out var stateTypeNameObj) &&
-                stateTypeNameObj is string stateTypeName)
-            {
-                var type = Type.GetType(stateTypeName);
-                if (type == null)
-                    return;
+            var type = Type.GetType(stateTypeName);
+            if (type == null)
+                return;
 
-                var newState = gameStates.FirstOrDefault(state => state.GetType() == type);
-                if (newState != null && newState != currentState)
-                {
-                    ChangeState(newState);
-                }
-            }
+            var newState = gameStates.FirstOrDefault(state => state.GetType() == type);
+            if (newState == null || newState == currentState)
+                return;
+            
+            ChangeState(newState);
         }
 
         public void Dispose()
