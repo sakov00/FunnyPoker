@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.Bootstrap;
+using _Project.Scripts.GameStates;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Services;
 using ExitGames.Client.Photon;
@@ -10,71 +12,83 @@ using Zenject;
 
 namespace _Project.Scripts.Managers
 {
-    public class GameStateManager : IInRoomCallbacks
+    public class GameStateManager : IInitializable, IDisposable
     {
+        [Inject] private NetworkCallBacks networkCallBacks;
+        [Inject] private List<IGameState> gameStates;
+        
         private const string GameStateKey = "GameState";
-        private Dictionary<int, IGameState> gameStates;
         private IGameState currentState;
-
-        [Inject]
-        public void Initialize(List<IGameState> states)
+        
+        public void Initialize()
         {
-            PhotonNetwork.AddCallbackTarget(this);
-            gameStates = new Dictionary<int, IGameState>();
-            for (int i = 0; i < states.Count; i++)
-            {
-                gameStates[i] = states[i];
-            }
+            SetState<WaitingPlayersState>();
+            networkCallBacks.PropertiesUpdated += PropertiesUpdate;
         }
         
         public void Next()
         {
             if (!PhotonNetwork.IsMasterClient)
                 return;
-            
-            int currentKey = gameStates.FirstOrDefault(x => x.Value == currentState).Key;
 
-            SetState(currentKey + 1);
+            int index = gameStates.IndexOf(currentState);
+            if (index < 0 || index + 1 >= gameStates.Count)
+                return;
+
+            var nextState = gameStates[index + 1];
+            SetState(nextState.GetType());
         }
-
-        public void SetState(int stateKey)
+        
+        public void SetState<T>() where T : IGameState
         {
-            if(!PhotonNetwork.IsMasterClient)
+            SetState(typeof(T));
+        }
+        
+        private void SetState(Type stateType)
+        {
+            if (!PhotonNetwork.IsMasterClient)
                 return;
-            
-            if (!gameStates.ContainsKey(stateKey))
-                return;
-            
-            currentState?.ExitState();
-            currentState = gameStates[stateKey];
-            
-            var property = new Hashtable { { GameStateKey, stateKey } };
-            PhotonNetwork.CurrentRoom.SetCustomProperties(property);
 
+            var newState = gameStates.FirstOrDefault(state => state.GetType() == stateType);
+            if (newState == null || newState == currentState)
+                return;
+
+            ChangeState(newState);
+
+            var props = new Hashtable {{ GameStateKey, stateType.AssemblyQualifiedName }};
+            PhotonNetwork.CurrentRoom.SetCustomProperties(props);
+        }
+        
+        private void ChangeState(IGameState newState)
+        {
+            currentState?.ExitState();
+            currentState = newState;
             currentState?.EnterState();
         }
 
-        public void OnPlayerEnteredRoom(Player newPlayer) { }
-        public void OnPlayerLeftRoom(Player otherPlayer) { }
-        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps) { }
-
-        public void OnRoomPropertiesUpdate(Hashtable changedProps)
+        private void PropertiesUpdate(Hashtable changedProps)
         {
             if (PhotonNetwork.IsMasterClient)
                 return;
             
-            if (changedProps.TryGetValue(GameStateKey, out var gameStateKey))
+            if (changedProps.TryGetValue(GameStateKey, out var stateTypeNameObj) &&
+                stateTypeNameObj is string stateTypeName)
             {
-                gameStates.TryGetValue((int)gameStateKey, out var photonState);
-                if (photonState != currentState)
+                var type = Type.GetType(stateTypeName);
+                if (type == null)
+                    return;
+
+                var newState = gameStates.FirstOrDefault(state => state.GetType() == type);
+                if (newState != null && newState != currentState)
                 {
-                    currentState?.ExitState();
-                    currentState = photonState;
-                    currentState?.EnterState();
+                    ChangeState(newState);
                 }
             }
         }
-        
-        public void OnMasterClientSwitched(Player newMasterClient) { }
+
+        public void Dispose()
+        {
+            networkCallBacks.PropertiesUpdated -= PropertiesUpdate;
+        }
     }
 }

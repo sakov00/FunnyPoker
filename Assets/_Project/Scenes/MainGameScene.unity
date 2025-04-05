@@ -10000,7 +10000,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 726709781541860428, guid: d8804b18bfc05fb4d9c8d546709d4404, type: 3}
   cameraPrefab: {fileID: 587340636821943716, guid: 3a0cdac158c6d1246b49b1b4ec3aece5, type: 3}
   networkCallBacks: {fileID: 899396491}
-  tablePresenter: {fileID: 1324862743}
+  gameData: {fileID: 1000003148}
   startGameCanvas: {fileID: 0}
   mainGameCanvas: {fileID: 1766512417}
   endGameCanvas: {fileID: 0}

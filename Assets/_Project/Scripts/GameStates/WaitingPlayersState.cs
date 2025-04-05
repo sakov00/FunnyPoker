@@ -16,20 +16,7 @@ namespace _Project.Scripts.GameStates
         public void EnterState()
         {
             Debug.Log("Ожидание игроков...");
-            networkCallBacks.CallbackOnJoinedRoom += OnJoinedRoom;
-            networkCallBacks.CallbackOnPlayerEnteredRoom += OnPlayerEnteredRoom;
-        }
-
-        private void OnJoinedRoom()
-        {
-            if(!PhotonNetwork.IsMasterClient)
-                return;
-            
-            if (PhotonNetwork.CurrentRoom == null ||
-                PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
-                return;
-            
-            gameStateManager.Next();
+            networkCallBacks.Entered += OnPlayerEnteredRoom;
         }
 
         private void OnPlayerEnteredRoom(Player newPlayer)
@@ -40,14 +27,13 @@ namespace _Project.Scripts.GameStates
             if (PhotonNetwork.CurrentRoom == null ||
                 PhotonNetwork.CurrentRoom.PlayerCount != PhotonNetwork.CurrentRoom.MaxPlayers)
                 return;
-            
+
             gameStateManager.Next();
         }
 
         public void ExitState()
         {
-            networkCallBacks.CallbackOnJoinedRoom -= OnJoinedRoom;
-            networkCallBacks.CallbackOnPlayerEnteredRoom -= OnPlayerEnteredRoom;
+            networkCallBacks.Entered -= OnPlayerEnteredRoom;
             Debug.Log("Все игроки подключены. Начинаем игру.");
         }
     }

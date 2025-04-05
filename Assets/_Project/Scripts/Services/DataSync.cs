@@ -2,81 +2,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using _Project.Scripts.Factories;
+using _Project.Scripts.Bootstrap;
 using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.MVP.Cards;
 using _Project.Scripts.MVP.Place;
 using _Project.Scripts.MVP.Table;
 using ExitGames.Client.Photon;
 using Photon.Pun;
-using Photon.Realtime;
 using Zenject;
-using Object = UnityEngine.Object;
 
 namespace _Project.Scripts.Services
 {
-    public class SyncData : IInitializable, IInRoomCallbacks
+    public class DataSync : IInitializable, IDisposable
     {
-        [Inject] private PlayerFactory playerFactory;
+        [Inject] private NetworkCallBacks networkCallBacks;
         [Inject] private GameData gameData;
 
         private bool isSyncData = true;
+        private bool isGetInfo = true;
 
         public void Initialize()
         {
-            DestroyEmptyPlaces();
-            LoadFromPhoton();
-
-            var playerPlaceInfo = gameData.AllPlayerPlaces.First(place => place.IsFree);
-            playerPlaceInfo.PlayerActorNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-            playerPlaceInfo.IsFree = false;
-            playerFactory.CreatePlayer(playerPlaceInfo.PlayerPoint.position, playerPlaceInfo.PlayerPoint.rotation);
+            networkCallBacks.PropertiesUpdated += PropertiesUpdate;
         }
-
-        private void DestroyEmptyPlaces()
-        {
-            for (int i = gameData.AllPlayerPlaces.Count - 1; i >= 0; i--)
-            {
-                if (i >= PhotonNetwork.CurrentRoom.MaxPlayers)
-                {
-                    Object.Destroy(gameData.AllPlayerPlaces[i].gameObject);
-                    gameData.AllPlayerPlaces.RemoveAt(i);
-                }
-            }
-        }
-
-        public void OnPlayerEnteredRoom(Player newPlayer)
-        {
-            var playerPlaceInfo = gameData.AllPlayerPlaces.First(place => place.IsFree);
-            playerPlaceInfo.PlayerActorNumber = newPlayer.ActorNumber;
-            playerPlaceInfo.IsFree = false;
-        }
-
-        public void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            var placeInfo = gameData.AllPlayerPlaces.First(place => place.PlayerActorNumber == otherPlayer.ActorNumber);
-            placeInfo.PlayerActorNumber = 0;
-            placeInfo.IsFree = true;
-        }
-
-        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-        {
-        }
-
-        public void OnMasterClientSwitched(Player newMasterClient)
-        {
-        }
-
-        public void OnRoomPropertiesUpdate(Hashtable changedProps)
-        {
-            LoadFromPhoton(changedProps);
-        }
-
+        
         public void SyncProperty<T>(string objectName, string propertyName, T value)
         {
             if (!isSyncData)
                 return;
-
+            
+            isGetInfo = false;
+            
             Hashtable property = new()
             {
                 { objectName + propertyName, value }
@@ -84,11 +40,28 @@ namespace _Project.Scripts.Services
             PhotonNetwork.CurrentRoom.SetCustomProperties(property);
         }
 
-        private void LoadFromPhoton(Hashtable properties = null)
+        private void PropertiesUpdate(Hashtable changedProps)
         {
-            isSyncData = false;
+            LoadFromPhoton(changedProps);
+        }
 
+        public void LoadFromPhoton(Hashtable properties = null)
+        {
+            if (!isGetInfo)
+            {
+                isGetInfo = true;
+                return;
+            }
+            
+            isSyncData = false;
             properties ??= PhotonNetwork.CurrentRoom.CustomProperties;
+
+            foreach (var property in properties)
+            {
+                
+            }
+
+            properties.TryGetValue()
 
             var hashtable = properties.First();
             var objAndProp = hashtable.Key.ToString();
@@ -98,7 +71,7 @@ namespace _Project.Scripts.Services
             string propertyName = match.Groups[2].Value;
             var value = hashtable.Value;
 
-            if (objectName.Contains(nameof(PlacePresenter)))
+            if (properties.ContainsKey(nameof(PlacePresenter)))
             {
                 var targetObject = gameData.AllPlayerPlaces.FirstOrDefault(x => x.ObjectName == objectName);
                 ApplyPlaceData(targetObject, propertyName, value);
@@ -152,6 +125,11 @@ namespace _Project.Scripts.Services
             };
 
             propertyActions[propertyName].Invoke();
+        }
+        
+        public void Dispose()
+        {
+            networkCallBacks.PropertiesUpdated -= PropertiesUpdate;
         }
     }
 }

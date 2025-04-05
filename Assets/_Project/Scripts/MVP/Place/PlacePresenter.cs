@@ -16,7 +16,7 @@ namespace _Project.Scripts.MVP.Place
     {
         [Inject] private GameData gameData;
         [Inject] private RoundService roundService;
-        [Inject] private SyncData syncData;
+        [Inject] private DataSync dataSync;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -140,7 +140,7 @@ namespace _Project.Scripts.MVP.Place
             {
                 pair.Key
                     .Skip(1)
-                    .Subscribe(value => syncData.SyncProperty(ObjectName, pair.Value, value))
+                    .Subscribe(value => dataSync.SyncProperty(ObjectName, pair.Value, value))
                     .AddTo(disposable);
             }
         }

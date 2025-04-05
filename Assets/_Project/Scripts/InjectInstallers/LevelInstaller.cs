@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Bootstrap;
 using _Project.Scripts.Factories;
+using _Project.Scripts.GameLogic.Data;
 using _Project.Scripts.GameLogic.PlayerCanvases;
 using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.GameStates;
@@ -19,7 +20,7 @@ namespace _Project.Scripts.InjectInstallers
         [SerializeField] private NetworkCallBacks networkCallBacks;
         
         [Header("Game Objects")]
-        [SerializeField] private TablePresenter tablePresenter;
+        [SerializeField] private GameData gameData;
         
         [Header("Canvases")]
         [SerializeField] private StartGameCanvas startGameCanvas;    
@@ -30,11 +31,12 @@ namespace _Project.Scripts.InjectInstallers
         {
             BindNetwork();
             BindGameObjects();
+            BindFactories();
             BindManagers();
             BindServices();
             BindGameStates();
-            BindFactories();
             BindCanvases();
+            BindGameData();
         }
 
         private void BindNetwork()
@@ -44,22 +46,28 @@ namespace _Project.Scripts.InjectInstallers
 
         private void BindGameObjects()
         {
-            Container.Bind<PlayerInputHandler>().AsSingle();
-            Container.BindInstance(tablePresenter).AsSingle();
+            
+        }
+        
+        private void BindFactories()
+        {
+            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
         }
         
         private void BindManagers()
         {
-            Container.Bind<GameStateManager>().AsSingle()
-                .WithArguments(Container.ResolveAll<IGameState>());
+            Container.BindInterfacesAndSelfTo<PlayerInputHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameStateManager>().AsSingle();
             Container.Bind<CardsManager>().AsSingle();
-            Container.Bind<PlayerInput>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerInput>().AsSingle();
             Container.Bind<CanvasesManager>().AsSingle();
         }
         
         private void BindServices()
         {
             Container.Bind<RoundService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlaceSync>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DataSync>().AsSingle();
         }
         
         private void BindGameStates()
@@ -73,16 +81,16 @@ namespace _Project.Scripts.InjectInstallers
             Container.BindInterfacesAndSelfTo<ShowdownState>().AsSingle();
         }
 
-        private void BindFactories()
-        {
-            Container.Bind<PlayerFactory>().AsSingle().WithArguments(playerPrefab, cameraPrefab);
-        }
-
         private void BindCanvases()
         {
             Container.BindInstance(startGameCanvas).AsSingle();
             Container.BindInstance(mainGameCanvas).AsSingle();
             Container.BindInstance(endGameCanvas).AsSingle();
+        }
+
+        private void BindGameData()
+        {
+            Container.BindInstance(gameData).AsSingle();
         }
     }
 }

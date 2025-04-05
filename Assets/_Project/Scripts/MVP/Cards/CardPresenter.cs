@@ -12,7 +12,7 @@ namespace _Project.Scripts.MVP.Cards
 {
     public class CardPresenter : MonoBehaviourPun
     {
-        [Inject] private SyncData syncData;
+        [Inject] private DataSync dataSync;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -42,7 +42,7 @@ namespace _Project.Scripts.MVP.Cards
         {
             sync.isFreeReactive
                 .Skip(1)
-                .Subscribe(value => syncData.SyncProperty(ObjectName, nameof(IsFree), value))
+                .Subscribe(value => dataSync.SyncProperty(ObjectName, nameof(IsFree), value))
                 .AddTo(disposable);
         }
 

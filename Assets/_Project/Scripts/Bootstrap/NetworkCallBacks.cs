@@ -1,6 +1,7 @@
 ﻿using System;
 using _Project.Scripts.GameLogic.PlayerInput;
 using _Project.Scripts.Managers;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using Zenject;
@@ -10,7 +11,11 @@ namespace _Project.Scripts.Bootstrap
     public class NetworkCallBacks : MonoBehaviourPunCallbacks, IInitializable
     {
         [Inject] private GameStateManager gameStateManager;
-        [Inject] private PlayerInputHandler playerInputHandler;
+        
+        public Action Joined;
+        public Action<Player> Left;
+        public Action<Player> Entered;
+        public Action<Hashtable> PropertiesUpdated;
         
         public void Initialize()
         {
@@ -35,7 +40,22 @@ namespace _Project.Scripts.Bootstrap
 
         public override void OnJoinedRoom()
         { 
-            gameStateManager.SetState(0);
+            Joined?.Invoke();
+        }
+
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            Left?.Invoke(otherPlayer);
+        }
+
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            Entered?.Invoke(newPlayer);
+        }
+        
+        public override void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
+        {
+            PropertiesUpdated?.Invoke(propertiesThatChanged);
         }
     }
 }

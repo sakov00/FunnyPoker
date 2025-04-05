@@ -15,7 +15,7 @@ namespace _Project.Scripts.MVP.Table
     public class TablePresenter : MonoBehaviourPun
     {
         [Inject] private GameData gameData;
-        [Inject] private SyncData syncData;
+        [Inject] private DataSync dataSync;
         
         private readonly CompositeDisposable disposable = new ();
 
@@ -48,7 +48,7 @@ namespace _Project.Scripts.MVP.Table
         {
             sync.bank
                 .Skip(1)
-                .Subscribe(value => syncData.SyncProperty(ObjectName, nameof(Bank), value))
+                .Subscribe(value => dataSync.SyncProperty(ObjectName, nameof(Bank), value))
                 .AddTo(disposable);
             
             sync.playingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
