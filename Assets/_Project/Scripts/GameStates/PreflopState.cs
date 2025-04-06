@@ -26,10 +26,10 @@ namespace _Project.Scripts.GameStates
             var placeInfo = gameData.AllPlayerPlaces.ElementAt(random);
             
             placeInfo.IsSmallBlind = true;
-            placeInfo.BettingMoney = 5;
+            placeInfo.GlobalBettingMoney = 5;
             
             placeInfo.Next.IsBigBlind = true;
-            placeInfo.Next.BettingMoney = 10;
+            placeInfo.Next.GlobalBettingMoney = 10;
             
             placeInfo.Next.Next.IsEnabled = true;
 

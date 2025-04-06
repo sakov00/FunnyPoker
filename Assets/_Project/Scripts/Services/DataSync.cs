@@ -32,11 +32,7 @@ namespace _Project.Scripts.Services
                 return;
             
             isGetInfo = false;
-            
-            Hashtable property = new()
-            {
-                { objectName + propertyName, value }
-            };
+            Hashtable property = new() { { objectName + propertyName, value } };
             PhotonNetwork.CurrentRoom.SetCustomProperties(property);
         }
 

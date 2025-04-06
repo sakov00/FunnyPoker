@@ -58,12 +58,12 @@ namespace _Project.Scripts.GameLogic.PlayerInput
         
         private void Call()
         {
-            playerPlacePresenter.BettingMoney = gameData.TablePresenter.MaxPlayerBet;
+            playerPlacePresenter.GlobalBettingMoney = gameData.TablePresenter.MaxPlayerBet;
         }
         
         private void Raise(int value)
         {
-            playerPlacePresenter.BettingMoney += value;
+            playerPlacePresenter.GlobalBettingMoney += value;
         }
 
         public void Dispose()

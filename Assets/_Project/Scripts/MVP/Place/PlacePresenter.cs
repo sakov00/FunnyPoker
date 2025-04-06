@@ -77,11 +77,17 @@ namespace _Project.Scripts.MVP.Place
         public int BettingMoney
         {
             get => sync.bettingMoneyReactive.Value;
+            set => sync.bettingMoneyReactive.Value = value;
+        }
+        
+        public int GlobalBettingMoney
+        {
+            get => BettingMoney;
             set
             {
-                Money -= value - sync.bettingMoneyReactive.Value;
-                gameData.TablePresenter.Bank += value - sync.bettingMoneyReactive.Value;
-                sync.bettingMoneyReactive.Value = value;
+                Money -= value - BettingMoney;
+                gameData.TablePresenter.Bank += value - BettingMoney;
+                BettingMoney = value;
             }
         }
         
