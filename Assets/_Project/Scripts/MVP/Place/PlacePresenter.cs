@@ -136,8 +136,24 @@ namespace _Project.Scripts.MVP.Place
                 .Subscribe(value => view.UpdateButton(value))
                 .AddTo(disposable);
             
-            sync.handPlayingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
-            sync.handPlayingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
+            sync.handPlayingCards
+                .ObserveAdd()
+                .Subscribe(addEvent => AddHandPlayingCard(addEvent.Value))
+                .AddTo(disposable);
+            sync.handPlayingCards
+                .ObserveAdd()
+                .Subscribe(addEvent => dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray()))
+                .AddTo(disposable);
+            
+            // sync.handPlayingCards
+            //     .ObserveRemove()
+            //     .Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value))
+            //     .AddTo(disposable);
+            
+            sync.handPlayingCards
+                .ObserveRemove()
+                .Subscribe(removeEvent => dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray()))
+                .AddTo(disposable);
         }
         
         private void BindSyncProperties<T>(Dictionary<ReactiveProperty<T>, string> properties)
@@ -153,33 +169,15 @@ namespace _Project.Scripts.MVP.Place
         
         private void AddHandPlayingCard(int value)
         {
-            photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.All, value);
+            int cardPlaceIndex = HandPlayingCards.IndexOf(value);
+            var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
+            movedCard.UpdateCardPosition(PlayerCardsParent, CardPoints[cardPlaceIndex]);
         }
         
         private void RemoveHandPlayingCard(int value)
         {
-            photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.All, value);
-        }
-        
-        [PunRPC]
-        private void SyncAddHandPlayingCardRPC(int addedCardId)
-        {
-            if(!sync.handPlayingCards.Contains(addedCardId))
-                sync.handPlayingCards.Add(addedCardId);
-            
-            int cardPlaceIndex = HandPlayingCards.IndexOf(addedCardId);
-            var movedCard = gameData.AllPlayingCards.First(card => card.Id == addedCardId);
-            movedCard.UpdateCardPosition(PlayerCardsParent, CardPoints[cardPlaceIndex]);
-        }
-        
-        [PunRPC]
-        private void SyncRemoveHandPlayingCardRPC(int removedCardId)
-        {
-            if(!sync.handPlayingCards.Contains(removedCardId))
-                sync.handPlayingCards.Remove(removedCardId);
-            
-            int cardPlaceIndex = HandPlayingCards.IndexOf(removedCardId);
-            var movedCard = gameData.AllPlayingCards.First(card => card.Id == removedCardId);
+            int cardPlaceIndex = HandPlayingCards.IndexOf(value);
+            var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
             movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
         

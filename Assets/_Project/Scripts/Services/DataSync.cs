@@ -9,6 +9,7 @@ using _Project.Scripts.MVP.Place;
 using _Project.Scripts.MVP.Table;
 using ExitGames.Client.Photon;
 using Photon.Pun;
+using UniRx;
 using Zenject;
 
 namespace _Project.Scripts.Services
@@ -92,7 +93,8 @@ namespace _Project.Scripts.Services
                 { nameof(target.Money), () => target.Money = Convert.ToInt32(value) },
                 { nameof(target.BettingMoney), () => target.BettingMoney = Convert.ToInt32(value) },
                 { nameof(target.IsSmallBlind), () => target.IsSmallBlind = Convert.ToBoolean(value) },
-                { nameof(target.IsBigBlind), () => target.IsBigBlind = Convert.ToBoolean(value) }
+                { nameof(target.IsBigBlind), () => target.IsBigBlind = Convert.ToBoolean(value) },
+                { nameof(target.HandPlayingCards), () => SyncLists(new List<int>((int[])value), target.HandPlayingCards)},
             };
 
             propertyActions[propertyName].Invoke();
@@ -116,6 +118,29 @@ namespace _Project.Scripts.Services
             };
 
             propertyActions[propertyName].Invoke();
+        }
+        
+        private void SyncLists<T>(List<T> source, IReactiveCollection<T> target)
+        {
+            for (int i = 0; i < source.Count; i++)
+            {
+                if (i < target.Count)
+                {
+                    if (!Equals(target[i], source[i]))
+                    {
+                        target[i] = source[i];
+                    }
+                }
+                else
+                {
+                    target.Add(source[i]);
+                }
+            }
+
+            while (target.Count > source.Count)
+            {
+                target.RemoveAt(target.Count - 1);
+            }
         }
         
         public void Dispose()
