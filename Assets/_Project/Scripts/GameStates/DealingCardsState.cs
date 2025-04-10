@@ -18,7 +18,8 @@ namespace _Project.Scripts.GameStates
             if(!PhotonNetwork.IsMasterClient)
                 return;
             
-            cardsManager.DealTwoCardsToPlayers();
+            cardsManager.DealCardToPlayers();
+            cardsManager.DealCardToTable();
             gameStateManager.Next();
         }
 

@@ -10697,6 +10697,42 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984844992221447972, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1074334395234994758, guid: 6e1ef0a6a9041aa4fa99a1051d91c9be, type: 3}
       propertyPath: sceneViewId
       value: 5

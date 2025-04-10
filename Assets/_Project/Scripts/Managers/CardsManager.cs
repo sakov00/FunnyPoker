@@ -13,33 +13,41 @@ namespace _Project.Scripts.Managers
     public class CardsManager
     {
         [Inject] private GameData gameData;
-
-        public void DealTwoCardsToPlayers()
+        
+        public void DealCardToTable()
         {
-            DealCardToPlayers();
-            DealCardToPlayers();
+            var table = gameData.TablePresenter;
+            var cards = GetRandomPlayingCard(5);
+            foreach (var card in cards)
+                table.PlayingCards.Add(card.Id);
         }
         
-        private void DealCardToPlayers()
+        public void DealCardToPlayers()
         {
             foreach (var place in gameData.AllPlayerPlaces)
             {
-                var card = GetRandomPlayingCard();
-                card.gameObject.SetActive(true);
-                place.HandPlayingCards.Add(card.Id);
+                var cards = GetRandomPlayingCard(2);
+                foreach (var card in cards)
+                    place.HandPlayingCards.Add(card.Id);
             }
         }
         
-        private CardPresenter GetRandomPlayingCard()
+        private List<CardPresenter> GetRandomPlayingCard(int count)
         {
-            var freePlayingCards = gameData.AllPlayingCards.Where(x => x.IsFree).ToList();
-            if (!freePlayingCards.Any())
-                return null;
+            var listCards = new List<CardPresenter>();
+            for (int i = 0; i < count; i++)
+            {
+                var freePlayingCards = gameData.AllPlayingCards.Where(x => x.IsFree).ToList();
+                if (!freePlayingCards.Any())
+                    return null;
 
-            var index = Random.Range(0, freePlayingCards.Count);
-            var card = freePlayingCards[index];
-            card.IsFree = false;
-            return card;
+                var index = Random.Range(0, freePlayingCards.Count);
+                var card = freePlayingCards[index];
+                card.IsFree = false;
+                card.gameObject.SetActive(true);
+                listCards.Add(card);
+            }
+            return listCards;
         }
     }
 }

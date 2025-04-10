@@ -51,7 +51,7 @@ namespace _Project.Scripts.MVP.Place
                 {
                     sync.isEnabledReactive.Value = value;
                     if (value)
-                        roundService.CheckRoundEnd(this);
+                        roundService.CheckRoundEnd();
                 }
             }
         }
@@ -138,22 +138,20 @@ namespace _Project.Scripts.MVP.Place
             
             sync.handPlayingCards
                 .ObserveAdd()
-                .Subscribe(addEvent => AddHandPlayingCard(addEvent.Value))
+                .Subscribe(addEvent =>
+                {
+                    AddHandPlayingCard(addEvent.Value);
+                    dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray());
+                })
                 .AddTo(disposable);
-            
-            sync.handPlayingCards
-                .ObserveAdd()
-                .Subscribe(addEvent => dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray()))
-                .AddTo(disposable);
-            
-            sync.handPlayingCards
-                .ObserveRemove()
-                .Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value))
-                .AddTo(disposable);
-            
+
             sync.handPlayingCards
                 .ObserveRemove()
-                .Subscribe(removeEvent => dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray()))
+                .Subscribe(removeEvent =>
+                {
+                    RemoveHandPlayingCard(removeEvent.Value);
+                    dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray());
+                })
                 .AddTo(disposable);
         }
         

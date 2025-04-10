@@ -32,8 +32,6 @@ namespace _Project.Scripts.GameStates
             placeInfo.Next.GlobalBettingMoney = 10;
             
             placeInfo.Next.Next.IsEnabled = true;
-
-            gameData.TablePresenter.ThrowCards();
         }
 
         public void ExitState()

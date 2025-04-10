@@ -114,7 +114,8 @@ namespace _Project.Scripts.Services
         {
             var propertyActions = new Dictionary<string, Action>
             {
-                { nameof(target.Bank), () => target.Bank = Convert.ToInt32(value) }
+                { nameof(target.Bank), () => target.Bank = Convert.ToInt32(value) },
+                { nameof(target.PlayingCards), () => SyncLists(new List<int>((int[])value), target.PlayingCards)},
             };
 
             propertyActions[propertyName].Invoke();

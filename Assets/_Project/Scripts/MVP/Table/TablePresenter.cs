@@ -44,6 +44,12 @@ namespace _Project.Scripts.MVP.Table
             view ??= GetComponent<TableView>();
         }
 
+        public void ShowCard(int indexCard)
+        {
+            var cardId = PlayingCards[indexCard];
+            view.ShowCard(cardId);
+        }
+
         private void Start()
         {
             sync.bank
@@ -51,45 +57,40 @@ namespace _Project.Scripts.MVP.Table
                 .Subscribe(value => dataSync.SyncProperty(ObjectName, nameof(Bank), value))
                 .AddTo(disposable);
             
-            sync.playingCards.ObserveAdd().Subscribe(addEvent => AddHandPlayingCard(addEvent.Value)).AddTo(disposable);
-            sync.playingCards.ObserveRemove().Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value)).AddTo(disposable);
-        }
+            sync.playingCards.ObserveAdd().Subscribe(addEvent => AddPlayingCard(addEvent.Value)).AddTo(disposable);
+            sync.playingCards.ObserveRemove().Subscribe(removeEvent => RemovePlayingCard(removeEvent.Value)).AddTo(disposable);
+            
+            sync.playingCards
+                .ObserveAdd()
+                .Subscribe(addEvent =>
+                {
+                    AddPlayingCard(addEvent.Value);
+                    dataSync.SyncProperty(ObjectName, nameof(PlayingCards), PlayingCards.ToArray());
+                })
+                .AddTo(disposable);
 
-        public void ThrowCards()
-        {
-            
+            sync.playingCards
+                .ObserveRemove()
+                .Subscribe(removeEvent =>
+                {
+                    RemovePlayingCard(removeEvent.Value);
+                    dataSync.SyncProperty(ObjectName, nameof(PlayingCards), PlayingCards.ToArray());
+                })
+                .AddTo(disposable);
         }
         
-        private void AddHandPlayingCard(int value)
+        private void AddPlayingCard(int value)
         {
-            photonView?.RPC("SyncAddHandPlayingCardRPC", RpcTarget.Others, value);
-        }
-        
-        private void RemoveHandPlayingCard(int value)
-        {
-            photonView?.RPC("SyncRemoveHandPlayingCardRPC", RpcTarget.Others, value);
-        }
-        
-        [PunRPC]
-        private void SyncAddHandPlayingCardRPC(int addedCardId)
-        {
-            if(!sync.playingCards.Contains(addedCardId))
-                sync.playingCards.Add(addedCardId);
-            
-            int cardPlaceIndex = PlayingCards.IndexOf(addedCardId);
-            var movedCard = gameData.AllPlayingCards.First(card => card.Id == addedCardId);
+            int cardPlaceIndex = PlayingCards.IndexOf(value);
+            var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
             movedCard.UpdateCardPosition(CardsParent, CardPoints[cardPlaceIndex]);
         }
         
-        [PunRPC]
-        private void SyncRemoveHandPlayingCardRPC(int removedCardId)
+        private void RemovePlayingCard(int value)
         {
-            if(!sync.playingCards.Contains(removedCardId))
-                sync.playingCards.Remove(removedCardId);
-            
-            int cardPlaceIndex = PlayingCards.IndexOf(removedCardId);
-            var movedCard = gameData.AllPlayingCards.First(card => card.Id == removedCardId);
-            movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
+            // int cardPlaceIndex = HandPlayingCards.IndexOf(value);
+            // var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
+            // movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
 
         private void OnDestroy()

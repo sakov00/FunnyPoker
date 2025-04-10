@@ -14,10 +14,13 @@ namespace _Project.Scripts.Services
         [Inject] private GameData gameData;
         [Inject] private GameStateManager gameStateManager;
         
-        public void CheckRoundEnd(PlacePresenter place)
+        public void CheckRoundEnd()
         {
-            if (place.IsBigBlind)
+            foreach (var place in gameData.AllPlayerPlaces)
             {
+                if (!place.IsBigBlind || !place.IsEnabled)
+                    continue;
+                
                 var activePlayers = gameData.AllPlayerPlaces.Where(p => !p.IsFolded).ToList();
                 var allBetsEqual = activePlayers.All(p => p.BettingMoney == gameData.TablePresenter.MaxPlayerBet);
 
