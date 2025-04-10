@@ -140,15 +140,16 @@ namespace _Project.Scripts.MVP.Place
                 .ObserveAdd()
                 .Subscribe(addEvent => AddHandPlayingCard(addEvent.Value))
                 .AddTo(disposable);
+            
             sync.handPlayingCards
                 .ObserveAdd()
                 .Subscribe(addEvent => dataSync.SyncProperty(ObjectName, nameof(HandPlayingCards), HandPlayingCards.ToArray()))
                 .AddTo(disposable);
             
-            // sync.handPlayingCards
-            //     .ObserveRemove()
-            //     .Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value))
-            //     .AddTo(disposable);
+            sync.handPlayingCards
+                .ObserveRemove()
+                .Subscribe(removeEvent => RemoveHandPlayingCard(removeEvent.Value))
+                .AddTo(disposable);
             
             sync.handPlayingCards
                 .ObserveRemove()
@@ -176,9 +177,9 @@ namespace _Project.Scripts.MVP.Place
         
         private void RemoveHandPlayingCard(int value)
         {
-            int cardPlaceIndex = HandPlayingCards.IndexOf(value);
-            var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
-            movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
+            // int cardPlaceIndex = HandPlayingCards.IndexOf(value);
+            // var movedCard = gameData.AllPlayingCards.First(card => card.Id == value);
+            // movedCard.UpdateCardPosition(gameData.DealerCardsParent, CardPoints[cardPlaceIndex]);
         }
         
         private void OnDestroy()

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c9124a29-c595-426d-8c5c-dd43b4413fe4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FunnyPoker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DataSync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/DataSync.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.9/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Core/Utilities/LinqUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../FunnyPoker_clone_0/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../FunnyPoker_clone_0/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -100,10 +101,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3956">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18488">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3956" />
+      <option name="pid" value="18488" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -181,6 +182,8 @@
       <workItem from="1743928672916" duration="1999000" />
       <workItem from="1744055300917" duration="795000" />
       <workItem from="1744129159767" duration="2069000" />
+      <workItem from="1744139042257" duration="42000" />
+      <workItem from="1744282899439" duration="894000" />
     </task>
     <servers />
   </component>
@@ -201,53 +204,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/RoundService.cs</url>
-          <line>23</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\Services\RoundService.cs" containingFunctionPresentation="Method 'CheckRoundEnd'">
-            <startOffsets>
-              <option value="756" />
-            </startOffsets>
-            <endOffsets>
-              <option value="773" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/RoundService.cs</url>
-          <line>20</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\Services\RoundService.cs" containingFunctionPresentation="Method 'CheckRoundEnd'">
-            <startOffsets>
-              <option value="545" />
-            </startOffsets>
-            <endOffsets>
-              <option value="623" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/GameLogic/PlayerInput/PlayerInputHandler.cs</url>
-          <line>32</line>
-          <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\GameLogic\PlayerInput\PlayerInputHandler.cs" containingFunctionPresentation="Method 'PlayerAct'">
-            <startOffsets>
-              <option value="1191" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1192" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/MVP/Place/PlacePresenter.cs</url>
-          <line>178</line>
+          <line>179</line>
           <properties documentPath="D:\Work\FunnyPoker\FunnyPoker\Assets\_Project\Scripts\MVP\Place\PlacePresenter.cs" containingFunctionPresentation="Method 'RemoveHandPlayingCard'">
             <startOffsets>
-              <option value="6090" />
+              <option value="6091" />
             </startOffsets>
             <endOffsets>
-              <option value="6143" />
+              <option value="6147" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="69" />
